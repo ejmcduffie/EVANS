@@ -1,13 +1,17 @@
-import mongoose from 'mongoose';
+import { initDb } from './fileDb';
 
 export const connectToDB = async () => {
-  if (mongoose.connections[0].readyState) return;
-  
   try {
-    await mongoose.connect(process.env.MONGODB_URI!);
-    console.log('Connected to MongoDB');
+    await initDb();
+    console.log('Connected to file-based database');
+    return true;
   } catch (error) {
-    console.error('MongoDB connection error:', error);
+    console.error('Database initialization error:', error);
     throw error;
   }
+};
+
+export const disconnectFromDB = async () => {
+  // No need to disconnect from file-based storage
+  return true;
 };

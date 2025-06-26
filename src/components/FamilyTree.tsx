@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState, useCallback } from 'react';
-import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
 interface FamilyMember {
@@ -25,7 +24,6 @@ interface FamilyTreeProps {
 }
 
 export default function FamilyTree({ initialData = null }: FamilyTreeProps) {
-  const { data: session, status } = useSession();
   const router = useRouter();
   const [treeData, setTreeData] = useState<FamilyMember | null>(initialData?.tree || null);
   const [metadata, setMetadata] = useState<{fileName?: string; uploadDate?: string}>({});
@@ -34,8 +32,6 @@ export default function FamilyTree({ initialData = null }: FamilyTreeProps) {
   const [generations, setGenerations] = useState(4);
 
   const fetchFamilyTree = useCallback(async () => {
-    if (status === 'loading') return;
-    
     try {
       setLoading(true);
       setError(null);
@@ -44,18 +40,11 @@ export default function FamilyTree({ initialData = null }: FamilyTreeProps) {
       const data = await response.json();
       
       if (!response.ok) {
-        // Handle specific error cases
-        if (data.code === 'NO_GEDCOM_FILES') {
-          setError('No verified GEDCOM files found. Please upload a GEDCOM file first.');
-          setTreeData(null);
-          return;
-        }
         throw new Error(data.error || data.message || 'Failed to load family tree');
       }
       
       console.log('Received family tree data:', data);
       
-      // Handle both direct tree data and nested tree property
       const treeData = data.tree || data;
       if (!treeData) {
         throw new Error('No tree data found in the response');
@@ -63,14 +52,13 @@ export default function FamilyTree({ initialData = null }: FamilyTreeProps) {
       
       setTreeData(treeData);
     } catch (err) {
-      console.error('Error fetching family tree:', err);
-      const errorMessage = err instanceof Error ? err.message : 'Failed to load family tree';
-      setError(errorMessage);
+      console.error('Failed to fetch family tree:', err);
+      setError('Failed to load family tree data');
       setTreeData(null);
     } finally {
       setLoading(false);
     }
-  }, [status]);
+  }, [router]);
 
   useEffect(() => {
     if (!initialData) {
@@ -87,7 +75,6 @@ export default function FamilyTree({ initialData = null }: FamilyTreeProps) {
     const borderColor = isMale ? 'border-blue-200' : isFemale ? 'border-pink-200' : 'border-purple-200';
     const name = person.name || `${person.givenName || ''} ${person.surname || ''}`.trim() || 'Unknown';
     
-    // Format dates for display
     const formatDate = (dateStr?: string) => {
       if (!dateStr) return '';
       try {
@@ -131,17 +118,14 @@ export default function FamilyTree({ initialData = null }: FamilyTreeProps) {
   const renderGenerations = (person: FamilyMember, depth = 0, maxDepth = 4) => {
     if (depth > maxDepth || !person) return null;
     
-    // Ensure we have arrays for partners and children
     const partners = Array.isArray(person.partners) ? person.partners : [];
     const children = Array.isArray(person.children) ? person.children : [];
     
-    // Only show a limited number of children to prevent UI overload
     const visibleChildren = children.slice(0, 5);
     const hasMoreChildren = children.length > 5;
     
     return (
       <div key={`${person.id}-${depth}`} className="flex flex-col items-center">
-        {/* Current person and their partners */}
         <div className="flex items-start">
           {renderPerson(person, depth)}
           
@@ -158,7 +142,6 @@ export default function FamilyTree({ initialData = null }: FamilyTreeProps) {
           )}
         </div>
         
-        {/* Children */}
         {visibleChildren.length > 0 && (
           <div className="mt-4">
             <div className="h-6 flex justify-center">
@@ -204,14 +187,6 @@ export default function FamilyTree({ initialData = null }: FamilyTreeProps) {
             <div className="mt-2 text-sm text-red-700">
               <p>
                 {error}
-                {error === 'No verified GEDCOM files found' && (
-                  <button
-                    onClick={() => router.push('/upload')}
-                    className="ml-2 text-red-600 underline hover:text-red-800"
-                  >
-                    Upload a GEDCOM file
-                  </button>
-                )}
               </p>
             </div>
             <div className="mt-4">
@@ -223,13 +198,6 @@ export default function FamilyTree({ initialData = null }: FamilyTreeProps) {
                 >
                   Try again
                 </button>
-                <button
-                  type="button"
-                  onClick={() => router.push('/upload')}
-                  className="ml-3 bg-red-50 px-2 py-1.5 rounded-md text-sm font-medium text-red-800 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600"
-                >
-                  Upload GEDCOM
-                </button>
               </div>
             </div>
           </div>
@@ -238,7 +206,6 @@ export default function FamilyTree({ initialData = null }: FamilyTreeProps) {
     );
   }
 
-  // Show metadata if available
   const renderMetadata = () => {
     if (!metadata.fileName && !metadata.uploadDate) return null;
     
@@ -271,18 +238,11 @@ export default function FamilyTree({ initialData = null }: FamilyTreeProps) {
           >
             Try Again
           </button>
-          <button
-            onClick={() => router.push('/upload')}
-            className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-          >
-            Upload GEDCOM
-          </button>
         </div>
       </div>
     );
   }
 
-  // Main tree view when we have data
   return (
     <div className="bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-100">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">

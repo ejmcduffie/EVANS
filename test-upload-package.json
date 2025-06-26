@@ -1,0 +1,10 @@
+{
+  "name": "test-upload",
+  "version": "1.0.0",
+  "description": "Test script for file upload",
+  "main": "test-upload.js",
+  "type": "module",
+  "scripts": {
+    "test": "node test-upload.js"
+  }
+}

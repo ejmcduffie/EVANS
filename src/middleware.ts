@@ -1,14 +1,9 @@
-import { withAuth } from 'next-auth/middleware';
-
-export default withAuth({
-  pages: {
-    signIn: '/login',
-    error: '/login'
-  }
-});
+// No authentication middleware needed for demo
+export default function middleware() {
+  // No authentication checks - all routes are public
+}
 
 export const config = {
-  // Make all pages publicly accessible
-  // No protected routes
+  // No protected routes - all pages are public
   matcher: []
 };

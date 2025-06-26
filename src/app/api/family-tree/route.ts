@@ -1,68 +1,72 @@
-import { getServerSession } from 'next-auth';
 import { NextResponse } from 'next/server';
-import authOptions from '@/auth';
-import { connectToDB } from '@/lib/dbconnect';
-import mongoose from 'mongoose';
-import { ObjectId } from 'mongodb';
-import { readFileSync } from 'fs';
-import path from 'path';
-import { parseGedcom, findRootIndividual, getFamilyTreeData } from '@/lib/gedcomParser';
-import { Resend } from 'resend';
 
 // Force dynamic rendering for this route
 export const dynamic = 'force-dynamic';
 
-// TEMPORARY EMAIL TEST - REMOVE AFTER TESTING
-export async function GET_EMAIL_TEST() {
-  try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    
-    const { data, error } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: 'your_actual_email@domain.com', // CHANGE TO YOUR REAL EMAIL
-      subject: 'AncestryChain Test',
-      html: '<p>Resend API is working!</p>'
-    });
-
-    if (error) {
-      try {
-        console.error('Family tree API error:', error);
-        return NextResponse.json({ error: error.message }, { status: 400 });
-      } catch (error) {
-        console.error('Unexpected error in family-tree route:', error);
-        return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
-      }
+// Sample family tree data for demo purposes
+const exampleFamilyTree = {
+  id: 'root',
+  name: 'John Smith',
+  givenName: 'John',
+  surname: 'Smith',
+  birthDate: '1955-06-15',
+  gender: 'M',
+  children: [
+    {
+      id: 'child1',
+      name: 'James Smith',
+      givenName: 'James',
+      surname: 'Smith',
+      birthDate: '1980-03-22',
+      gender: 'M',
+      children: []
+    },
+    {
+      id: 'child2',
+      name: 'Sarah Johnson',
+      givenName: 'Sarah',
+      surname: 'Johnson',
+      birthDate: '1982-11-05',
+      gender: 'F',
+      children: [
+        {
+          id: 'grandchild1',
+          name: 'Emma Johnson',
+          givenName: 'Emma',
+          surname: 'Johnson',
+          birthDate: '2010-07-30',
+          gender: 'F',
+          children: []
+        }
+      ]
     }
-
-    return NextResponse.json({ 
-      success: true, 
-      emailId: data?.id,
-      message: 'Test email sent - check your inbox'
-    });
-  } catch (error) {
-    try {
-      console.error('Family tree API error:', error);
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    } catch (error) {
-      console.error('Unexpected error in family-tree route:', error);
-      return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  ],
+  partners: [
+    {
+      id: 'partner1',
+      name: 'Mary Smith',
+      givenName: 'Mary',
+      surname: 'Williams',
+      birthDate: '1958-09-20',
+      gender: 'F',
+      children: []
     }
-  }
-}
+  ]
+};
 
 export async function GET() {
-  try {
-    return NextResponse.json({ 
-      status: 'success',
-      message: 'Basic endpoint working'
-    });
-  } catch (error) {
-    try {
-      console.error('Family tree API error:', error);
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    } catch (error) {
-      console.error('Unexpected error in family-tree route:', error);
-      return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
-    }
-  }
+  // Return example family tree data for demo mode
+  return NextResponse.json({ 
+    status: 'success',
+    data: exampleFamilyTree
+  });
+}
+
+export async function POST() {
+  // In demo mode, always return example data
+  return NextResponse.json({ 
+    status: 'success',
+    data: exampleFamilyTree,
+    message: 'Demo mode: Using example family tree data'
+  });
 }

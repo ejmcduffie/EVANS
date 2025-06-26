@@ -1,0 +1,3856 @@
+0 HEAD
+1 SUBM @SUBM1@
+1 SOUR Ancestry.com Family Trees
+2 NAME Ancestry.com Member Trees
+2 VERS 2024.11
+2 _TREE Dixon Family Tree
+3 RIN 200784081
+3 _ENV prd
+2 CORP Ancestry.com
+3 PHON 801-705-7000
+3 WWW www.ancestry.com
+3 ADDR 1300 West Traverse Parkway
+4 CONT Lehi, UT  84043
+4 CONT USA
+1 DATE 16 Dec 2024
+2 TIME 02:34:47
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+0 @SUBM1@ SUBM
+1 NAME Ancestry.com Member Trees Submitter
+0 @I152622224522@ INDI
+1 NAME Ronald J /Dixon/ Sr.
+2 GIVN Ronald J
+2 SURN Dixon
+2 NSFX Sr.
+2 SOUR @S367332408@
+3 PAGE "U.S., School Yearbooks, 1880-2012"; School Name: Thornton Township High School; Year: 1971
+3 DATA
+4 WWW https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166
+3 _APID 1,1265::649898881
+2 SOUR @S367332408@
+3 PAGE "U.S., School Yearbooks, 1880-2012"; School Name: Thornwood High School; Year: 1972
+3 DATA
+4 WWW https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166
+3 _APID 1,1265::649971707
+2 SOUR @S367332408@
+3 PAGE "U.S., School Yearbooks, 1880-2012"; School Name: Thornwood High School; Year: 1973
+3 DATA
+4 WWW https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166
+3 _APID 1,1265::656623797
+2 SOUR @S367332465@
+3 _APID 1,1732::54521359
+2 SOUR @S367332430@
+3 _APID 1,1788::183493019
+2 SOUR @S367332339@
+3 PAGE Chicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications
+3 _APID 1,6944::69477
+2 SOUR @S367332450@
+3 PAGE The National Archives in Washington, DC; Washington, DC, USA; Passenger and Crew Lists of Vessels Arriving at New York, New York, 1897-1957; Microfilm Serial or NAID: T715; RG Title: Records of the Immigration and Naturalization Service, 1787-2004
+4 CONC ; RG: 85
+3 _APID 1,7488::3033335818
+2 SOUR @S367332378@
+3 PAGE Publication Date: 31/ Mar/ 2004; Publication Place: Louisville, Mississippi, USA; URL: http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+3 DATA
+4 WWW http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+3 _APID 1,7545::58011927
+2 SOUR @S367332448@
+3 PAGE South Florida Sun Sentinel; Publication Date: 3 Mar 1994; Publication Place: Fort Lauderdale, Florida, USA; URL: https://www.newspapers.com/image/238763750/?article=272f75cc-6c20-11ed-9d83-96d16767c50b&xid=4639 &terms=Ronald_Dixon
+3 DATA
+4 WWW https://www.newspapers.com/image/238763750/?article=272f75cc-6c20-11ed-9d83-96d16767c50b&xid=4639 &terms=Ronald_Dixon
+3 _APID 1,50033::4906724450
+2 SOUR @S367332361@
+3 PAGE Southtown Star; Publication Date: 14 Mar 2004; Publication Place: Tinley Park, Illinois, USA; URL: https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+3 DATA
+4 WWW https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+3 _APID 1,61843::472521272
+2 SOUR @S367332386@
+3 _APID 1,62209::286761560
+2 SOUR @S367332443@
+3 PAGE Tallahassee, Florida; Florida Division of Elections; Florida Voter Registration Records,1942-2023
+3 _APID 1,62882::13178307
+1 SEX M
+1 FAMC @F17@
+1 BIRT
+2 DATE 16 Feb 1956
+2 PLAC Chicago, Cook, Illinois
+2 SOUR @S367332408@
+3 PAGE "U.S., School Yearbooks, 1880-2012"; School Name: Thornton Township High School; Year: 1971
+3 DATA
+4 WWW https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166
+3 _APID 1,1265::649898881
+2 SOUR @S367332408@
+3 PAGE "U.S., School Yearbooks, 1880-2012"; School Name: Thornwood High School; Year: 1972
+3 DATA
+4 WWW https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166
+3 _APID 1,1265::649971707
+2 SOUR @S367332408@
+3 PAGE "U.S., School Yearbooks, 1880-2012"; School Name: Thornwood High School; Year: 1973
+3 DATA
+4 WWW https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166
+3 _APID 1,1265::656623797
+2 SOUR @S367332465@
+3 _APID 1,1732::54521359
+2 SOUR @S367332430@
+3 _APID 1,1788::183493019
+2 SOUR @S367332339@
+3 PAGE Chicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications
+3 _APID 1,6944::69477
+2 SOUR @S367332386@
+3 _APID 1,62209::286761560
+2 SOUR @S367332443@
+3 PAGE Tallahassee, Florida; Florida Division of Elections; Florida Voter Registration Records,1942-2023
+3 _APID 1,62882::13178307
+1 EVEN
+2 TYPE Arrival
+2 DATE 11 Feb 1955
+2 PLAC New York, New York, USA
+2 SOUR @S367332450@
+3 PAGE The National Archives in Washington, DC; Washington, DC, USA; Passenger and Crew Lists of Vessels Arriving at New York, New York, 1897-1957; Microfilm Serial or NAID: T715; RG Title: Records of the Immigration and Naturalization Service, 1787-2004
+4 CONC ; RG: 85
+3 _APID 1,7488::3033335818
+1 RESI
+2 DATE 1971
+2 PLAC Harvey, Illinois, USA
+2 SOUR @S367332408@
+3 PAGE "U.S., School Yearbooks, 1880-2012"; School Name: Thornton Township High School; Year: 1971
+3 DATA
+4 WWW https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166
+3 _APID 1,1265::649898881
+1 RESI
+2 DATE 1972
+2 PLAC South Holland, Illinois, USA
+2 SOUR @S367332408@
+3 PAGE "U.S., School Yearbooks, 1880-2012"; School Name: Thornwood High School; Year: 1972
+3 DATA
+4 WWW https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166
+3 _APID 1,1265::649971707
+1 RESI
+2 DATE 1973
+2 PLAC South Holland, Illinois, USA
+2 SOUR @S367332408@
+3 PAGE "U.S., School Yearbooks, 1880-2012"; School Name: Thornwood High School; Year: 1973
+3 DATA
+4 WWW https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166
+3 _APID 1,1265::656623797
+1 RESI
+2 DATE 1976-2018
+2 PLAC Hazel Crest, Illinois, USA
+2 SOUR @S367332386@
+3 _APID 1,62209::286761560
+1 RESI
+2 DATE 9 Jun 1978
+2 PLAC Markham, IL
+2 SOUR @S367332339@
+3 PAGE Chicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications
+3 _APID 1,6944::69477
+2 NOTE Occupation: Trainman
+1 RESI
+2 DATE 1984-2018
+2 PLAC Olympia Fields, Illinois, USA
+2 SOUR @S367332386@
+3 _APID 1,62209::286761560
+1 RESI
+2 DATE 3 Mar 1994
+2 PLAC Fort Lauderdale, Florida, USA
+2 SOUR @S367332448@
+3 PAGE South Florida Sun Sentinel; Publication Date: 3 Mar 1994; Publication Place: Fort Lauderdale, Florida, USA; URL: https://www.newspapers.com/image/238763750/?article=272f75cc-6c20-11ed-9d83-96d16767c50b&xid=4639 &terms=Ronald_Dixon
+3 DATA
+4 WWW https://www.newspapers.com/image/238763750/?article=272f75cc-6c20-11ed-9d83-96d16767c50b&xid=4639 &terms=Ronald_Dixon
+3 _APID 1,50033::4906724450
+1 RESI
+2 DATE 1995
+2 PLAC Olympia Fields, IL
+2 SOUR @S367332430@
+3 _APID 1,1788::183493019
+1 RESI
+2 DATE 1996
+2 PLAC Fort Lauderdale, FL
+2 SOUR @S367332430@
+3 _APID 1,1788::183493019
+1 RESI
+2 DATE 2014-2020
+2 PLAC Homewood, Illinois, USA
+2 SOUR @S367332386@
+3 _APID 1,62209::286761560
+1 EVEN
+2 TYPE Departure
+2 PLAC London, England
+2 SOUR @S367332450@
+3 PAGE The National Archives in Washington, DC; Washington, DC, USA; Passenger and Crew Lists of Vessels Arriving at New York, New York, 1897-1957; Microfilm Serial or NAID: T715; RG Title: Records of the Immigration and Naturalization Service, 1787-2004
+4 CONC ; RG: 85
+3 _APID 1,7488::3033335818
+1 RESI
+2 PLAC Glenwood, Illinois, USA
+2 SOUR @S367332465@
+3 _APID 1,1732::54521359
+1 RESI
+2 PLAC Hazel Crest, IL
+2 SOUR @S367332430@
+3 _APID 1,1788::183493019
+1 SOUR @S367332408@
+2 PAGE "U.S., School Yearbooks, 1880-2012"; School Name: Thornton Township High School; Year: 1971
+2 DATA
+3 WWW https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166
+2 _APID 1,1265::649898881
+1 SOUR @S367332408@
+2 PAGE "U.S., School Yearbooks, 1880-2012"; School Name: Thornwood High School; Year: 1972
+2 DATA
+3 WWW https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166
+2 _APID 1,1265::649971707
+1 SOUR @S367332408@
+2 PAGE "U.S., School Yearbooks, 1880-2012"; School Name: Thornwood High School; Year: 1973
+2 DATA
+3 WWW https://www.classmates.com/yearbooks/?page=1&s=81166&utm_source=ancestry&utm_medium=unpaid&utm_campaign=partnerships&utm_term=yearbook&utm_content=81166
+2 _APID 1,1265::656623797
+1 SOUR @S367332465@
+2 _APID 1,1732::54521359
+1 SOUR @S367332430@
+2 _APID 1,1788::183493019
+1 SOUR @S367332339@
+2 PAGE Chicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications
+2 _APID 1,6944::69477
+1 SOUR @S367332450@
+2 PAGE The National Archives in Washington, DC; Washington, DC, USA; Passenger and Crew Lists of Vessels Arriving at New York, New York, 1897-1957; Microfilm Serial or NAID: T715; RG Title: Records of the Immigration and Naturalization Service, 1787-2004
+3 CONC ; RG: 85
+2 _APID 1,7488::3033335818
+1 SOUR @S367332378@
+2 PAGE Publication Date: 31/ Mar/ 2004; Publication Place: Louisville, Mississippi, USA; URL: http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+2 DATA
+3 WWW http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+2 _APID 1,7545::58011927
+1 SOUR @S367332448@
+2 PAGE South Florida Sun Sentinel; Publication Date: 3 Mar 1994; Publication Place: Fort Lauderdale, Florida, USA; URL: https://www.newspapers.com/image/238763750/?article=272f75cc-6c20-11ed-9d83-96d16767c50b&xid=4639 &terms=Ronald_Dixon
+2 DATA
+3 WWW https://www.newspapers.com/image/238763750/?article=272f75cc-6c20-11ed-9d83-96d16767c50b&xid=4639 &terms=Ronald_Dixon
+2 _APID 1,50033::4906724450
+1 SOUR @S367332361@
+2 PAGE Southtown Star; Publication Date: 14 Mar 2004; Publication Place: Tinley Park, Illinois, USA; URL: https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+2 DATA
+3 WWW https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+2 _APID 1,61843::472521272
+1 SOUR @S367332386@
+2 _APID 1,62209::286761560
+1 SOUR @S367332443@
+2 PAGE Tallahassee, Florida; Florida Division of Elections; Florida Voter Registration Records,1942-2023
+2 _APID 1,62882::13178307
+1 OBJE @O17@
+2 _PRIM Y
+2 _CROP
+3 _LEFT 63
+3 _TOP 80
+3 _WDTH 250
+3 _HGHT 319
+3 _TYPE primary
+1 OBJE @O13@
+2 _CROP
+3 _LEFT 74
+3 _TOP 81
+3 _WDTH 295
+3 _HGHT 325
+3 _TYPE primary
+1 OBJE @O19@
+2 _CROP
+3 _LEFT 54
+3 _TOP 75
+3 _WDTH 216
+3 _HGHT 298
+3 _TYPE primary
+0 @I152622224874@ INDI
+1 NAME Pearl /Dixon/
+2 GIVN Pearl
+2 SURN Dixon
+2 SOUR @S367332339@
+3 _APID 1,6944::300069477
+2 SOUR @S367332378@
+3 PAGE Publication Date: 31/ Mar/ 2004; Publication Place: Louisville, Mississippi, USA; URL: http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+3 DATA
+4 WWW http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+3 _APID 1,7545::233966894
+2 SOUR @S367936157@
+3 _APID 1,60525::202484914
+2 SOUR @S367332361@
+3 PAGE Southtown Star; Publication Date: 14 Mar 2004; Publication Place: Tinley Park, Illinois, USA; URL: https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+3 DATA
+4 WWW https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+3 _APID 1,61843::471993282
+1 SEX F
+1 FAMC @F14@
+1 FAMS @F17@
+1 BIRT
+2 DATE 10 Feb 1934
+2 PLAC Louisiana
+2 SOUR @S367936157@
+3 _APID 1,60525::202484914
+1 RESI
+2 PLAC Markham City, Cook, Illinois, USA
+1 DEAT
+2 DATE 26 Sep 2021
+2 PLAC Markham, Cook, Illinois, USA
+2 SOUR @S367936157@
+3 _APID 1,60525::202484914
+1 BURI
+2 PLAC Elwood, Will County, Illinois, United States of America
+2 SOUR @S367936157@
+3 _APID 1,60525::202484914
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 19530861150:1030:40731388
+1 SOUR @S367332339@
+2 _APID 1,6944::300069477
+1 SOUR @S367332378@
+2 PAGE Publication Date: 31/ Mar/ 2004; Publication Place: Louisville, Mississippi, USA; URL: http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+2 DATA
+3 WWW http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+2 _APID 1,7545::233966894
+1 SOUR @S367936157@
+2 _APID 1,60525::202484914
+1 SOUR @S367332361@
+2 PAGE Southtown Star; Publication Date: 14 Mar 2004; Publication Place: Tinley Park, Illinois, USA; URL: https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+2 DATA
+3 WWW https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+2 _APID 1,61843::471993282
+0 @I152622224961@ INDI
+1 NAME Leandro Leonard /Dixon/ Sr
+2 GIVN Leandro Leonard
+2 SURN Dixon
+2 NSFX Sr
+2 SOUR @S367332320@
+3 PAGE Year: 1940; Census Place: Natchez, Adams, Mississippi; Roll: m-t0627-02005; Page: 7B; Enumeration District: 1-10A
+3 _APID 1,2442::125614295
+2 SOUR @S367332339@
+3 _APID 1,6944::150069477
+2 SOUR @S367332378@
+3 _APID 1,7545::2335806
+2 SOUR @S367936157@
+3 DATA
+4 WWW https://www.findagrave.com/memorial/8505544/leandro-leonard-dixon
+3 _APID 1,60525::103998728
+2 SOUR @S367935854@
+3 _APID 1,60901::29428521
+2 SOUR @S367332361@
+3 _APID 1,61843::638041790
+1 SEX M
+1 FAMC @F21@
+1 FAMS @F17@
+1 FAMS @F18@
+1 BIRT
+2 DATE 26 Apr 1927
+2 PLAC Natchez Adam, Mississippi
+2 SOUR @S367332320@
+3 PAGE Year: 1940; Census Place: Natchez, Adams, Mississippi; Roll: m-t0627-02005; Page: 7B; Enumeration District: 1-10A
+3 _APID 1,2442::125614295
+2 SOUR @S367332378@
+3 _APID 1,7545::2335806
+2 SOUR @S367936157@
+3 DATA
+4 WWW https://www.findagrave.com/memorial/8505544/leandro-leonard-dixon
+3 _APID 1,60525::103998728
+2 SOUR @S367935854@
+3 _APID 1,60901::29428521
+2 SOUR @S367332361@
+3 _APID 1,61843::638041790
+1 MARR
+2 DATE 11 June 1954
+2 PLAC Cook, Illinois, United States
+1 RESI
+2 DATE 1935
+2 PLAC Natchez, Adams, Mississippi
+2 SOUR @S367332320@
+3 PAGE Year: 1940; Census Place: Natchez, Adams, Mississippi; Roll: m-t0627-02005; Page: 7B; Enumeration District: 1-10A
+3 _APID 1,2442::125614295
+1 RESI
+2 DATE 1940
+2 PLAC Beat 1, Natchez, Adams, Mississippi, USA
+2 SOUR @S367332320@
+3 PAGE Year: 1940; Census Place: Natchez, Adams, Mississippi; Roll: m-t0627-02005; Page: 7B; Enumeration District: 1-10A
+3 _APID 1,2442::125614295
+2 NOTE Marital Status: Single; Relation to Head of House: Son
+1 RESI
+2 PLAC HARVEY, IL, Markham, IL
+2 SOUR @S367332378@
+3 _APID 1,7545::2335806
+1 RESI
+2 PLAC Markham City, Cook, Illinois, USA
+1 RESI
+2 PLAC Markham, Cook, Illinois, USA
+2 SOUR @S367332361@
+3 _APID 1,61843::638041790
+1 DEAT
+2 DATE 9 Mar 2004
+2 PLAC Harvey, Cook, Illinois, United States of America
+2 SOUR @S367332378@
+3 _APID 1,7545::2335806
+2 SOUR @S367936157@
+3 DATA
+4 WWW https://www.findagrave.com/memorial/8505544/leandro-leonard-dixon
+3 _APID 1,60525::103998728
+2 SOUR @S367935854@
+3 _APID 1,60901::29428521
+2 SOUR @S367332361@
+3 _APID 1,61843::638041790
+1 BURI
+2 DATE 15 Mar 2004
+2 SOUR @S367936157@
+3 DATA
+4 WWW https://www.findagrave.com/memorial/8505544/leandro-leonard-dixon
+3 _APID 1,60525::103998728
+2 SOUR @S367332361@
+3 _APID 1,61843::638041790
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 18467363294:1030:32867964
+2 _APID 102071413162:1030:40731388
+2 _APID 162208809422:1030:169929728
+1 SOUR @S367332320@
+2 PAGE Year: 1940; Census Place: Natchez, Adams, Mississippi; Roll: m-t0627-02005; Page: 7B; Enumeration District: 1-10A
+2 _APID 1,2442::125614295
+1 SOUR @S367332339@
+2 _APID 1,6944::150069477
+1 SOUR @S367332378@
+2 _APID 1,7545::2335806
+1 SOUR @S367936157@
+2 DATA
+3 WWW https://www.findagrave.com/memorial/8505544/leandro-leonard-dixon
+2 _APID 1,60525::103998728
+1 SOUR @S367935854@
+2 _APID 1,60901::29428521
+1 SOUR @S367332361@
+2 _APID 1,61843::638041790
+1 OBJE @O18@
+2 _PRIM Y
+1 OBJE @O3@
+1 OBJE @O26@
+1 OBJE @O14@
+1 OBJE @O10@
+0 @I152622225098@ INDI
+1 NAME Theresa /Stewart/
+2 GIVN Theresa
+2 SURN Stewart
+1 SEX F
+1 FAMC @F24@
+1 FAMS @F14@
+1 BIRT
+2 DATE 23 aug 1906
+2 PLAC Natchez, Adams, Mississippi, USA
+1 DEAT
+2 DATE 6 Apr 1989
+2 PLAC Chicago, Cook, Illinois, USA
+0 @I152622225103@ INDI
+1 NAME Wyatt Rance /Wentworth/
+2 GIVN Wyatt Rance
+2 SURN Wentworth
+1 SEX M
+1 FAMC @F31@
+1 FAMS @F14@
+1 BIRT
+2 DATE 5 Sep 1887
+2 PLAC St Joseph, Tensas, Louisiana, USA
+1 DEAT
+2 DATE 2 Apr 1940
+2 PLAC Concordia Parish, Louisiana, United States of America
+0 @I152622225151@ INDI
+1 NAME Charlotte E /Payne/
+2 GIVN Charlotte E
+2 SURN Payne
+1 SEX F
+1 FAMC @F8@
+1 FAMS @F21@
+1 FAMS @F22@
+1 BIRT
+2 DATE abt 1904
+2 PLAC Natchez, Mississippi, USA
+1 DEAT
+2 DATE 1975
+2 PLAC Chicago, Cook, Illinois, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 102075019861:1030:40731388
+2 _APID 142261659903:1030:158698982
+2 _APID 162208810209:1030:169929728
+0 @I152622225210@ INDI
+1 NAME Cornelius /Dixon/
+2 GIVN Cornelius
+2 SURN Dixon
+2 SOUR @S367332320@
+3 PAGE Year: 1940; Census Place: Adams, Mississippi; Roll: m-t0627-02005; Page: 27B; Enumeration District: 1-13
+3 _APID 1,2442::125620581
+1 SEX M
+1 FAMC @F28@
+1 FAMS @F21@
+1 FAMS @F29@
+1 BIRT
+2 DATE abt 1909
+2 PLAC Mississippi
+2 SOUR @S367332320@
+3 PAGE Year: 1940; Census Place: Adams, Mississippi; Roll: m-t0627-02005; Page: 27B; Enumeration District: 1-13
+3 _APID 1,2442::125620581
+1 RESI
+2 DATE 1935
+2 PLAC Rural, Adams, Mississippi
+2 SOUR @S367332320@
+3 PAGE Year: 1940; Census Place: Adams, Mississippi; Roll: m-t0627-02005; Page: 27B; Enumeration District: 1-13
+3 _APID 1,2442::125620581
+1 RESI
+2 DATE 1940
+2 PLAC Beat, Adams, Mississippi, USA
+2 SOUR @S367332320@
+3 PAGE Year: 1940; Census Place: Adams, Mississippi; Roll: m-t0627-02005; Page: 27B; Enumeration District: 1-13
+3 _APID 1,2442::125620581
+2 NOTE Occupation: Farmer; Marital Status: Married; Relation to Head of House: Head
+1 DEAT
+2 DATE Aug 1975
+2 PLAC Natchez, Adams, Mississippi, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 18345648827:1030:32867964
+2 _APID 102075019699:1030:40731388
+1 SOUR @S367332320@
+2 PAGE Year: 1940; Census Place: Adams, Mississippi; Roll: m-t0627-02005; Page: 27B; Enumeration District: 1-13
+2 _APID 1,2442::125620581
+0 @I152622225278@ INDI
+1 NAME Sophronia J /Wallace/
+2 GIVN Sophronia J
+2 SURN Wallace
+1 SEX F
+1 FAMC @F20@
+1 FAMS @F24@
+1 BIRT
+2 DATE 17 sep 1880
+2 PLAC Wilkerson County, Mississippi, USA
+1 DEAT
+2 PLAC Natchez, Mississippi, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 34522003980:1030:85695542
+2 _APID 392415957195:1030:183328437
+1 OBJE @O20@
+2 _PRIM Y
+0 @I152622225291@ INDI
+1 NAME William B /Stewart/
+2 GIVN William B
+2 SURN Stewart
+1 SEX M
+1 FAMC @F26@
+1 FAMS @F24@
+1 BIRT
+2 DATE Dec 1886
+2 PLAC Mississippi
+1 DEAT
+2 DATE 1956
+2 PLAC Natchez, Mississippi, USA
+1 OBJE @O25@
+2 _PRIM Y
+0 @I152622225433@ INDI
+1 NAME Mary /Dixon/
+2 GIVN Mary
+2 SURN Dixon
+2 SOUR @S367332320@
+3 _APID 1,2442::125620582
+1 SEX F
+1 FAMS @F29@
+1 BIRT
+2 DATE abt 1919
+2 PLAC Mississippi
+2 SOUR @S367332320@
+3 _APID 1,2442::125620582
+1 RESI
+2 DATE 1935
+2 PLAC Rural, Adams, Mississippi
+2 SOUR @S367332320@
+3 _APID 1,2442::125620582
+1 RESI
+2 DATE 1940
+2 PLAC Beat, Adams, Mississippi, USA
+2 SOUR @S367332320@
+3 _APID 1,2442::125620582
+2 NOTE Occupation: Laborer; Marital Status: Married; Relation to Head of House: Wife
+1 SOUR @S367332320@
+2 _APID 1,2442::125620582
+0 @I152622225875@ INDI
+1 NAME Linda //
+2 GIVN Linda
+2 SOUR @S367332378@
+3 PAGE Publication Date: 31/ Mar/ 2004; Publication Place: Louisville, Mississippi, USA; URL: http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+3 DATA
+4 WWW http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+3 _APID 1,7545::32805961
+2 SOUR @S367332361@
+3 PAGE Southtown Star; Publication Date: 14 Mar 2004; Publication Place: Tinley Park, Illinois, USA; URL: https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+3 DATA
+4 WWW https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+3 _APID 1,61843::472669705
+1 FAMC @F17@
+1 SOUR @S367332378@
+2 PAGE Publication Date: 31/ Mar/ 2004; Publication Place: Louisville, Mississippi, USA; URL: http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+2 DATA
+3 WWW http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+2 _APID 1,7545::32805961
+1 SOUR @S367332361@
+2 PAGE Southtown Star; Publication Date: 14 Mar 2004; Publication Place: Tinley Park, Illinois, USA; URL: https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+2 DATA
+3 WWW https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+2 _APID 1,61843::472669705
+0 @I152622225876@ INDI
+1 NAME Kenneth //
+2 GIVN Kenneth
+2 SOUR @S367332378@
+3 PAGE Publication Date: 31/ Mar/ 2004; Publication Place: Louisville, Mississippi, USA; URL: http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+3 DATA
+4 WWW http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+3 _APID 1,7545::76429212
+2 SOUR @S367332361@
+3 PAGE Southtown Star; Publication Date: 14 Mar 2004; Publication Place: Tinley Park, Illinois, USA; URL: https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+3 DATA
+4 WWW https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+3 _APID 1,61843::472761711
+1 FAMC @F17@
+1 SOUR @S367332378@
+2 PAGE Publication Date: 31/ Mar/ 2004; Publication Place: Louisville, Mississippi, USA; URL: http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+2 DATA
+3 WWW http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+2 _APID 1,7545::76429212
+1 SOUR @S367332361@
+2 PAGE Southtown Star; Publication Date: 14 Mar 2004; Publication Place: Tinley Park, Illinois, USA; URL: https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+2 DATA
+3 WWW https://www.newspapers.com/image/538426367/?article=7739a111-f592-4e20-afd6-82160c3d4022&focus=0.035620157,0.66176116,0.18498352,0.84433496&xid=3355
+2 _APID 1,61843::472761711
+0 @I152622226194@ INDI
+1 NAME Leandro // Jr
+2 GIVN Leandro
+2 NSFX Jr
+2 SOUR @S367332378@
+3 PAGE Publication Date: 31/ Mar/ 2004; Publication Place: Louisville, Mississippi, USA; URL: http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+3 DATA
+4 WWW http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+3 _APID 1,7545::225840348
+1 SEX M
+1 FAMC @F17@
+1 SOUR @S367332378@
+2 PAGE Publication Date: 31/ Mar/ 2004; Publication Place: Louisville, Mississippi, USA; URL: http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+2 DATA
+3 WWW http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+2 _APID 1,7545::225840348
+0 @I152622226195@ INDI
+1 NAME Garmon // Sr.
+2 GIVN Garmon
+2 NSFX Sr.
+2 SOUR @S367332378@
+3 PAGE Publication Date: 31/ Mar/ 2004; Publication Place: Louisville, Mississippi, USA; URL: http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+3 DATA
+4 WWW http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+3 _APID 1,7545::64370049
+1 SEX M
+1 FAMC @F17@
+1 SOUR @S367332378@
+2 PAGE Publication Date: 31/ Mar/ 2004; Publication Place: Louisville, Mississippi, USA; URL: http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+2 DATA
+3 WWW http://www.natchezdemocrat.com/articles/2004/03/30/obituaries/obits23.txt
+2 _APID 1,7545::64370049
+0 @I152622227089@ INDI
+1 NAME Ida Ann /Murray/
+2 GIVN Ida Ann
+2 SURN Murray
+1 SEX F
+1 FAMC @F30@
+1 FAMS @F31@
+1 BIRT
+2 DATE 4 Dec 1860
+2 PLAC Waterproof, Tensas, Louisiana, USA
+1 DEAT
+2 DATE 13 Dec 1907
+2 PLAC Collinston, Morehouse, Louisiana, USA
+0 @I152622227113@ INDI
+1 NAME Wyatt William /Wentworth/
+2 GIVN Wyatt William
+2 SURN Wentworth
+1 SEX M
+1 FAMC @F32@
+1 FAMS @F31@
+1 BIRT
+2 DATE 10 Jun 1853
+2 PLAC Franklin Co,Mississippi
+1 DEAT
+2 DATE 1915
+2 PLAC Independence, Tangipahoa, Louisiana, USA
+0 @I152622227158@ INDI
+1 NAME Queen Victoria /Lindo Payne/
+2 GIVN Queen Victoria
+2 SURN Lindo Payne
+1 SEX F
+1 FAMC @F34@
+1 FAMS @F8@
+1 BIRT
+2 DATE abt 1879
+2 PLAC Mississippi
+1 DEAT
+2 PLAC Natchez, Adams, Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 142261659899:1030:158698982
+2 _APID 162528139816:1030:169929728
+0 @I152622227192@ INDI
+1 NAME Julius /Payne/
+2 GIVN Julius
+2 SURN Payne
+1 SEX M
+1 FAMC @F10@
+1 FAMS @F8@
+1 BIRT
+2 DATE abt 1852
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 142261659897:1030:158698982
+2 _APID 162528139823:1030:169929728
+0 @I152622227205@ INDI
+1 NAME Cora E /Dixon/
+2 GIVN Cora E
+2 SURN Dixon
+1 SEX F
+1 FAMC @F1@
+1 FAMS @F28@
+1 BIRT
+2 DATE 8 Aug 1891
+2 PLAC Mississippi
+1 DEAT
+2 DATE Oct 1982
+0 @I152622227228@ INDI
+1 NAME Cornelius /Dixon/
+2 GIVN Cornelius
+2 SURN Dixon
+1 SEX M
+1 FAMC @F40@
+1 FAMS @F28@
+1 BIRT
+2 DATE abt 1886
+2 PLAC North Carolina
+0 @I152622227251@ INDI
+1 NAME Richard /Dixon/
+2 GIVN Richard
+2 SURN Dixon
+1 SEX M
+1 FAMC @F12@
+1 FAMS @F40@
+1 BIRT
+2 DATE 1841
+2 PLAC White Hall, North Carolina, United States
+1 DEAT
+2 DATE 1911
+2 PLAC Township 8, Craven, North Carolina, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 372593901960:1030:198656587
+0 @I152622227270@ INDI
+1 NAME Richard Montville /ALDRIDGE, Jr./ de USA
+2 GIVN Richard Montville
+2 SURN ALDRIDGE, Jr.
+2 NSFX de USA
+1 SEX M
+1 FAMC @F27@
+1 FAMS @F12@
+1 BIRT
+2 DATE 1820
+2 PLAC Lenoir Co., NC, USA
+1 DEAT
+2 DATE 1873
+2 PLAC Richland Twp., Beaufort Co., NC, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422485781706:1030:191121988
+2 _APID 372595279917:1030:198656587
+0 @I152622227417@ INDI
+1 NAME Henry /Dukes/
+2 GIVN Henry
+2 SURN Dukes
+1 SEX M
+1 FAMS @F1@
+1 BIRT
+2 PLAC East Feliciana Parish, Louisiana, USA
+0 @I152622227535@ INDI
+1 NAME Annie Mae /Harris/
+2 GIVN Annie Mae
+2 SURN Harris
+1 SEX F
+1 FAMS @F1@
+1 BIRT
+2 PLAC East Feliciana Parish, Louisiana, USA
+0 @I152622227622@ INDI
+1 NAME Ellen Elenora /Gray/
+2 GIVN Ellen Elenora
+2 SURN Gray
+2 SOUR @S367935703@
+3 PAGE Year: 1920; Census Place: Beat 1, Adams, Mississippi; Roll: T625_868; Page: 7A; Enumeration District: 2
+3 _APID 1,6061::109869178
+2 SOUR @S367935629@
+3 PAGE Year: 1930; Census Place: Beat 1, Adams, Mississippi; Page: 22B; Enumeration District: 0008; FHL microfilm: 2340872
+3 _APID 1,6224::36202121
+2 SOUR @S367935710@
+3 PAGE Year: 1880; Census Place: Beat 3, Issaquena, Mississippi; Roll: 650; Page: 321a; Enumeration District: 084
+3 _APID 1,6742::13731978
+2 SOUR @S367332671@
+3 _APID 1,7163::36092032
+2 SOUR @S367332941@
+3 PAGE Year: 1900; Census Place: Beat 1, Adams, Mississippi; Roll: 799; Page: 21; Enumeration District: 0003
+3 _APID 1,7602::55073313
+2 SOUR @S367935873@
+3 PAGE Year: 1910; Census Place: Beat 1, Adams, Mississippi; Roll: T624_731; Page: 2a; Enumeration District: 0003; FHL microfilm: 1374744
+3 _APID 1,7884::160205467
+2 SOUR @S367935854@
+3 _APID 1,60901::756090640
+1 SEX F
+1 FAMC @F37@
+1 FAMS @F20@
+1 BIRT
+2 DATE Jan 1858
+2 PLAC Louisiana, USA
+2 SOUR @S367935703@
+3 PAGE Year: 1920; Census Place: Beat 1, Adams, Mississippi; Roll: T625_868; Page: 7A; Enumeration District: 2
+3 _APID 1,6061::109869178
+2 SOUR @S367935629@
+3 PAGE Year: 1930; Census Place: Beat 1, Adams, Mississippi; Page: 22B; Enumeration District: 0008; FHL microfilm: 2340872
+3 _APID 1,6224::36202121
+2 SOUR @S367935710@
+3 PAGE Year: 1880; Census Place: Beat 3, Issaquena, Mississippi; Roll: 650; Page: 321a; Enumeration District: 084
+3 _APID 1,6742::13731978
+2 SOUR @S367332671@
+3 _APID 1,7163::36092032
+2 SOUR @S367332941@
+3 PAGE Year: 1900; Census Place: Beat 1, Adams, Mississippi; Roll: 799; Page: 21; Enumeration District: 0003
+3 _APID 1,7602::55073313
+2 SOUR @S367935873@
+3 PAGE Year: 1910; Census Place: Beat 1, Adams, Mississippi; Roll: T624_731; Page: 2a; Enumeration District: 0003; FHL microfilm: 1374744
+3 _APID 1,7884::160205467
+1 RESI
+2 DATE 1870
+2 PLAC Natchez, Natchez, Adams, Mississippi, USA
+2 SOUR @S367332671@
+3 _APID 1,7163::36092032
+1 RESI
+2 DATE 1880
+2 PLAC Beat 3, Issaquena, Mississippi, USA
+2 SOUR @S367935710@
+3 PAGE Year: 1880; Census Place: Beat 3, Issaquena, Mississippi; Roll: 650; Page: 321a; Enumeration District: 084
+3 _APID 1,6742::13731978
+2 NOTE Occupation: Farm laborer; Marital Status: Married; Relation to Head of House: Wife
+1 RESI
+2 DATE 1900
+2 PLAC Beat 1, Adams, Mississippi, USA
+2 SOUR @S367332941@
+3 PAGE Year: 1900; Census Place: Beat 1, Adams, Mississippi; Roll: 799; Page: 21; Enumeration District: 0003
+3 _APID 1,7602::55073313
+2 NOTE Marital Status: Married; Relation to Head of House: Wife
+1 RESI
+2 DATE 1910
+2 PLAC Beat 1, Adams, Mississippi, USA
+2 SOUR @S367935873@
+3 PAGE Year: 1910; Census Place: Beat 1, Adams, Mississippi; Roll: T624_731; Page: 2a; Enumeration District: 0003; FHL microfilm: 1374744
+3 _APID 1,7884::160205467
+2 NOTE Occupation: Farm Laborer; Marital Status: Married; Relation to Head of House: Wife
+1 RESI
+2 DATE 1920
+2 PLAC Beat 1, Adams, Mississippi, USA
+2 SOUR @S367935703@
+3 PAGE Year: 1920; Census Place: Beat 1, Adams, Mississippi; Roll: T625_868; Page: 7A; Enumeration District: 2
+3 _APID 1,6061::109869178
+2 NOTE Marital Status: Married; Relation to Head of House: Wife
+1 RESI
+2 DATE 1930
+2 PLAC Beat 1, Beat 1, Adams, Mississippi, USA
+2 SOUR @S367935629@
+3 PAGE Year: 1930; Census Place: Beat 1, Adams, Mississippi; Page: 22B; Enumeration District: 0008; FHL microfilm: 2340872
+3 _APID 1,6224::36202121
+2 NOTE Marital Status: Married; Relation to Head of House: Wife
+1 DEAT
+2 DATE 1930
+2 PLAC Natchez, Adams, Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 34522003977:1030:85695542
+2 _APID 152552346699:1030:112771341
+2 _APID 162549784048:1030:169929728
+2 _APID 392415121069:1030:183328437
+1 SOUR @S367935703@
+2 PAGE Year: 1920; Census Place: Beat 1, Adams, Mississippi; Roll: T625_868; Page: 7A; Enumeration District: 2
+2 _APID 1,6061::109869178
+1 SOUR @S367935629@
+2 PAGE Year: 1930; Census Place: Beat 1, Adams, Mississippi; Page: 22B; Enumeration District: 0008; FHL microfilm: 2340872
+2 _APID 1,6224::36202121
+1 SOUR @S367935710@
+2 PAGE Year: 1880; Census Place: Beat 3, Issaquena, Mississippi; Roll: 650; Page: 321a; Enumeration District: 084
+2 _APID 1,6742::13731978
+1 SOUR @S367332671@
+2 _APID 1,7163::36092032
+1 SOUR @S367332941@
+2 PAGE Year: 1900; Census Place: Beat 1, Adams, Mississippi; Roll: 799; Page: 21; Enumeration District: 0003
+2 _APID 1,7602::55073313
+1 SOUR @S367935873@
+2 PAGE Year: 1910; Census Place: Beat 1, Adams, Mississippi; Roll: T624_731; Page: 2a; Enumeration District: 0003; FHL microfilm: 1374744
+2 _APID 1,7884::160205467
+1 SOUR @S367935854@
+2 _APID 1,60901::756090640
+1 OBJE @O27@
+2 _PRIM Y
+0 @I152622227708@ INDI
+1 NAME Charles “Charlie” /Wallace/ Sr
+2 GIVN Charles “Charlie”
+2 SURN Wallace
+2 NSFX Sr
+2 SOUR @S367935703@
+3 _APID 1,6061::109869177
+2 SOUR @S367935629@
+3 _APID 1,6224::36202135
+2 SOUR @S367332671@
+3 _APID 1,7163::26102946
+2 SOUR @S367935873@
+3 _APID 1,7884::13543676
+1 SEX M
+1 FAMC @F19@
+1 FAMS @F20@
+1 BIRT
+2 DATE Oct 1849
+2 PLAC Louisiana, USA
+2 SOUR @S367935703@
+3 _APID 1,6061::109869177
+2 SOUR @S367935629@
+3 _APID 1,6224::36202135
+2 SOUR @S367332671@
+3 _APID 1,7163::26102946
+2 SOUR @S367935873@
+3 _APID 1,7884::13543676
+1 RESI
+2 DATE 1870
+2 PLAC Ward 1, Colfax, Grant, Louisiana, USA
+2 SOUR @S367332671@
+3 _APID 1,7163::26102946
+2 NOTE Occupation: At Home
+1 RESI
+2 DATE 1910
+2 PLAC Beat 1, Adams, Mississippi, USA
+2 SOUR @S367935873@
+3 _APID 1,7884::13543676
+2 NOTE Occupation: Farmer; Marital Status: Married; Relation to Head of House: Head
+1 RESI
+2 DATE 1920
+2 PLAC Beat 1, Adams, Mississippi, USA
+2 SOUR @S367935703@
+3 _APID 1,6061::109869177
+2 NOTE Occupation: Laborer; Marital Status: Married; Relation to Head of House: Head
+1 RESI
+2 DATE 1930
+2 PLAC Beat 1, Beat 1, Adams, Mississippi, USA
+2 SOUR @S367935629@
+3 _APID 1,6224::36202135
+2 NOTE Marital Status: Married; Relation to Head of House: Head; Occupation: Laborer
+1 DEAT
+2 DATE 12 Feb 1911
+2 PLAC Natchez, Adams, Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 34522003976:1030:85695542
+2 _APID 152559894285:1030:112771341
+2 _APID 152243962615:1030:169724265
+2 _APID 392415121068:1030:183328437
+1 SOUR @S367935703@
+2 _APID 1,6061::109869177
+1 SOUR @S367935629@
+2 _APID 1,6224::36202135
+1 SOUR @S367332671@
+2 _APID 1,7163::26102946
+1 SOUR @S367935873@
+2 _APID 1,7884::13543676
+1 OBJE @O23@
+2 _PRIM Y
+1 OBJE @O9@
+0 @I152622227955@ INDI
+1 NAME Nancy /Brooks/
+2 GIVN Nancy
+2 SURN Brooks
+1 SEX F
+1 FAMC @F36@
+1 FAMS @F26@
+1 BIRT
+2 DATE 4 March 1853
+2 PLAC Louisiana, USA
+1 DEAT
+2 DATE 19 March 1929
+2 PLAC Los Angeles, Los Angeles, California, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 13020806573:1030:49739022
+1 OBJE @O15@
+2 _PRIM Y
+0 @I152622227971@ INDI
+1 NAME Alexander /Stewart/
+2 GIVN Alexander
+2 SURN Stewart
+1 SEX M
+1 FAMS @F26@
+1 BIRT
+2 DATE Dec 1854
+2 PLAC Maryland, USA
+0 @I152622227992@ INDI
+1 NAME Mary M. /Hindman/
+2 GIVN Mary M.
+2 SURN Hindman
+1 SEX F
+1 FAMC @F15@
+1 FAMS @F30@
+1 BIRT
+2 DATE abt 1838
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 212058329486:1030:946299
+2 _APID 162263175185:1030:174379716
+0 @I152622228007@ INDI
+1 NAME George C. /Murray/
+2 GIVN George C.
+2 SURN Murray
+1 SEX M
+1 FAMS @F30@
+1 BIRT
+2 DATE 1832
+2 PLAC Ohio
+1 DEAT
+2 DATE before 1880
+2 PLAC  Louisiana, USA
+0 @I152622228145@ INDI
+1 NAME Maria S /Prichard/
+2 GIVN Maria S
+2 SURN Prichard
+1 SEX F
+1 FAMS @F32@
+1 BIRT
+2 DATE Aug 1820
+2 PLAC Mississippi, USA
+1 DEAT
+2 DATE 1900
+2 PLAC Natchez, Adams, Mississippi, USA
+0 @I152622228240@ INDI
+1 NAME Rowan Farrar Stephen /Wentworth/
+2 GIVN Rowan Farrar Stephen
+2 SURN Wentworth
+1 SEX M
+1 FAMC @F9@
+1 FAMS @F32@
+1 BIRT
+2 DATE 25 AUG 1813
+2 PLAC Franklin Co,Mississippi
+1 DEAT
+2 DATE 20 July 1864
+2 PLAC Battle of Peachtree Creek, GA
+0 @I152622228267@ INDI
+1 NAME George /Lindo/ Sr.
+2 GIVN George
+2 SURN Lindo
+2 NSFX Sr.
+1 SEX M
+1 FAMC @F5@
+1 FAMS @F34@
+1 BIRT
+2 DATE Abt 1840
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID -1533230615:1030:4859709
+2 _APID 162549784001:1030:169929728
+0 @I152622228304@ INDI
+1 NAME Elisa /Pane/
+2 GIVN Elisa
+2 SURN Pane
+1 SEX F
+1 FAMS @F10@
+1 BIRT
+2 DATE 1810
+2 PLAC North Carolina
+0 @I152622228335@ INDI
+1 NAME Horace /Payne/
+2 GIVN Horace
+2 SURN Payne
+1 SEX M
+1 FAMS @F10@
+1 BIRT
+2 DATE 1805
+2 PLAC Kentucky
+1 DEAT
+2 DATE 1890
+2 PLAC Natchez, Adams, Mississippi, USA
+0 @I152622228386@ INDI
+1 NAME Jane /Crawford/
+2 GIVN Jane
+2 SURN Crawford
+1 SEX F
+1 FAMS @F5@
+1 BIRT
+2 DATE 1820
+2 PLAC Natchez, Adams, Mississippi, USA
+1 DEAT
+2 PLAC Virginia USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID -1533230597:1030:4859709
+2 _APID 162549784556:1030:169929728
+0 @I152622228437@ INDI
+1 NAME Jacob /Lindo/ Sr
+2 GIVN Jacob
+2 SURN Lindo
+2 NSFX Sr
+1 SEX M
+1 FAMS @F5@
+1 BIRT
+2 DATE 1810
+2 PLAC Natchez, Adams, Mississippi, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 312370234739:1030:4859709
+2 _APID 162549784639:1030:169929728
+2 _APID 392453857161:1030:187602577
+0 @I152622228861@ INDI
+1 NAME Henry /Brown/
+2 GIVN Henry
+2 SURN Brown
+2 SOUR @S367935720@
+3 _APID 1,4472::4134085
+2 SOUR @S367332671@
+3 PAGE Year: 1870; Census Place: Natchez, Adams, Mississippi; Roll: M593_720; Page: 41B
+3 _APID 1,7163::36092033
+2 SOUR @S367935676@
+3 PAGE Mississippi Free Trader; Publication Date: 6 Dec 1843; Publication Place: Natchez, Mississippi, USA; URL: https://www.newspapers.com/image/605369289/?article=312ee323-ea53-433a-81fc-0f75c150e7ff&xid=5506&terms=Henry_D_Foster_8_erestion_Brown
+3 DATA
+4 WWW https://www.newspapers.com/image/605369289/?article=312ee323-ea53-433a-81fc-0f75c150e7ff&xid=5506&terms=Henry_D_Foster_8_erestion_Brown
+3 _APID 1,50053::4300464962
+1 SEX M
+1 FAMS @F37@
+1 BIRT
+2 DATE abt 1812
+2 PLAC Rhode Island
+2 SOUR @S367935720@
+3 _APID 1,4472::4134085
+2 SOUR @S367332671@
+3 PAGE Year: 1870; Census Place: Natchez, Adams, Mississippi; Roll: M593_720; Page: 41B
+3 _APID 1,7163::36092033
+1 RESI
+2 DATE 6 Dec 1843
+2 PLAC Natchez, Mississippi, USA
+2 SOUR @S367935676@
+3 PAGE Mississippi Free Trader; Publication Date: 6 Dec 1843; Publication Place: Natchez, Mississippi, USA; URL: https://www.newspapers.com/image/605369289/?article=312ee323-ea53-433a-81fc-0f75c150e7ff&xid=5506&terms=Henry_D_Foster_8_erestion_Brown
+3 DATA
+4 WWW https://www.newspapers.com/image/605369289/?article=312ee323-ea53-433a-81fc-0f75c150e7ff&xid=5506&terms=Henry_D_Foster_8_erestion_Brown
+3 _APID 1,50053::4300464962
+1 RESI
+2 DATE 1855
+2 PLAC New Bedford, Bristol, Massachusetts, USA
+2 SOUR @S367935720@
+3 _APID 1,4472::4134085
+1 RESI
+2 DATE 1870
+2 PLAC Natchez, Natchez, Adams, Mississippi, USA
+2 SOUR @S367332671@
+3 PAGE Year: 1870; Census Place: Natchez, Adams, Mississippi; Roll: M593_720; Page: 41B
+3 _APID 1,7163::36092033
+2 NOTE Occupation: Porter In Store
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 162549784433:1030:169929728
+2 _APID 392416351293:1030:183328437
+1 SOUR @S367935720@
+2 _APID 1,4472::4134085
+1 SOUR @S367332671@
+2 PAGE Year: 1870; Census Place: Natchez, Adams, Mississippi; Roll: M593_720; Page: 41B
+2 _APID 1,7163::36092033
+1 SOUR @S367935676@
+2 PAGE Mississippi Free Trader; Publication Date: 6 Dec 1843; Publication Place: Natchez, Mississippi, USA; URL: https://www.newspapers.com/image/605369289/?article=312ee323-ea53-433a-81fc-0f75c150e7ff&xid=5506&terms=Henry_D_Foster_8_erestion_Brown
+2 DATA
+3 WWW https://www.newspapers.com/image/605369289/?article=312ee323-ea53-433a-81fc-0f75c150e7ff&xid=5506&terms=Henry_D_Foster_8_erestion_Brown
+2 _APID 1,50053::4300464962
+0 @I152622228908@ INDI
+1 NAME Bosin /Wallace/
+2 GIVN Bosin
+2 SURN Wallace
+2 SOUR @S367332671@
+3 PAGE Year: 1870; Census Place: Ward 1, Grant, Louisiana; Roll: M593_513; Page: 78B
+3 _APID 1,7163::26398964
+2 SOUR @S367332681@
+3 PAGE The National Archives in Washington, DC; Washington, DC, USA; Records of the Field Offices For the State of Louisiana, Bureau of Refugees, Freedmen, and Abandoned Lands, 1863-1872; NARA Series Number: M1905; NARA Reel Number: Roll 47, Labor Contrac
+4 CONC ts, 1865
+3 _APID 1,62309::3215431
+1 SEX M
+1 FAMS @F19@
+1 BIRT
+2 DATE abt 1830
+2 PLAC Alabama
+2 SOUR @S367332671@
+3 PAGE Year: 1870; Census Place: Ward 1, Grant, Louisiana; Roll: M593_513; Page: 78B
+3 _APID 1,7163::26398964
+1 RESI
+2 DATE 1870
+2 PLAC Ward 1, Colfax, Grant, Louisiana, USA
+2 SOUR @S367332671@
+3 PAGE Year: 1870; Census Place: Ward 1, Grant, Louisiana; Roll: M593_513; Page: 78B
+3 _APID 1,7163::26398964
+2 NOTE Occupation: Farmer
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 152559917715:1030:112771341
+2 _APID 162529783576:1030:191809714
+1 SOUR @S367332671@
+2 PAGE Year: 1870; Census Place: Ward 1, Grant, Louisiana; Roll: M593_513; Page: 78B
+2 _APID 1,7163::26398964
+1 SOUR @S367332681@
+2 PAGE The National Archives in Washington, DC; Washington, DC, USA; Records of the Field Offices For the State of Louisiana, Bureau of Refugees, Freedmen, and Abandoned Lands, 1863-1872; NARA Series Number: M1905; NARA Reel Number: Roll 47, Labor Contrac
+3 CONC ts, 1865
+2 _APID 1,62309::3215431
+0 @I152622228929@ INDI
+1 NAME Hettie /Wallace/
+2 GIVN Hettie
+2 SURN Wallace
+2 SOUR @S367332671@
+3 _APID 1,7163::26338188
+1 SEX F
+1 FAMS @F19@
+1 BIRT
+2 DATE abt 1830
+2 PLAC Alabama
+2 SOUR @S367332671@
+3 _APID 1,7163::26338188
+1 RESI
+2 DATE 1870
+2 PLAC Ward 1, Colfax, Grant, Louisiana, USA
+2 SOUR @S367332671@
+3 _APID 1,7163::26338188
+2 NOTE Occupation: Keeping House
+1 SOUR @S367332671@
+2 _APID 1,7163::26338188
+0 @I152622229974@ INDI
+1 NAME Stephen L. /Wentworth/
+2 GIVN Stephen L.
+2 SURN Wentworth
+1 SEX M
+1 FAMC @F6@
+1 FAMS @F9@
+1 BIRT
+2 DATE 01 Apr 1788
+2 PLAC Conway, Carroll, New Hampshire, USA
+1 DEAT
+2 DATE 02 Mar 1868
+2 PLAC Knox, Waldo, Maine, USA
+0 @I152622230100@ INDI
+1 NAME Paul /Wentworth/
+2 GIVN Paul
+2 SURN Wentworth
+1 SEX M
+1 FAMC @F25@
+1 FAMS @F6@
+1 BIRT
+2 DATE 1758
+2 PLAC Berwick, York, Maine, United States
+1 DEAT
+2 DATE 04 Sep 1833
+2 PLAC On A Visit in Prospect
+1 OBJE @O5@
+2 _PRIM Y
+1 OBJE @O6@
+0 @I152622230222@ INDI
+1 NAME Molley 'Mary' /COFFIN/
+2 GIVN Molley 'Mary'
+2 SURN COFFIN
+1 SEX F
+1 FAMC @F3@
+1 FAMS @F6@
+1 BIRT
+2 DATE 27 Jul 1763
+2 PLAC Rumford, Merrimack, New Hampshire, United States
+1 DEAT
+2 DATE 22 Sep 1842
+2 PLAC East Knox, Waldo, Maine
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132423571515:1030:174285975
+1 OBJE @O12@
+2 _PRIM Y
+0 @I152622230257@ INDI
+1 NAME Paul /Wentworth/
+2 GIVN Paul
+2 SURN Wentworth
+1 SEX M
+1 FAMC @F11@
+1 FAMS @F25@
+1 BIRT
+2 DATE 3 Oct 1743
+2 PLAC Somersworth, New Hampshire, USA
+1 DEAT
+2 DATE 18 Apr 1783
+2 PLAC Berwick, ME, USA
+1 OBJE @O4@
+2 _PRIM Y
+0 @I152622230352@ INDI
+1 NAME Ezekiel /Wentworth/
+2 GIVN Ezekiel
+2 SURN Wentworth
+2 SOUR @S367333080@
+3 PAGE Godfrey Memorial Library; Middletown, Connecticut; American Genealogical Biographical Index; Volume Number: 192
+3 _APID 1,3599::3991858
+1 SEX M
+1 FAMC @F39@
+1 FAMS @F11@
+1 BIRT
+2 DATE 1710-1719
+2 PLAC New Hampshire
+2 SOUR @S367333080@
+3 PAGE Godfrey Memorial Library; Middletown, Connecticut; American Genealogical Biographical Index; Volume Number: 192
+3 _APID 1,3599::3991858
+1 DEAT
+2 DATE Abt. 1787
+2 PLAC Berwick, York, Maine, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132531173728:1030:78915363
+1 SOUR @S367333080@
+2 PAGE Godfrey Memorial Library; Middletown, Connecticut; American Genealogical Biographical Index; Volume Number: 192
+2 _APID 1,3599::3991858
+1 OBJE @O21@
+2 _PRIM Y
+0 @I152622230408@ INDI
+1 NAME Patience /Abbott/
+2 GIVN Patience
+2 SURN Abbott
+1 SEX F
+1 FAMC @F33@
+1 FAMS @F25@
+1 BIRT
+2 DATE 5 Sep 1742
+2 PLAC Kittery, Maine, USA
+1 DEAT
+2 DATE Jan 1776
+2 PLAC Middleton, Strafford, New Hampshire, USA
+0 @I152622230502@ INDI
+1 NAME Martha 1710-5 /LORD/
+2 GIVN Martha 1710-5
+2 SURN LORD
+1 SEX F
+1 FAMS @F11@
+1 BIRT
+2 DATE 1710
+2 PLAC South Berwick, York, Maine, USA
+1 DEAT
+2 DATE Abt. 1755
+2 PLAC Berwick, York, Maine, USA
+1 OBJE @O16@
+2 _PRIM Y
+1 OBJE @O1@
+0 @I152622230799@ INDI
+1 NAME MARY /INGALLS/
+2 GIVN MARY
+2 SURN INGALLS
+1 SEX F
+1 FAMS @F33@
+1 BIRT
+2 DATE 7 Sep 1727
+2 PLAC Andover, Essex, Massachusetts Colony
+1 DEAT
+2 DATE 30 Mar 1750
+2 PLAC Andover, Essex, Massachusetts Colony
+0 @I152622230822@ INDI
+1 NAME Ebenezer 1 /Abbott/
+2 GIVN Ebenezer 1
+2 SURN Abbott
+1 SEX M
+1 FAMC @F7@
+1 FAMS @F33@
+1 BIRT
+2 DATE 27 Feb 1711
+2 PLAC Berwick, York, ME
+1 DEAT
+2 DATE 21 Dec 1759
+2 PLAC Kittery, York, Me
+1 OBJE @O2@
+2 _PRIM Y
+0 @I152622230871@ INDI
+1 NAME Elizabeth /Key/
+2 GIVN Elizabeth
+2 SURN Key
+1 SEX F
+1 FAMC @F38@
+1 FAMS @F7@
+1 BIRT
+2 DATE 1673
+2 PLAC Berwick, York, Maine, USA
+1 DEAT
+2 DATE 1715
+2 PLAC Berwick, York, Maine, USA
+1 OBJE @O11@
+2 _PRIM Y
+0 @I152622230907@ INDI
+1 NAME John /Key (Mackey)/
+2 GIVN John
+2 SURN Key (Mackey)
+1 SEX M
+1 FAMS @F38@
+1 BIRT
+2 DATE 1633
+2 PLAC Perthshire, Scotland
+1 DEAT
+2 DATE 30 Oct 1718
+2 PLAC Berwick, York, Maine, USA
+0 @I152622230979@ INDI
+1 NAME Walter I /Abbott/
+2 GIVN Walter I
+2 SURN Abbott
+1 SEX M
+1 FAMC @F35@
+1 FAMS @F7@
+1 BIRT
+2 DATE 24 June 1673
+2 PLAC Kittery, York, Maine, USA
+1 DEAT
+2 DATE 22 Dec 1740
+2 PLAC Berwick, York, Maine, USA
+0 @I152622231012@ INDI
+1 NAME Thomas /Abbott/ Sr.
+2 GIVN Thomas
+2 SURN Abbott
+2 NSFX Sr.
+1 SEX M
+1 FAMS @F35@
+1 BIRT
+2 DATE 1635
+2 PLAC England
+1 DEAT
+2 DATE 8 Mar 1712
+2 PLAC Berwick, York, Maine, USA
+1 OBJE @O7@
+2 _PRIM Y
+0 @I152622231596@ INDI
+1 NAME Elizabeth /Brown/
+2 GIVN Elizabeth
+2 SURN Brown
+1 SEX F
+1 FAMC @F37@
+1 BIRT
+2 DATE abt 1840
+2 PLAC Rhode Island
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 392416351292:1030:183328437
+0 @I152622231604@ INDI
+1 NAME Charles /Wallace/
+2 GIVN Charles
+2 SURN Wallace
+1 SEX M
+1 FAMC @F20@
+1 BIRT
+2 DATE 1880
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 392415120690:1030:183328437
+0 @I152622231605@ INDI
+1 NAME Mary /Brooks/
+2 GIVN Mary
+2 SURN Brooks
+1 SEX F
+1 FAMC @F20@
+1 BIRT
+2 DATE Abt 1873
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 392415121065:1030:183328437
+0 @I152622231606@ INDI
+1 NAME Walton /Wallace/
+2 GIVN Walton
+2 SURN Wallace
+1 SEX M
+1 FAMC @F20@
+1 BIRT
+2 DATE Abt 1879
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 392415121066:1030:183328437
+0 @I152622231608@ INDI
+1 NAME Samuel /Wallace/
+2 GIVN Samuel
+2 SURN Wallace
+1 SEX M
+1 FAMC @F20@
+1 BIRT
+2 DATE Oct 1888
+2 PLAC Louisiana, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 34522003983:1030:85695542
+2 _APID 392415957191:1030:183328437
+0 @I152622231609@ INDI
+1 NAME Abram /Wallace/
+2 GIVN Abram
+2 SURN Wallace
+1 SEX M
+1 FAMC @F20@
+1 BIRT
+2 DATE Aug 1884
+2 PLAC Louisiana, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 34522003982:1030:85695542
+2 _APID 392415957192:1030:183328437
+0 @I152622231610@ INDI
+1 NAME Mintoah /Wallace/
+2 GIVN Mintoah
+2 SURN Wallace
+1 SEX F
+1 FAMC @F20@
+1 BIRT
+2 DATE Nov 1890
+2 PLAC Louisiana, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 34522003984:1030:85695542
+2 _APID 392415957193:1030:183328437
+0 @I152622231611@ INDI
+1 NAME Lizzie /Wallace/
+2 GIVN Lizzie
+2 SURN Wallace
+1 SEX F
+1 FAMC @F20@
+1 BIRT
+2 DATE Nov 1882
+2 PLAC Louisiana, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 34522003981:1030:85695542
+2 _APID 392415957194:1030:183328437
+0 @I152622231612@ INDI
+1 NAME William /Wallace/
+2 GIVN William
+2 SURN Wallace
+2 SOUR @S367935703@
+3 _APID 1,6061::109869179
+1 SEX M
+1 FAMC @F20@
+1 BIRT
+2 DATE Sep 1878
+2 PLAC Louisiana, USA
+2 SOUR @S367935703@
+3 _APID 1,6061::109869179
+1 RESI
+2 DATE 1920
+2 PLAC Beat 1, Adams, Mississippi, USA
+2 SOUR @S367935703@
+3 _APID 1,6061::109869179
+2 NOTE Marital Status: Single; Relation to Head of House: Son
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 34524258937:1030:85695542
+2 _APID 392415957196:1030:183328437
+1 SOUR @S367935703@
+2 _APID 1,6061::109869179
+0 @I152622231613@ INDI
+1 NAME Prince /Wallace/
+2 GIVN Prince
+2 SURN Wallace
+2 SOUR @S367935873@
+3 _APID 1,7884::160205468
+1 SEX M
+1 FAMC @F20@
+1 BIRT
+2 DATE Dec 1893
+2 PLAC Missouri, USA
+2 SOUR @S367935873@
+3 _APID 1,7884::160205468
+1 RESI
+2 DATE 1910
+2 PLAC Beat 1, Adams, Mississippi, USA
+2 SOUR @S367935873@
+3 _APID 1,7884::160205468
+2 NOTE Occupation: Farm Laborer; Marital Status: Single; Relation to Head of House: Son
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 34522003985:1030:85695542
+2 _APID 392415957197:1030:183328437
+1 SOUR @S367935873@
+2 _APID 1,7884::160205468
+0 @I152622232478@ INDI
+1 NAME Richard /Aldridge/ Sr
+2 GIVN Richard
+2 SURN Aldridge
+2 NSFX Sr
+2 SOUR @S367333025@
+3 _APID 1,1138::5919445
+2 SOUR @S367333043@
+3 PAGE Fourth Census of the United States, 1820; Census Place: Lenoir, North Carolina; Page: 284; NARA Roll: M33_80; Image: 256
+3 _APID 1,7734::101377
+2 SOUR @S367333041@
+3 PAGE Record of Wills, 1869-1922; Indexes 1869-1966; Author: Lenoir County (North Carolina). Clerk of Superior Court
+3 _APID 1,9061::3468787
+1 SEX M
+1 FAMC @F23@
+1 FAMS @F27@
+1 BIRT
+2 DATE 1796
+2 PLAC Lenoir Co., NC
+1 RESI
+2 DATE 7 Aug 1820
+2 PLAC Lenoir, North Carolina, USA
+2 SOUR @S367333043@
+3 PAGE Fourth Census of the United States, 1820; Census Place: Lenoir, North Carolina; Page: 284; NARA Roll: M33_80; Image: 256
+3 _APID 1,7734::101377
+1 _MILT
+2 PLAC North Carolina
+2 SOUR @S367333025@
+3 _APID 1,1138::5919445
+1 DEAT
+2 DATE 1827
+2 PLAC Green, North Carolina, United States
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 28005564468:1030:38558110
+2 _APID 422485781699:1030:191121988
+1 SOUR @S367333025@
+2 _APID 1,1138::5919445
+1 SOUR @S367333043@
+2 PAGE Fourth Census of the United States, 1820; Census Place: Lenoir, North Carolina; Page: 284; NARA Roll: M33_80; Image: 256
+2 _APID 1,7734::101377
+1 SOUR @S367333041@
+2 PAGE Record of Wills, 1869-1922; Indexes 1869-1966; Author: Lenoir County (North Carolina). Clerk of Superior Court
+2 _APID 1,9061::3468787
+1 OBJE @O24@
+2 _PRIM Y
+0 @I152622232831@ INDI
+1 NAME William /Aldridge/
+2 GIVN William
+2 SURN Aldridge
+1 SEX M
+1 FAMS @F23@
+1 BIRT
+2 DATE 1756
+2 PLAC Greene, North Carolina, USA
+1 DEAT
+2 DATE July 1818
+2 PLAC Floyd, Virginia, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507736422:1030:191121988
+0 @I152622232846@ INDI
+1 NAME Nancy /Aldridge/
+2 GIVN Nancy
+2 SURN Aldridge
+1 SEX F
+1 FAMC @F23@
+1 BIRT
+2 DATE 1790
+2 PLAC , , North Carolina, United States
+1 DEAT
+2 PLAC Washington, Brown, Ohio, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507736471:1030:191121988
+0 @I152622232906@ INDI
+1 NAME Leonard /Aldredge/
+2 GIVN Leonard
+2 SURN Aldredge
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE 1789
+2 PLAC Montgomery, Virginia, USA
+1 DEAT
+2 DATE 01 Dec 1854
+2 PLAC Floyd, Virginia, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507736488:1030:191121988
+0 @I152622232911@ INDI
+1 NAME Bethana /Aldridge/
+2 GIVN Bethana
+2 SURN Aldridge
+1 SEX F
+1 FAMC @F23@
+1 BIRT
+2 DATE 1799
+2 PLAC Christiansburg, Montgomery, Virginia, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507741517:1030:191121988
+0 @I152622232912@ INDI
+1 NAME Ezekiel /Aldridge/
+2 GIVN Ezekiel
+2 SURN Aldridge
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE 1790
+2 PLAC Christiansburg, Montgomery, Virginia, USA
+1 DEAT
+2 DATE 1826
+2 PLAC Montgomery, Virginia, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507741518:1030:191121988
+0 @I152622232914@ INDI
+1 NAME Priscilla /Aldridge/
+2 GIVN Priscilla
+2 SURN Aldridge
+1 SEX F
+1 FAMC @F23@
+1 BIRT
+2 DATE 1779
+2 PLAC Christiansburg, Montgomery, Virginia, USA
+1 DEAT
+2 DATE 1850
+2 PLAC Floyd, Virginia, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507741519:1030:191121988
+0 @I152622232916@ INDI
+1 NAME Sophia /Aldridge/
+2 GIVN Sophia
+2 SURN Aldridge
+1 SEX F
+1 FAMC @F23@
+1 BIRT
+2 DATE 1802
+2 PLAC Christiansburg, Montgomery, Virginia, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507741520:1030:191121988
+0 @I152622232918@ INDI
+1 NAME Nathaniel /Aldridge/
+2 GIVN Nathaniel
+2 SURN Aldridge
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE 1788
+2 PLAC Bath County, Virginia
+1 DEAT
+2 DATE 4 Apr 1835
+2 PLAC Breckinridge County, Ky
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507736518:1030:191121988
+0 @I152622232923@ INDI
+1 NAME Thomas /Aldridge/
+2 GIVN Thomas
+2 SURN Aldridge
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE 1783
+2 PLAC , Greene, North Carolina, USA
+1 DEAT
+2 PLAC United States
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507736561:1030:191121988
+0 @I152622232924@ INDI
+1 NAME William /ALDRIDGE/ Jr
+2 GIVN William
+2 SURN ALDRIDGE
+2 NSFX Jr
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE 1760
+2 PLAC , Greene, NC
+1 DEAT
+2 DATE 1827
+2 PLAC , Green, NC
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507736573:1030:191121988
+0 @I152622232926@ INDI
+1 NAME William  /Aldridge/ Jr.
+2 GIVN William 
+2 SURN Aldridge
+2 NSFX Jr.
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE 1770
+2 PLAC , Greene, NC
+1 DEAT
+2 DATE 1827
+2 PLAC , Green, NC
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507736593:1030:191121988
+0 @I152622232929@ INDI
+1 NAME Elizabeth /Smith/
+2 GIVN Elizabeth
+2 SURN Smith
+1 SEX F
+1 FAMS @F23@
+1 BIRT
+2 DATE 1760
+2 PLAC Greene,,North Carolina,USA
+1 DEAT
+2 DATE 1840
+2 PLAC Hines Hollow, Hawkins Co., TN, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507737173:1030:191121988
+0 @I152622232931@ INDI
+1 NAME William /Aldridge/
+2 GIVN William
+2 SURN Aldridge
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE 13 Apr 1792
+2 PLAC of, Lenoir, North Carolina, USA
+1 DEAT
+2 DATE 15 Oct 1870
+2 PLAC Lenoir,,North Carolina,USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507737221:1030:191121988
+0 @I152622232934@ INDI
+1 NAME Nancy Ann /Aldridge/
+2 GIVN Nancy Ann
+2 SURN Aldridge
+1 SEX F
+1 FAMC @F23@
+1 BIRT
+2 DATE Abt. 1790
+2 PLAC North Carolina, USA
+1 DEAT
+2 DATE 1847
+2 PLAC Washington, Brown County, Ohio, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507737243:1030:191121988
+0 @I152622232936@ INDI
+1 NAME Leonard /Aldridge/
+2 GIVN Leonard
+2 SURN Aldridge
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE 1789
+2 PLAC Montgomery (now Floyd) County, Virginia
+1 DEAT
+2 DATE 01 Dec 1854
+2 PLAC Floyd County, Virginia, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507737259:1030:191121988
+0 @I152622232938@ INDI
+1 NAME Thomas /Aldridge/
+2 GIVN Thomas
+2 SURN Aldridge
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE 1783
+2 PLAC , Greene, North Carolina, USA
+1 DEAT
+2 PLAC United States
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507737349:1030:191121988
+0 @I152622232940@ INDI
+1 NAME William  /Aldridge/ Jr.
+2 GIVN William 
+2 SURN Aldridge
+2 NSFX Jr.
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE 1770
+2 PLAC , Greene, NC
+1 DEAT
+2 DATE 1827
+2 PLAC , Green, NC
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422507737358:1030:191121988
+0 @I152622232942@ INDI
+1 NAME Elizabeth /Young/
+2 GIVN Elizabeth
+2 SURN Young
+1 SEX F
+1 FAMS @F27@
+1 BIRT
+2 DATE 1796
+2 PLAC Lenoir Co, NC
+1 DEAT
+2 DATE 1871
+2 PLAC Lenoir, North Carolina, United States
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 28005564469:1030:38558110
+2 _APID 422488990040:1030:191121988
+0 @I152622232947@ INDI
+1 NAME John Miller /Aldridge/
+2 GIVN John Miller
+2 SURN Aldridge
+1 SEX M
+1 FAMC @F27@
+1 BIRT
+2 DATE abt 1818
+2 PLAC Lenoir, North Carolina, USA
+1 DEAT
+2 DATE 1873
+2 PLAC Richland, Beaufort, North Carolina, United States
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422485444338:1030:191121988
+0 @I152622232949@ INDI
+1 NAME William Young /Aldridge/
+2 GIVN William Young
+2 SURN Aldridge
+1 SEX M
+1 FAMC @F27@
+1 BIRT
+2 DATE 1826
+2 PLAC Lenoir Co
+1 DEAT
+2 DATE 1868
+2 PLAC North Carolina, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422485781704:1030:191121988
+0 @I152622232952@ INDI
+1 NAME Mary /Aldridge/
+2 GIVN Mary
+2 SURN Aldridge
+1 SEX F
+1 FAMC @F27@
+1 BIRT
+2 DATE abt 1823
+2 PLAC North Carolina
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422504452833:1030:191121988
+0 @I152622232953@ INDI
+1 NAME John Miller /Aldridge/
+2 GIVN John Miller
+2 SURN Aldridge
+1 SEX M
+1 FAMC @F27@
+1 BIRT
+2 DATE 1818
+2 PLAC North Carolina, United States
+1 DEAT
+2 DATE 1873
+2 PLAC Richland, Beaufort, North Carolina, United States
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422511170759:1030:191121988
+0 @I152622232955@ INDI
+1 NAME Mary /Aldridge/
+2 GIVN Mary
+2 SURN Aldridge
+1 SEX F
+1 FAMC @F27@
+1 BIRT
+2 DATE abt 1823
+2 PLAC North Carolina
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 422511170763:1030:191121988
+0 @I152632094590@ INDI
+1 NAME Jose /Walker/
+2 GIVN Jose
+2 SURN Walker
+1 SEX M
+1 FAMS @F22@
+1 BIRT
+2 DATE abt 1902
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 162208810207:1030:169929728
+0 @I152632094833@ INDI
+1 NAME Maurace L /Payne/
+2 GIVN Maurace L
+2 SURN Payne
+1 SEX M
+1 FAMC @F8@
+1 BIRT
+2 DATE abt 1910
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 142261653324:1030:158698982
+0 @I152632094834@ INDI
+1 NAME Granville /Payne/
+2 GIVN Granville
+2 SURN Payne
+1 SEX M
+1 FAMC @F8@
+1 BIRT
+2 DATE abt 1890
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 142261659906:1030:158698982
+0 @I152632094835@ INDI
+1 NAME George L /Payne/
+2 GIVN George L
+2 SURN Payne
+1 SEX M
+1 FAMC @F8@
+1 BIRT
+2 DATE abt 1893
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 142261659907:1030:158698982
+0 @I152632094836@ INDI
+1 NAME Frank Leslie /Payne/
+2 GIVN Frank Leslie
+2 SURN Payne
+1 SEX M
+1 FAMC @F8@
+1 BIRT
+2 DATE 29 Apr 1895
+2 PLAC Natchez, Mississippi, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 142261659909:1030:158698982
+0 @I152632094837@ INDI
+1 NAME Julius /Payne/
+2 GIVN Julius
+2 SURN Payne
+1 SEX M
+1 FAMC @F8@
+1 BIRT
+2 DATE 13 May 1897
+2 PLAC Mississippi, USA
+1 DEAT
+2 DATE Jul 1974
+2 PLAC Natchez, Adams, Mississippi, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 142261659911:1030:158698982
+0 @I152632094840@ INDI
+1 NAME Henderson /Payne/
+2 GIVN Henderson
+2 SURN Payne
+1 SEX M
+1 FAMC @F8@
+1 BIRT
+2 DATE abt 1901
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 142261659912:1030:158698982
+0 @I152632094841@ INDI
+1 NAME Sina /Payne/
+2 GIVN Sina
+2 SURN Payne
+1 SEX F
+1 FAMC @F8@
+1 BIRT
+2 DATE abt 1900
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 142261659913:1030:158698982
+0 @I152632094940@ INDI
+1 NAME JOHN /WENTWORTH/
+2 GIVN JOHN
+2 SURN WENTWORTH
+1 SEX M
+1 FAMS @F39@
+1 BIRT
+2 DATE 20 Jul 1679
+2 PLAC Dover, New Hampshire
+1 DEAT
+2 DATE 6 Jan 1772
+2 PLAC Dover, New Hampshire
+1 OBJE @O22@
+2 _PRIM Y
+0 @I152632095005@ INDI
+1 NAME Nancy /COOPER/
+2 GIVN Nancy
+2 SURN COOPER
+1 SEX F
+1 FAMS @F9@
+1 DEAT
+2 DATE 1826
+2 PLAC Mississippi, USA
+0 @I152632095148@ INDI
+1 NAME Samuel S. /Hindman/
+2 GIVN Samuel S.
+2 SURN Hindman
+1 SEX M
+1 FAMS @F15@
+1 BIRT
+2 DATE 9 Apr 1808
+2 PLAC Mississippi
+1 MARR
+2 DATE 17 Oct 1833
+2 PLAC Jefferson, Mississippi
+1 DEAT
+2 DATE 22 Aug 1870
+2 PLAC Girard, Richland Parish, Louisiana, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 212058326421:1030:946299
+2 _APID 162263157995:1030:174379716
+0 @I152632095169@ INDI
+1 NAME Elizabeth /Smith/
+2 GIVN Elizabeth
+2 SURN Smith
+1 SEX F
+1 FAMS @F15@
+1 BIRT
+2 DATE abt 1818
+2 PLAC Mississippi
+1 DEAT
+2 DATE 1850
+2 PLAC Pike, Alabama, United States
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 212058326422:1030:946299
+2 _APID 162263549661:1030:174379716
+0 @I152632095351@ INDI
+1 NAME John /Hindman/
+2 GIVN John
+2 SURN Hindman
+1 SEX M
+1 FAMC @F15@
+1 BIRT
+2 DATE abt 1842
+2 PLAC Mississippi
+1 DEAT
+2 PLAC Richland Parish, Louisiana
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 212058326424:1030:946299
+2 _APID 162263157999:1030:174379716
+0 @I152632095353@ INDI
+1 NAME Charles M /Hindman/
+2 GIVN Charles M
+2 SURN Hindman
+1 SEX M
+1 FAMC @F15@
+1 BIRT
+2 DATE abt 1843
+2 PLAC Louisiana
+1 DEAT
+2 PLAC Gerard, Richland, Louisiana
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 212058326426:1030:946299
+2 _APID 162263158001:1030:174379716
+0 @I152632095354@ INDI
+1 NAME Andrew W. /Hindmon/
+2 GIVN Andrew W.
+2 SURN Hindmon
+1 SEX M
+1 FAMC @F15@
+1 BIRT
+2 DATE abt 1846
+2 PLAC Tensas, Louisiana
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 212058329484:1030:946299
+2 _APID 162263175183:1030:174379716
+0 @I152632095355@ INDI
+1 NAME Monroe /Hindman/
+2 GIVN Monroe
+2 SURN Hindman
+1 SEX M
+1 FAMC @F15@
+1 BIRT
+2 DATE 1844
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 212058329488:1030:946299
+2 _APID 162263175187:1030:174379716
+0 @I152632095356@ INDI
+1 NAME James /Hindman/
+2 GIVN James
+2 SURN Hindman
+1 SEX M
+1 FAMC @F15@
+1 BIRT
+2 DATE abt 1835
+2 PLAC Mississippi
+1 DEAT
+2 DATE 7 Nov 1863
+2 PLAC rappohanock, Ridge, St Mary's, Maryland, USA - civil War death
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 212058329485:1030:946299
+2 _APID 162263175184:1030:174379716
+0 @I152632095619@ INDI
+1 NAME Fred /Hindmon/
+2 GIVN Fred
+2 SURN Hindmon
+1 SEX M
+1 FAMC @F15@
+1 BIRT
+2 DATE 4 Dec 1851
+2 PLAC Louisiana
+1 DEAT
+2 DATE 24 March 1911
+2 PLAC LaSalle Parish, , Louisiana, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 212058325814:1030:946299
+0 @I152632095620@ INDI
+1 NAME Leonard Mack /Hindman/
+2 GIVN Leonard Mack
+2 SURN Hindman
+1 SEX M
+1 FAMC @F15@
+1 BIRT
+2 DATE 1849
+2 PLAC Tensas Parish, Louisiana, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 212058329489:1030:946299
+0 @I152632096124@ INDI
+1 NAME Cortez Lemuel /Dixon/ Sr
+2 GIVN Cortez Lemuel
+2 SURN Dixon
+2 NSFX Sr
+1 SEX M
+1 FAMC @F21@
+1 BIRT
+2 DATE 8 February 1925
+2 PLAC Mississippi
+1 DEAT
+2 DATE 10 September 2004
+2 PLAC Chicago, Cook, Illinois, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 18467248376:1030:32867964
+2 _APID 102075019703:1030:40731388
+0 @I152632096126@ INDI
+1 NAME Evelyn /Grinell/ Fleming
+2 GIVN Evelyn
+2 SURN Grinell
+2 NSFX Fleming
+1 SEX F
+1 FAMS @F18@
+1 DEAT
+2 PLAC Natchez, Adams, Mississippi, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 18467385373:1030:32867964
+2 _APID 102075019704:1030:40731388
+0 @I152632096128@ INDI
+1 NAME Leandro /Dixon/ Jr
+2 GIVN Leandro
+2 SURN Dixon
+2 NSFX Jr
+1 SEX M
+1 FAMC @F18@
+1 BIRT
+2 DATE 24 August 1952
+2 PLAC Natchez, Adams County, Mississippi, United States of America
+1 DEAT
+2 DATE 2 November 2011
+2 PLAC Jackson, Hinds County, Mississippi, United States of America
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 18467376716:1030:32867964
+2 _APID 102075019705:1030:40731388
+0 @I152632096894@ INDI
+1 NAME Epsie /Thomas/
+2 GIVN Epsie
+2 SURN Thomas
+1 SEX F
+1 FAMS @F36@
+1 BIRT
+2 DATE abt 1830
+2 PLAC Mississippi
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 242291790307:1030:49739022
+0 @I152632097330@ INDI
+1 NAME Stephen /Coffin/
+2 GIVN Stephen
+2 SURN Coffin
+1 SEX M
+1 FAMC @F16@
+1 FAMS @F3@
+1 FAMS @F2@
+1 BIRT
+2 DATE 6 Aug 1729
+2 PLAC Newbury, Massachusetts
+1 DEAT
+2 DATE 1800
+2 PLAC Alfred, York, Maine, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132274722566:1030:174285975
+1 OBJE @O8@
+2 _PRIM Y
+0 @I152632097579@ INDI
+1 NAME Daniel /Coffin/
+2 GIVN Daniel
+2 SURN Coffin
+1 SEX M
+1 FAMS @F16@
+1 BIRT
+2 DATE 19 Sep 1700
+2 PLAC Newbury, Essex, Massachusetts, USA
+1 DEAT
+2 DATE 1800
+2 PLAC Alfred, York, Maine, U.S.A.
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132312325977:1030:174285975
+0 @I152632097580@ INDI
+1 NAME Lydia /Moulton/
+2 GIVN Lydia
+2 SURN Moulton
+1 SEX F
+1 FAMS @F16@
+1 BIRT
+2 DATE 1703
+2 PLAC Hampton, Rockingham, New Hampshire, USA
+1 DEAT
+2 DATE 31 May 1743
+2 PLAC Greenland, Rockingham, New Hampshire, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132312325980:1030:174285975
+0 @I152632097581@ INDI
+1 NAME Sarah /Coffin/
+2 GIVN Sarah
+2 SURN Coffin
+1 SEX F
+1 FAMC @F16@
+1 BIRT
+2 DATE 6 May 1746
+2 PLAC New Hampshire, USA
+1 DEAT
+2 DATE 1799
+2 PLAC Waterbury, Washington, VT, Vermont, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132473198304:1030:174285975
+0 @I152632097582@ INDI
+1 NAME Sarah /Atkinson/
+2 GIVN Sarah
+2 SURN Atkinson
+1 FAMS @F2@
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132312227698:1030:174285975
+0 @I152632097583@ INDI
+1 NAME John /Coffin/
+2 GIVN John
+2 SURN Coffin
+1 SEX M
+1 FAMC @F2@
+1 BIRT
+2 DATE abt 1763
+2 PLAC Salisbury
+1 DEAT
+2 DATE 24 Aug 1851
+2 PLAC Salisbury, Massachusetts, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132473270004:1030:174285975
+0 @I152632097584@ INDI
+1 NAME W S /Coffin/
+2 GIVN W S
+2 SURN Coffin
+1 SEX M
+1 FAMC @F2@
+1 DEAT
+2 DATE 1 Jun 1906
+2 PLAC Unity, Waldo, Maine, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132492997525:1030:174285975
+0 @I152632097585@ INDI
+1 NAME Sarah /Holt/
+2 GIVN Sarah
+2 SURN Holt
+1 SEX F
+1 FAMS @F3@
+1 BIRT
+2 DATE 29 Oct 1738
+2 PLAC Andover, Essex, Massachusetts, USA
+1 DEAT
+2 DATE 1800
+2 PLAC Alfred, York, Maine, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132274722329:1030:174285975
+0 @I152632097586@ INDI
+1 NAME Benjamin /Coffin Sr/
+2 GIVN Benjamin
+2 SURN Coffin Sr
+1 SEX M
+1 FAMC @F3@
+1 BIRT
+2 DATE 18 Feb 1769
+2 PLAC Massabesic, York, Maine, United States
+1 DEAT
+2 DATE 12 Feb 1842
+2 PLAC Burlington, Penobscot, Maine, United States
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132274721935:1030:174285975
+0 @I152632097587@ INDI
+1 NAME Sarah Sally /Coffin/
+2 GIVN Sarah Sally
+2 SURN Coffin
+1 SEX F
+1 FAMC @F3@
+1 BIRT
+2 DATE 1756
+2 PLAC Berwick, York, Maine, USA
+1 DEAT
+2 DATE 15 October 1836
+2 PLAC Berwick, York, Maine, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132423571506:1030:174285975
+0 @I152632097589@ INDI
+1 NAME Peter /Coffin/
+2 GIVN Peter
+2 SURN Coffin
+1 SEX M
+1 FAMC @F3@
+1 BIRT
+2 DATE May 1758
+2 PLAC Conway, Carroll, New Hampshire, USA
+1 DEAT
+2 DATE 1 November 1843
+2 PLAC Gorham, Coos, New Hampshire, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132423571508:1030:174285975
+0 @I152632097591@ INDI
+1 NAME Abiah /Coffin/
+2 GIVN Abiah
+2 SURN Coffin
+1 SEX F
+1 FAMC @F3@
+1 BIRT
+2 DATE 1766
+2 PLAC Plaistow, Rockingham County, New Hampshire, United States of America
+1 DEAT
+2 DATE 1844
+2 PLAC Landaff, Grafton County, New Hampshire, United States of America
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132423571509:1030:174285975
+0 @I152632097592@ INDI
+1 NAME James /Coffin/
+2 GIVN James
+2 SURN Coffin
+1 SEX M
+1 FAMC @F3@
+1 BIRT
+2 DATE 5 June 1771
+2 PLAC Conway, Carroll, New Hampshire, USA
+1 DEAT
+2 DATE 13 January 1829
+2 PLAC Lovell, Oxford, Maine, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132423571510:1030:174285975
+0 @I152632097594@ INDI
+1 NAME Nicholas /Coffin/
+2 GIVN Nicholas
+2 SURN Coffin
+1 SEX M
+1 FAMC @F3@
+1 BIRT
+2 DATE 5 April 1765
+2 PLAC Conway, Carroll, New Hampshire, USA
+1 DEAT
+2 DATE 14 February 1850
+2 PLAC Half, Maine, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132423571511:1030:174285975
+0 @I152632097595@ INDI
+1 NAME Hezekiah /Coffin/
+2 GIVN Hezekiah
+2 SURN Coffin
+1 SEX M
+1 FAMC @F3@
+1 BIRT
+2 DATE 1773
+2 PLAC Conway, Carroll, New Hampshire, USA
+1 DEAT
+2 DATE 1834
+2 PLAC Indiana, Indiana, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132423571512:1030:174285975
+0 @I152632097596@ INDI
+1 NAME Lydia /Coffin/
+2 GIVN Lydia
+2 SURN Coffin
+1 SEX F
+1 FAMC @F3@
+1 BIRT
+2 DATE 1760
+2 PLAC Conway, Carroll, New Hampshire, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132423571513:1030:174285975
+0 @I152632097597@ INDI
+1 NAME Grindel /Coffin/
+2 GIVN Grindel
+2 SURN Coffin
+1 SEX M
+1 FAMC @F3@
+1 BIRT
+2 DATE 1 April 1787
+2 PLAC Conway, Carroll, New Hampshire, USA
+1 DEAT
+2 DATE 1850
+2 PLAC Ashland, Aroostook, Maine, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 132423571514:1030:174285975
+0 @I152632097722@ INDI
+1 NAME Jinnie A /Dixon/
+2 GIVN Jinnie A
+2 SURN Dixon
+2 SOUR @S367936417@
+3 PAGE The National Archives in Washington, DC; Washington, DC, USA; Registers of Signatures of Depositors in Branches of the Freedman's Savings and Trust Company, 1865-1874; ARC Identifier: 566522; Record Group Number: 101; Record Group: Records of the O
+4 CONC ffice of
+3 _APID 1,8755::75236845
+1 SEX F
+1 FAMC @F13@
+1 FAMS @F12@
+1 BIRT
+2 DATE Abt. 1810
+2 PLAC Lenoir County, North Carolina, USA
+1 DEAT
+2 DATE ABT 1849
+2 PLAC Lenoir County, North Carolina, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 432131407018:1030:105339071
+2 _APID 362362526894:1030:181841410
+2 _APID 102464055262:1030:189060604
+2 _APID 372593901969:1030:198656587
+1 SOUR @S367936417@
+2 PAGE The National Archives in Washington, DC; Washington, DC, USA; Registers of Signatures of Depositors in Branches of the Freedman's Savings and Trust Company, 1865-1874; ARC Identifier: 566522; Record Group Number: 101; Record Group: Records of the O
+3 CONC ffice of
+2 _APID 1,8755::75236845
+0 @I152632097766@ INDI
+1 NAME Slave /Dixon/
+2 GIVN Slave
+2 SURN Dixon
+1 SEX M
+1 FAMS @F13@
+1 FAMS @F4@
+1 BIRT
+2 DATE 1778
+2 PLAC Londonderry, Donegal County, Ireland
+1 DEAT
+2 DATE 1820
+2 PLAC Dekalb, Tennessee, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 362362619436:1030:181841410
+2 _APID 372595279906:1030:198656587
+0 @I152632098360@ INDI
+1 NAME Mom  /Dixon/
+2 GIVN Mom 
+2 SURN Dixon
+1 SEX F
+1 FAMS @F13@
+1 BIRT
+2 DATE Abt. 1780
+2 PLAC Lenoir County, North Carolina, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 372595279915:1030:198656587
+0 @I152632098361@ INDI
+1 NAME Richard /Kennedy/
+2 GIVN Richard
+2 SURN Kennedy
+1 SEX M
+1 FAMC @F13@
+1 BIRT
+2 DATE Aug 1800
+2 PLAC Lenoir County, North Carolina, USA
+1 DEAT
+2 DATE 25 June 1862
+2 PLAC Henry County, Alabama, United States of America
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 372595279907:1030:198656587
+0 @I152632098362@ INDI
+1 NAME John C /Kennedy/
+2 GIVN John C
+2 SURN Kennedy
+1 SEX M
+1 FAMC @F13@
+1 BIRT
+2 DATE 4 December 1799
+2 PLAC Darlington, Darlington, South Carolina, USA
+1 DEAT
+2 DATE 2 Apr 1882
+2 PLAC Smithville, De Kalb, Tennessee, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 372595279911:1030:198656587
+0 @I152632098363@ INDI
+1 NAME Margaret /Kennedy/
+2 GIVN Margaret
+2 SURN Kennedy
+1 SEX F
+1 FAMC @F13@
+1 BIRT
+2 DATE 15 Aug 1762
+2 PLAC Pennsylvania, USA
+1 DEAT
+2 DATE 10 Jul 1832
+2 PLAC Washington County, Virginia, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 372595279912:1030:198656587
+0 @I152632098364@ INDI
+1 NAME Sarah  /Kennedy/
+2 GIVN Sarah 
+2 SURN Kennedy
+1 SEX F
+1 FAMC @F13@
+1 BIRT
+2 DATE 16 Mar 1778
+2 PLAC Kings Creek, Cherokee County, South Carolina, United States of America
+1 DEAT
+2 DATE 4 Dec 1854
+2 PLAC Owsley, Pike, Kentucky, United States
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 372595279913:1030:198656587
+0 @I152632098367@ INDI
+1 NAME James /Kennedy/
+2 GIVN James
+2 SURN Kennedy
+1 SEX M
+1 FAMC @F13@
+1 BIRT
+2 DATE 18 Mar 1790
+2 PLAC Darlington, Darlington County, South Carolina, United States of America
+1 DEAT
+2 DATE 19 January 1872
+2 PLAC Greene County, Illinois, United States of America
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 372595279914:1030:198656587
+0 @I152632098368@ INDI
+1 NAME Gilbert /Dixon/
+2 GIVN Gilbert
+2 SURN Dixon
+1 SEX M
+1 FAMC @F13@
+1 BIRT
+2 DATE Abt 1800
+2 PLAC Providence, Sumter, South Carolina, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 372595279916:1030:198656587
+0 @I152632098378@ INDI
+1 NAME John /Dixon/
+2 GIVN John
+2 SURN Dixon
+1 SEX M
+1 FAMC @F12@
+1 BIRT
+2 PLAC Lenoir County, North Carolina, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 372595279919:1030:198656587
+0 @I152632098379@ INDI
+1 NAME Andrew /Park/
+2 GIVN Andrew
+2 SURN Park
+1 SEX M
+1 FAMC @F12@
+1 BIRT
+2 DATE Abt. 1830
+2 PLAC Lenoir County, North Carolina, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 372595279920:1030:198656587
+0 @I152632098381@ INDI
+1 NAME Tabitha /Waters/
+2 GIVN Tabitha
+2 SURN Waters
+1 SEX F
+1 FAMC @F12@
+1 BIRT
+2 DATE Abt. 1835
+2 PLAC Lenoir County, North Carolina, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 372595279921:1030:198656587
+0 @I152632099376@ INDI
+1 NAME Slave /Dixon/
+2 GIVN Slave
+2 SURN Dixon
+1 SEX F
+1 FAMS @F4@
+1 BIRT
+2 DATE 01 Jan 1780
+2 PLAC Carolina, USA
+1 SOUR @S367332613@
+2 PAGE Ancestry Family Tree
+2 _APID 362362526924:1030:181841410
+0 @F1@ FAM
+1 HUSB @I152622227417@
+1 WIFE @I152622227535@
+1 CHIL @I152622227205@
+0 @F2@ FAM
+1 HUSB @I152632097330@
+1 WIFE @I152632097582@
+1 CHIL @I152632097583@
+1 CHIL @I152632097584@
+0 @F3@ FAM
+1 HUSB @I152632097330@
+1 WIFE @I152632097585@
+1 CHIL @I152632097587@
+1 CHIL @I152632097589@
+1 CHIL @I152632097596@
+1 CHIL @I152622230222@
+1 CHIL @I152632097594@
+1 CHIL @I152632097591@
+1 CHIL @I152632097586@
+1 CHIL @I152632097592@
+1 CHIL @I152632097595@
+1 CHIL @I152632097597@
+1 MARR
+2 DATE 1747
+2 PLAC Newbury, Essex, Massachusetts, USA
+1 MARR
+2 DATE 1750
+2 PLAC Conway, Carroll, New Hampshire, USA
+1 MARR
+2 DATE abt 1755
+2 PLAC Conway, Carroll, New Hampshire, USA
+0 @F4@ FAM
+1 HUSB @I152632097766@
+1 WIFE @I152632099376@
+0 @F5@ FAM
+1 HUSB @I152622228437@
+1 WIFE @I152622228386@
+1 CHIL @I152622228267@
+0 @F6@ FAM
+1 HUSB @I152622230100@
+1 WIFE @I152622230222@
+1 CHIL @I152622229974@
+0 @F7@ FAM
+1 HUSB @I152622230979@
+1 WIFE @I152622230871@
+1 CHIL @I152622230822@
+0 @F8@ FAM
+1 HUSB @I152622227192@
+1 WIFE @I152622227158@
+1 CHIL @I152632094834@
+1 CHIL @I152632094835@
+1 CHIL @I152632094836@
+1 CHIL @I152632094837@
+1 CHIL @I152632094841@
+1 CHIL @I152632094840@
+1 CHIL @I152622225151@
+1 CHIL @I152632094833@
+1 MARR
+2 DATE 1885
+0 @F9@ FAM
+1 HUSB @I152622229974@
+1 WIFE @I152632095005@
+1 CHIL @I152622228240@
+0 @F10@ FAM
+1 HUSB @I152622228335@
+1 WIFE @I152622228304@
+1 CHIL @I152622227192@
+0 @F11@ FAM
+1 HUSB @I152622230352@
+1 WIFE @I152622230502@
+1 CHIL @I152622230257@
+0 @F12@ FAM
+1 HUSB @I152622227270@
+1 WIFE @I152632097722@
+1 CHIL @I152632098379@
+1 CHIL @I152632098381@
+1 CHIL @I152622227251@
+1 CHIL @I152632098378@
+0 @F13@ FAM
+1 HUSB @I152632097766@
+1 WIFE @I152632098360@
+1 CHIL @I152632098363@
+1 CHIL @I152632098364@
+1 CHIL @I152632098367@
+1 CHIL @I152632098362@
+1 CHIL @I152632098368@
+1 CHIL @I152632098361@
+1 CHIL @I152632097722@
+0 @F14@ FAM
+1 HUSB @I152622225103@
+1 WIFE @I152622225098@
+1 CHIL @I152622224874@
+0 @F15@ FAM
+1 HUSB @I152632095148@
+1 WIFE @I152632095169@
+1 CHIL @I152632095356@
+1 CHIL @I152622227992@
+1 CHIL @I152632095351@
+1 CHIL @I152632095353@
+1 CHIL @I152632095355@
+1 CHIL @I152632095354@
+1 CHIL @I152632095620@
+1 CHIL @I152632095619@
+0 @F16@ FAM
+1 HUSB @I152632097579@
+1 WIFE @I152632097580@
+1 CHIL @I152632097330@
+1 CHIL @I152632097581@
+1 MARR
+2 DATE 11 Jan 1727
+2 PLAC Newbury, Essex, Massachusetts, USA
+1 MARR
+2 DATE 1745
+2 PLAC New Hampshire, United States
+0 @F17@ FAM
+1 HUSB @I152622224961@
+1 WIFE @I152622224874@
+1 CHIL @I152622224522@
+1 CHIL @I152622225875@
+1 CHIL @I152622225876@
+1 CHIL @I152622226194@
+1 CHIL @I152622226195@
+0 @F18@ FAM
+1 HUSB @I152622224961@
+1 WIFE @I152632096126@
+1 CHIL @I152632096128@
+0 @F19@ FAM
+1 HUSB @I152622228908@
+1 WIFE @I152622228929@
+1 CHIL @I152622227708@
+0 @F20@ FAM
+1 HUSB @I152622227708@
+1 WIFE @I152622227622@
+1 CHIL @I152622231605@
+1 CHIL @I152622231612@
+1 CHIL @I152622231606@
+1 CHIL @I152622231604@
+1 CHIL @I152622225278@
+1 CHIL @I152622231611@
+1 CHIL @I152622231609@
+1 CHIL @I152622231608@
+1 CHIL @I152622231610@
+1 CHIL @I152622231613@
+1 MARR
+2 DATE 1875
+0 @F21@ FAM
+1 HUSB @I152622225210@
+1 WIFE @I152622225151@
+1 CHIL @I152632096124@
+1 CHIL @I152622224961@
+0 @F22@ FAM
+1 HUSB @I152632094590@
+1 WIFE @I152622225151@
+0 @F23@ FAM
+1 HUSB @I152622232831@
+1 WIFE @I152622232929@
+1 CHIL @I152622232924@
+1 CHIL @I152622232926@
+1 CHIL @I152622232940@
+1 CHIL @I152622232914@
+1 CHIL @I152622232923@
+1 CHIL @I152622232938@
+1 CHIL @I152622232918@
+1 CHIL @I152622232906@
+1 CHIL @I152622232936@
+1 CHIL @I152622232846@
+1 CHIL @I152622232912@
+1 CHIL @I152622232934@
+1 CHIL @I152622232931@
+1 CHIL @I152622232478@
+1 CHIL @I152622232911@
+1 CHIL @I152622232916@
+0 @F24@ FAM
+1 HUSB @I152622225291@
+1 WIFE @I152622225278@
+1 CHIL @I152622225098@
+0 @F25@ FAM
+1 HUSB @I152622230257@
+1 WIFE @I152622230408@
+1 CHIL @I152622230100@
+0 @F26@ FAM
+1 HUSB @I152622227971@
+1 WIFE @I152622227955@
+1 CHIL @I152622225291@
+0 @F27@ FAM
+1 HUSB @I152622232478@
+1 WIFE @I152622232942@
+1 CHIL @I152622232953@
+1 CHIL @I152622232947@
+1 CHIL @I152622227270@
+1 CHIL @I152622232952@
+1 CHIL @I152622232955@
+1 CHIL @I152622232949@
+1 MARR
+2 DATE 1818
+2 PLAC Greene, North Carolina, United States
+0 @F28@ FAM
+1 HUSB @I152622227228@
+1 WIFE @I152622227205@
+1 CHIL @I152622225210@
+0 @F29@ FAM
+1 HUSB @I152622225210@
+1 WIFE @I152622225433@
+0 @F30@ FAM
+1 HUSB @I152622228007@
+1 WIFE @I152622227992@
+1 CHIL @I152622227089@
+0 @F31@ FAM
+1 HUSB @I152622227113@
+1 WIFE @I152622227089@
+1 CHIL @I152622225103@
+0 @F32@ FAM
+1 HUSB @I152622228240@
+1 WIFE @I152622228145@
+1 CHIL @I152622227113@
+0 @F33@ FAM
+1 HUSB @I152622230822@
+1 WIFE @I152622230799@
+1 CHIL @I152622230408@
+0 @F34@ FAM
+1 HUSB @I152622228267@
+1 CHIL @I152622227158@
+0 @F35@ FAM
+1 HUSB @I152622231012@
+1 CHIL @I152622230979@
+0 @F36@ FAM
+1 WIFE @I152632096894@
+1 CHIL @I152622227955@
+0 @F37@ FAM
+1 HUSB @I152622228861@
+1 CHIL @I152622231596@
+1 CHIL @I152622227622@
+0 @F38@ FAM
+1 HUSB @I152622230907@
+1 CHIL @I152622230871@
+0 @F39@ FAM
+1 HUSB @I152632094940@
+1 CHIL @I152622230352@
+0 @F40@ FAM
+1 HUSB @I152622227251@
+1 CHIL @I152622227228@
+0 @O1@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 27615
+3 _WDTH 320
+3 _HGHT 320
+2 TITL D
+1 _OID 12461aea-3c41-42fb-b37d-a7c3932e24bc
+1 _CREA 2024-11-10 21:51:15.721
+1 _USER EgQQ+FeWXW5tE5NSQWpgGFfKOB6GHvpAIdWxpdVA27ruHAnoOfUEBm19AfeuDxoF2IDECbzfmLWxHSPN8uqmLw==
+2 _ENCR 1
+1 _CLON
+2 _TID 79593388
+2 _PID 46406698455
+2 _OID 0c0f7ddc-12e7-40b8-9a02-252901bef4c0
+2 _USER 2SnEo2aDcXu16v0xF3y86IMWrzuIGfWi8BIeT+kFuLyYvOf9hSKZ5zj0jLYEYcEuulZI4dhxytEJDuQDTmFXqg==
+3 _ENCR 1
+2 _DATE 2015-04-24 22:52:17.740
+1 _ORIG u
+1 _MSER
+2 _LKID 0c0f7ddc-12e7-40b8-9a02-252901bef4c0
+1 _ATL N
+0 @O2@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 18258
+3 _WDTH 202
+3 _HGHT 236
+2 TITL Abbott Coat of Arms
+1 _OID 1a259036-9460-4688-aa08-0c66c0295cb8
+1 _CREA 2024-11-10 21:52:54.934
+1 _USER odSNkGaTDQcbCuvVc2U0Cj+fexO+O7QmwUTugy0fY8asx1IuPXQ+Wr7/C6zXur3GtKpBAdbus3eSO0W2IreYAg==
+2 _ENCR 1
+1 _CLON
+2 _TID 79593388
+2 _PID 46406698462
+2 _OID 0046fa72-7f79-4c0e-8190-e802baa62cda
+2 _USER X/KcsJm8+clYWSsQwfPjoT+SCOwoPVEdBL+hcZrpP/OPhw+8GTtjMSxG0o/3HEzxSvCtqlUF5pcjzu1lPdXhwA==
+3 _ENCR 1
+2 _DATE 2015-04-24 22:55:54.000
+1 _ORIG u
+1 _MSER
+2 _LKID 0046fa72-7f79-4c0e-8190-e802baa62cda
+1 _ATL N
+0 @O3@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 284319
+3 _WDTH 1170
+3 _HGHT 1432
+2 TITL 056178B5-7BE0-49D9-90E4-58EE3EE08E6D
+1 _OID 21a482ed-0fc1-41f3-a67a-7908223972fb
+1 _CREA 2024-12-16 01:50:05.660
+1 _USER +XXeCucX02FD29mU7rJQgQ+RCFEfzlBxai0Bc9ztaoQOaOliFz7Jcn67HaReQxrn4fp0ulLeNOO7lzuLPTBLow==
+2 _ENCR 1
+1 _CLON
+2 _TID 40731388
+2 _PID 102071413162
+2 _OID a50c1f30-f532-4069-ac2d-af5c20adb25b
+2 _USER hblWfO8WCWZ6TtTpVBaBicsYFcePWJlroWKb5q6jSlZs8KwFkbw7LZEHwYM3cY4EaOKtJtBrj5GqDTvxk5ufyw==
+3 _ENCR 1
+2 _DATE 2021-02-10 17:29:21.000
+1 _ORIG u
+1 _MSER
+2 _LKID a50c1f30-f532-4069-ac2d-af5c20adb25b
+1 _ATL N
+0 @O4@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 173825
+3 _WDTH 751
+3 _HGHT 746
+2 TITL PaulWenworthJr_WentworthGenealogy_vol2pg16
+1 _OID 2317a20a-7a37-4786-800c-c5da7cfe451e
+1 _DSCR https://books.google.ca/books?id=ux0aAAAAIAAJ&pg=PA16&lpg=PA16&dq=francis+a+bean+manitowoc&source=bl&ots=hmj989u8IV&sig=Af9Zd1OYuJA2U6MAhWcOcIxJcNo&hl=en&sa=X&ei=XbXfU6f9C4KRyASH54GYAg#v=onepage&q=francis%20a%20bean%20manitowoc&f=false
+1 _CREA 2024-11-10 21:47:49.730
+1 _USER DLnTvml8hOiMV9pvG4kTh7qc1UYFAFRRyGe/APaMo6If5ooCTyT3W/0GDM4hmwfm7MX2IMl81yRNzLdUB5vc5Q==
+2 _ENCR 1
+1 _CLON
+2 _TID 66600499
+2 _PID 48250324168
+2 _OID 7e99ec6d-9dab-4e6b-94e3-0538f7489df1
+2 _USER 2mwDp9kOp8Q9bOtMwezzDNUr8vj4vsEcagNXuzAjHmil8kplg+DiKtk0M+K38tO8Lc1FdphMMf1h/lzzsDyz8Q==
+3 _ENCR 1
+2 _DATE 2016-05-20 12:26:51.000
+1 _ORIG u
+1 _MSER
+2 _LKID 7e99ec6d-9dab-4e6b-94e3-0538f7489df1
+1 _ATL N
+0 @O5@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 110635
+3 _WDTH 544
+3 _HGHT 760
+2 TITL paul & mary wentworth
+1 _OID 38020961-8b0a-400b-b449-6b27d0819022
+1 _DSCR E. Knox Cemetery
+1 _CREA 2024-11-10 21:46:32.837
+1 _USER i5FgfuF46DnQ8JntgflYm9R3iYHoTjmnF7SCwB71bWNu55jluC+dNwXbj2+3UkCUl7sZ1G2OopBxDbsq1oNYhg==
+2 _ENCR 1
+1 _CLON
+2 _TID 76040207
+2 _PID 44332757704
+2 _OID 90a19e6a-627b-4628-8f1f-b941168c0bbe
+2 _USER QK7NyC8jfAgDGHWKYKZ8bK0TKzfuoGXsJalknkMyBj3GTuC4aW3J5/MqJMwM5dUQLwC9XPX6rqkFkDnk9oIrDQ==
+3 _ENCR 1
+2 _DATE 2014-12-31 16:16:27.000
+1 _ORIG u
+1 _MSER
+2 _LKID 90a19e6a-627b-4628-8f1f-b941168c0bbe
+1 _ATL N
+0 @O6@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpeg
+3 _SIZE 5718563
+3 _WDTH 2239
+3 _HGHT 3279
+2 TITL 11-12-2010 3;45;44 PM
+1 _OID 3efe6d2c-08f5-4348-b343-2047fe2e9367
+1 _META <metadataxml><cemetery /><transcription /></metadataxml>
+1 _CREA 2024-11-10 21:47:09.433
+1 _USER pD188e79NTqvqHSq/ljCW0W6Ilygr9VCUM7cuvL7Uu4CQEIELncd1fO2hEfMxN/W2gQbXut2JRNMi9IR6JjR/A==
+2 _ENCR 1
+1 _CLON
+2 _TID 10613031
+2 _PID 6927870230
+2 _OID f05b65a8-f448-4f20-83a4-0f3e27d32b70
+2 _USER uZCNjt78IFQeaPB4a0tw9BZko8CWs5NBBMnQv+Z6D7jw8itTY2OSMN2VQe1o8L+XpVmJh+R7jtDlQ2qeRsy4Xg==
+3 _ENCR 1
+2 _DATE 2013-02-12 19:27:28.430
+1 _ORIG u
+1 _MSER
+2 _LKID f05b65a8-f448-4f20-83a4-0f3e27d32b70
+1 _ATL N
+0 @O7@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 20451
+3 _WDTH 305
+3 _HGHT 373
+2 TITL early-new-england
+1 _OID 411b2756-ed99-4855-a2c2-7224517a0dbc
+1 _CREA 2024-11-10 21:54:12.299
+1 _USER mWiVaBVcMtkXgWdYSZY6qbB+SumJQZGqGLUEP19KXegoWMASrOx/7GHxT09bWyxAMG0qOlx93kJth5kanTwJow==
+2 _ENCR 1
+1 _CLON
+2 _TID 47487587
+2 _PID 6851505715
+2 _OID 901ced73-1b25-4a7c-ad7c-7a5d9a2ea5b4
+2 _USER tIdnEqmzdXlt0B6bJxggBkJOhSDiuErrysIb8mvMaiuumv72lMeDXpEDsBmbixkveCVTPsCESBzJMTwM2SyxMw==
+3 _ENCR 1
+2 _DATE 2018-03-08 00:57:21.697
+1 _ORIG u
+1 _MSER
+2 _LKID 901ced73-1b25-4a7c-ad7c-7a5d9a2ea5b4
+1 _ATL N
+0 @O8@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 17497
+3 _WDTH 138
+3 _HGHT 190
+2 TITL Coffin Coat of Arms
+1 _OID 4765e9b2-f00c-491f-8086-131816c7f7ba
+1 _CREA 2024-12-16 02:06:16.335
+1 _USER RxRENyfvT0skLDg+QKOlX/qq6q6es5wT9rKDTJtQud+6pxAfY+Mea4GQ9IGj6yUAScstEexZfyw4XJYxsM+inQ==
+2 _ENCR 1
+1 _CLON
+2 _TID 79593388
+2 _PID 46406698373
+2 _OID 52341862-3dc1-4a8d-bbd1-f11da17418da
+2 _USER O66IzzzpB1MCcaCsngxQTiSzYno55kL1pwUSHIEX7z51+Aj6ksbF21gGJqfEvFkQsssY70ok3G+QZaxLXMAsog==
+3 _ENCR 1
+2 _DATE 2015-04-24 22:51:52.000
+1 _ORIG u
+1 _MSER
+2 _LKID 52341862-3dc1-4a8d-bbd1-f11da17418da
+1 _ATL N
+0 @O9@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpg
+3 _SIZE 164130
+3 _WDTH 977
+3 _HGHT 1260
+2 TITL IMG_3351
+1 _OID 4b11faad-1841-4a7e-97dd-8c366d6d2700
+1 DATE 3/10/2024, 15:30
+1 _META <metadataxml />
+1 _CREA 2024-12-16 01:23:20.213
+1 _USER ZvBz7WUP09ADgbNN7iffcoQhTdOdtUOjTwFxtD4cet7UlEowCWTiIG4I92JQix6jKrbLW7Is0yclaN9bqgbH+g==
+2 _ENCR 1
+1 _CLON
+2 _TID 112771341
+2 _PID 152559894285
+2 _OID a76336d9-2a99-4bb0-a329-571e1bc35f50
+2 _USER SxG7zJxSw4t+pwC4PuiZTSksIP5geOnPSi1XPE7AZTzPI7v1fvqTXUXKx0bTjEY43jaVzR0h2Lg7Pg+/VvBiFw==
+3 _ENCR 1
+2 _DATE 2024-03-10 22:31:10.200
+1 _ORIG u
+1 _MSER
+2 _LKID a76336d9-2a99-4bb0-a329-571e1bc35f50
+1 _ATL N
+0 @O10@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 254737
+3 _WDTH 1170
+3 _HGHT 1303
+2 TITL 2984C9D9-3119-4A0C-8482-CAEBCF56BCCD
+1 _OID 5f96afcc-a3a4-48d8-a8ed-c39ef0e1dd84
+1 _CREA 2024-12-16 01:48:16.848
+1 _USER EBAez0vgR03ydTd5OantTCz3+mCFahCS/TZGj6Hx4Oi3fQ9/guCWUM0tOW+Las24e0BuKq/vXtaidyk7vDFKuw==
+2 _ENCR 1
+1 _CLON
+2 _TID 40731388
+2 _PID 102071413162
+2 _OID 2a9f4812-86e5-42f7-81df-3e7bb2630a59
+2 _USER jKIlzAP8saEUYYnhACR5lZm00LFb0lt1L8wJbRn8iZSbJloChv8h83brJRNbC0HhtSasKVJ4u7Z8oDlkyYjeBg==
+3 _ENCR 1
+2 _DATE 2021-02-10 17:29:23.000
+1 _ORIG u
+1 _MSER
+2 _LKID 2a9f4812-86e5-42f7-81df-3e7bb2630a59
+1 _ATL N
+0 @O11@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE other
+3 _STYPE jpeg
+3 _SIZE 98292
+3 _WDTH 515
+3 _HGHT 436
+2 TITL New England Families, Genealogical and Memorial
+1 _OID 674efa75-aa4a-431d-a5dd-ea55b5669bd5
+1 _DSCR New England Families, Genealogical and Memorial, p. 249
+1 _META <metadataxml><cemetery /><transcription /></metadataxml>
+1 _CREA 2024-11-10 21:53:20.388
+1 _USER CuPDI8OFL4EQkjOASdhZwocRbrrASCr2QAV+YYxyujGIHZce1BYInUO/nrJBtpjd0HJq61YpqK2fhUK4Yv2o/Q==
+2 _ENCR 1
+1 _CLON
+2 _TID 22744391
+2 _PID 29575487079
+2 _OID 5106260d-6d4d-428c-b0ce-dc6f24fb752f
+2 _USER /WTjya7BpoUrHN3mGbgwc9svMaTo7jgdQ4MVtbx7qivB+77pTaDEo68l83LMyqcwXDSmePNX79BXr2rKiWB4YA==
+3 _ENCR 1
+2 _DATE 2015-07-23 10:40:28.000
+1 _ORIG u
+1 _MSER
+2 _LKID 5106260d-6d4d-428c-b0ce-dc6f24fb752f
+1 _ATL N
+0 @O12@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 69110
+3 _WDTH 358
+3 _HGHT 500
+2 TITL Paul & Mary Wentworth Headstone
+1 _OID 6e8315b9-6a1b-440c-8471-0dab4856f365
+1 _CREA 2024-11-10 21:47:25.291
+1 _USER BIaIPdemh8HGJHY0lPCErJqeCJZ8JYG85HtGLmJW045gY8MXRGbAN9OOQpW0smYtxeM+hfx8OziGl7mnf4g+Rg==
+2 _ENCR 1
+1 _CLON
+2 _TID 79593388
+2 _PID 46406698159
+2 _OID 1805c149-f109-46dd-88db-4c52280d759a
+2 _USER MQfV6irxUchb8u8wlPqv2zMPp/73iCCE3adJsd2r9x0v1TRM0hMsXMU1xRNAxMAlpLwdwrdGLi+vcI3Ynf9eOA==
+3 _ENCR 1
+2 _DATE 2015-04-24 22:54:56.000
+1 _ORIG u
+1 _MSER
+2 _LKID 1805c149-f109-46dd-88db-4c52280d759a
+1 _ATL N
+0 @O13@ OBJE
+1 FILE
+2 FORM j2k
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpeg
+3 _SIZE 1797684
+3 _WDTH 2672
+3 _HGHT 3600
+2 TITL Ronald Dixon Sr.
+1 _OID 71418b80-d9ea-41fb-bf06-5b4a92620e77
+1 _DSCR Ancestry.com. U.S., School Yearbooks, 1900-2016 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2010.
+1 _META <metadataxml><record_source_gid>649971707:1265</record_source_gid></metadataxml>
+1 _CREA 2024-11-10 21:19:18.489
+1 _USER D4qeVSXS28ku7vG+hJ0bYJ3wdWgZrQNAOZV+MEBe5tcClJTjVPpQdNaNnQO7EbfUFMIv5VE7yaItIM1mpGhRzQ==
+2 _ENCR 1
+1 _ORIG u
+1 _ATL Y
+0 @O14@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 254608
+3 _WDTH 1170
+3 _HGHT 1058
+2 TITL 953AD86F-9A1A-415B-A369-7D1DCB131FA6
+1 _OID 74cc400c-8553-4557-a117-ff8f821bed36
+1 _CREA 2024-12-16 01:48:49.759
+1 _USER 45LlJ35jAEwCxkSlUduQCB3ei5qp1oCszIwjyzZPGSctx8l0wMgI+ys6yaRrc/ISkUKXDwDjKANyx5tYN9riMg==
+2 _ENCR 1
+1 _CLON
+2 _TID 40731388
+2 _PID 102071413162
+2 _OID 53d4065d-efe1-4554-9375-daf3a388c1a0
+2 _USER X7uFWtBnupq3gMiBRQ1SUSZaYgNnmU+0GTZKpv85MC6j1gJkuBXx4E10cnP9YcJ2wJvu2Lkjez7wFAVtbFA9Pg==
+3 _ENCR 1
+2 _DATE 2021-02-10 17:29:22.000
+1 _ORIG u
+1 _MSER
+2 _LKID 53d4065d-efe1-4554-9375-daf3a388c1a0
+1 _ATL N
+0 @O15@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 4447971
+3 _WDTH 2890
+3 _HGHT 3892
+2 TITL B88F43D9-0D11-4FEC-883E-4C21651D8229
+1 _OID 7cf0d6db-4047-4c69-9f0d-937c565a4b91
+1 _CREA 2024-12-16 00:58:59.017
+1 _USER 0awbDsNlUecZy8l8XBxOpuNwrrw2oIL49/6hwSUuutgUSQqjcnPhJdjkRSYDknpEg+kmQEtQUlqHiqXLxGncBA==
+2 _ENCR 1
+1 _CLON
+2 _TID 16559459
+2 _PID 20093713136
+2 _OID 67fbd986-bebb-4d3d-8d9a-f2bc05f5400a
+2 _USER 5NaumtiGq9hhgj8jURnQv0A0vONFehVyE3AdiFeP2Q34g2nfK9318hJCe21OIRSZsI45x2fE6klhjbg9X0e88g==
+3 _ENCR 1
+2 _DATE 2019-07-07 02:24:44.000
+1 _ORIG u
+1 _MSER
+2 _LKID 67fbd986-bebb-4d3d-8d9a-f2bc05f5400a
+1 _ATL N
+0 @O16@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 20310
+3 _WDTH 210
+3 _HGHT 210
+2 TITL Lord COA
+1 _OID 8c16fde8-35cc-4125-a2b8-0de7fb9bec65
+1 _CREA 2024-11-10 21:49:53.244
+1 _USER cpuvy9u+LsdM5PwQMvieosHRpIlYPfc0lN/shuKC6Xt24oz12Cy2HGzNgRXbEpTYLOELKzx+tW4y4fadPD0E3w==
+2 _ENCR 1
+1 _CLON
+2 _TID 102400346
+2 _PID 400015088023
+2 _OID 65a0468e-50e6-4537-84b0-fdf3946754f8
+2 _USER X8C3ebb2y3YFEf6/agHx1hy4/LBLJetFLbF6K0i3PIks63vx5mndteeLqwLrubXUMXGUUKnIgQ7IODNGSNrZrg==
+3 _ENCR 1
+2 _DATE 2016-07-19 15:18:15.000
+1 _ORIG u
+1 _MSER
+2 _LKID 65a0468e-50e6-4537-84b0-fdf3946754f8
+1 _ATL N
+0 @O17@ OBJE
+1 FILE
+2 FORM j2k
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpeg
+3 _SIZE 1797527
+3 _WDTH 2730
+3 _HGHT 3797
+2 TITL Ronald Dixon Sr.
+1 _OID 8d18bc1f-25be-4c70-9fa2-dadfaebcb603
+1 _DSCR Ancestry.com. U.S., School Yearbooks, 1900-2016 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2010.
+1 _META <metadataxml><record_source_gid>656623797:1265</record_source_gid></metadataxml>
+1 _CREA 2024-11-10 21:21:07.355
+1 _USER zRKEMh1CfWg/4pcqbRsqXmCHW2Eu5aUT8rQIBD/tF8BKrIEOS81jZNTxr6dFnrkUoZ4gJEWBosPp+B1ZH6lRyA==
+2 _ENCR 1
+1 _ORIG u
+1 _ATL Y
+0 @O18@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 292320
+3 _WDTH 1170
+3 _HGHT 1052
+2 TITL 5227238D-D400-4E63-914D-FB5F53671208
+1 _OID 912bdd20-48bc-4da8-a001-cce00931e43b
+1 _CREA 2024-12-16 01:47:21.767
+1 _USER miZMdCzc1irptiMUiNvDB/OunuPdKjAdLbcdVSwJmguR81+M+YVxpHTAFx60sv+Q5d25i9PO5EyJibnoNkq30g==
+2 _ENCR 1
+1 _CLON
+2 _TID 40731388
+2 _PID 102071413162
+2 _OID 9908862f-c279-44c5-aaa3-950afd215ff4
+2 _USER 7CeJGWrXSbcUJjsMeZlZdp9oPtWkufQSbIC6Z4ZNUPGXdxIQom/lZrl/0umvRXiBwgPxgDcgDA82wu/scpUURQ==
+3 _ENCR 1
+2 _DATE 2021-02-10 17:29:22.000
+1 _ORIG u
+1 _MSER
+2 _LKID 9908862f-c279-44c5-aaa3-950afd215ff4
+1 _ATL N
+0 @O19@ OBJE
+1 FILE
+2 FORM j2k
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpeg
+3 _SIZE 1798033
+3 _WDTH 2758
+3 _HGHT 3567
+2 TITL Ronald Dixon Sr.
+1 _OID 942020f6-b675-430a-8b7f-d07a88b03d34
+1 _DSCR Ancestry.com. U.S., School Yearbooks, 1900-2016 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2010.
+1 _META <metadataxml><record_source_gid>649898881:1265</record_source_gid></metadataxml>
+1 _CREA 2024-11-10 21:16:20.108
+1 _USER fzCqGbKzkpIPmOiy32Tjak9UfDluWMm/+6ON0jNiE5sswsCc1tFH4sy/wJyOvuobaIdIbyNAIOcEkC2l/Oj/LA==
+2 _ENCR 1
+1 _ORIG u
+1 _ATL Y
+0 @O20@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpeg
+3 _SIZE 2809207
+3 _WDTH 3024
+3 _HGHT 4032
+2 TITL IMG_4109
+1 _OID 9c9b5db5-76a4-4666-9ed4-06023bad1add
+1 _CREA 2024-11-10 21:05:10.804
+1 _USER gNk8M3i3fJX8eas5R3vHQh8rosXnJ44E5IWr01Q7MhfpV3MIyiWQwdky9lH4Xqi4+Ktj+6zhDi98vkCc9+0AEA==
+2 _ENCR 1
+1 _CLON
+2 _TID 40731388
+2 _PID 102075028007
+2 _OID d5f8cb74-c8ea-41ad-92d1-872c67afddd5
+2 _USER h9Wyh0+MhgzlT7BN+Cs38OZDgSNTLXQni4n6EP9u2SIybb1fYbHo3775PWer0rMN0FBqtK2+55YhC3gT5vdg8A==
+3 _ENCR 1
+2 _DATE 2021-10-11 01:37:04.000
+1 _ORIG u
+1 _MSER
+2 _LKID d5f8cb74-c8ea-41ad-92d1-872c67afddd5
+1 _ATL N
+0 @O21@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 34873
+3 _WDTH 261
+3 _HGHT 261
+1 _OID aceca850-1dbd-4259-b489-492b92ff8316
+1 DATE 4/4/2014 6:05:58 PM
+1 _CREA 2024-11-10 21:48:49.949
+1 _USER iQYWaJQM3TNtKYdynVRvGROoi+7LCO6/MukoNsPDIKgjkfo/SSGf1xvdg4A523LLmcPot0pOETBr3+zmPLAbCg==
+2 _ENCR 1
+1 _CLON
+2 _TID 82869709
+2 _PID 48468835608
+2 _OID 3e9eb999-c6ff-42bb-a0bc-0af8a9cdea37
+2 _USER fZFqq2yrKNJW0cdmYKRdIkyo3omAes9L2aBaJDmMyHE5zKayme0e0DWpzHsgM7vZz+ZB44o6EJKo+wxydlPMjQ==
+3 _ENCR 1
+2 _DATE 2015-08-20 20:04:19.577
+1 _ORIG u
+1 _MSER
+2 _LKID 3e9eb999-c6ff-42bb-a0bc-0af8a9cdea37
+1 _ATL N
+0 @O22@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE pjpeg
+3 _SIZE 406547
+3 _WDTH 1065
+3 _HGHT 1584
+2 TITL John  Wentworth-1615
+1 _OID b447c092-a096-440f-a00f-1231ae952bb2
+1 DATE 1711
+1 _DSCR Last appointed royal to be Lt.-Gov., to Providence, New Hamphire.  Appoined by Queen Ann in 1711
+1 _META <metadataxml><cemetery /><transcription /></metadataxml>
+1 _CREA 2024-12-16 01:36:46.088
+1 _USER sfLx+1BLyTh4R7lHJOhU51rP0l10k98aqJq+rJOmqQk3epyfV3GDDmbjeABqjJbYJxdYW519lAy0mXcdnv6LTw==
+2 _ENCR 1
+1 _CLON
+2 _TID 7249986
+2 _PID -517359154
+2 _OID a2d28a79-4745-4892-b50c-e0c61cbca004
+2 _USER ASFNzygPuL8EkwoCuh+OnNwYgEg19zkFf9hx4EotF3hV1emNLhu1XmlYpkHBEtlBOx7NfKDu/VPr+18D0leIzg==
+3 _ENCR 1
+2 _DATE 2009-05-10 21:44:44.000
+1 _ORIG u
+1 _MSER
+2 _LKID a2d28a79-4745-4892-b50c-e0c61cbca004
+1 _ATL N
+0 @O23@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE bmp
+3 _SIZE 87012
+3 _WDTH 583
+3 _HGHT 755
+2 TITL Mom's great grandfather
+1 _OID c540a3ab-cf5e-4465-9180-f114095bf7fa
+1 _META <metadataxml />
+1 _CREA 2024-11-10 21:27:09.671
+1 _USER uA977GH+EtruO1dmLqtQi5ztslTLgx4uW/Ttk4LDOKxyIdRVVofjEPdTHrcXH87TNZ+hqRnnrzRUQ7H6SUTtJQ==
+2 _ENCR 1
+1 _CLON
+2 _TID 102650284
+2 _PID 102083376083
+2 _OID 5c67e381-e6c0-4562-8087-d8fea064f6ff
+2 _USER L2VkNIOlxZ5ZjeiqngSumP4rJMcWxq/LCPi+o0s6/qRt9M84ItFw26C1Ecdl/XPe5WRskQb/y5b8eXu5KbvSvA==
+3 _ENCR 1
+2 _DATE 2019-03-10 16:58:56.000
+1 _ORIG u
+1 _MSER
+2 _LKID 5c67e381-e6c0-4562-8087-d8fea064f6ff
+1 _ATL N
+0 @O24@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 21790
+3 _WDTH 228
+3 _HGHT 221
+2 TITL image
+1 _OID d6c4e58f-b4e6-4c4f-9e69-7e09d2bc6fba
+1 _META <metadataxml><cemetery /><transcription /></metadataxml>
+1 _CREA 2024-11-10 22:10:59.617
+1 _USER 9gpiXvu85to/YVzMUmqMLVZSc3hDEc96UE4qEQ8yrwK/2SBMFQOK5wAeJTaYbvfpjXcFjxWIAk1qcAneITuAsQ==
+2 _ENCR 1
+1 _CLON
+2 _TID 67756285
+2 _PID 40481440689
+2 _OID 0049a958-495a-409f-a616-cb2436e9bedc
+2 _USER tWbHeuiINPoCUmUSXmfYMTN2FHIqcNHdI5AV1OEXxs0todu1CKkIYaRBVeS47QsY0IRQBV2du4+cTPx2s+oeYw==
+3 _ENCR 1
+2 _DATE 2016-02-28 16:00:59.303
+1 _ORIG u
+1 _MSER
+2 _LKID 0049a958-495a-409f-a616-cb2436e9bedc
+1 _ATL N
+0 @O25@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE bmp
+3 _SIZE 61581
+3 _WDTH 459
+3 _HGHT 699
+2 TITL FAMMBR15
+1 _OID dd21f2aa-1418-448a-bacd-ad6e6cffd522
+1 _CREA 2024-11-10 21:05:24.803
+1 _USER 2v9LgeYjew+jJM5s6yEEQkAccsp3vmRdZzaoQ75GuHhQoRMMvJCe6Rq1+F3f9CpMD4Y4wbHyfHYQ0pAIy5CIkg==
+2 _ENCR 1
+1 _CLON
+2 _TID 102650284
+2 _PID 102083353588
+2 _OID f4112f13-4b50-44dc-9546-2a0560521de9
+2 _USER XajqghQSe25d44Qwz17l5m+qGo/bSZFCmxyUELH7nQMsVGr13Rgk2+HPgVFP0YC6M8CKxkwm63cj88iniKa29A==
+3 _ENCR 1
+2 _DATE 2019-04-22 13:38:18.000
+1 _ORIG u
+1 _MSER
+2 _LKID f4112f13-4b50-44dc-9546-2a0560521de9
+1 _ATL N
+0 @O26@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE document
+3 _STYPE jpeg
+3 _SIZE 24013
+3 _WDTH 304
+3 _HGHT 400
+2 TITL Page 148 - U.S. Navy Cruise Books, 1918-2009
+1 _OID e5879599-a36c-48c3-92b2-21cef9d4d3fa
+1 DATE 1943 - 1946
+1 PLAC United States
+1 _DSCR U.S. Navy cruise books for various years and ships, 1918 to 2009. 
+1 _CREA 2024-12-16 01:49:26.333
+1 _USER 1GvYOUdU+rGNJkA7YSCAtztWNUi4dfArJY1PioT8IowVlneYyFHOcbpy2fwSRM/nfPRlS/sEHM2IPqUoQ+TAbQ==
+2 _ENCR 1
+1 _CLON
+2 _TID 40731388
+2 _PID 102071413162
+2 _OID 0008312a-7e50-4a6f-82c4-388768dae483
+2 _USER rcRo7iDOlyU+kPfFf8yEWcRpkrXelZpG9z109xaY5wjhCRha2mSuKFQdzGZvCSyLlHLRXSrbOGtc5XFTc+Gf+g==
+3 _ENCR 1
+2 _DATE 2019-02-17 04:07:01.685
+1 _ORIG fold3
+2 _URL https://www.fold3.com/image/301731820?terms=Leandro%20Leonard%20Dixon&amp;amp;xid=2030
+1 _MSER
+2 _LKID 0008312a-7e50-4a6f-82c4-388768dae483
+1 _ATL N
+0 @O27@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE bmp
+3 _SIZE 77183
+3 _WDTH 586
+3 _HGHT 760
+2 TITL Ellen Brown Wallace         Mom's great grandmother
+1 _OID f02f9873-517f-4248-baa7-c331e15acf1a
+1 _DSCR Choctaw Indian.. Marrried to Charlie Wallace (creole)  They had 8 children .. three girls and 5 boys.
+1 _META <metadataxml><cemetery /><transcription /></metadataxml>
+1 _CREA 2024-11-10 21:26:32.568
+1 _USER XDHc0Kxh6S4Ky7dkjrf0bLqKjaaRfZpvcKyaTdWsOYdfHd3kDWb3VqISl+3jg3ejeEzNCVNJ6Sje+ooZGYipOA==
+2 _ENCR 1
+1 _CLON
+2 _TID 102650284
+2 _PID 102083376193
+2 _OID 17bc585a-dee0-451a-904b-82bfd48f82e6
+2 _USER aFKKkT7xxsT8FrQ5gLZn4B7x+vmBIxSrykek0QH5U7tdFQ9FDZv3gXNmA3QKxpNM/1T3jn8qcq7RjJJCBtgiUA==
+3 _ENCR 1
+2 _DATE 2019-03-10 16:58:10.000
+1 _ORIG u
+1 _MSER
+2 _LKID 17bc585a-dee0-451a-904b-82bfd48f82e6
+1 _ATL N
+0 @S367332320@ SOUR
+1 TITL 1940 United States Federal Census
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2012
+2 PLAC Provo, UT, USA
+1 _APID 1,2442::0
+1 REPO @R255881211@
+1 NOTE United States of America, Bureau of the Census. &lt;i&gt;Sixteenth Census of the United States, 1940&lt;/i&gt;. Washington, D.C.: National Archives and Records Administration, 1940. T627, 4,643 rolls.
+0 @S367332339@ SOUR
+1 TITL U.S., Chicago and North Western Railroad Employment Records, 1935-1970
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2015
+2 PLAC Lehi, UT, USA
+1 _APID 1,6944::0
+1 REPO @R255881211@
+1 NOTE Chicago and North Western Railroad Employee Records. Chicago &amp; North Western Historical Society, Berwyn, Illinois.
+2 CONT &lt;p&gt;Chicago, St. Paul, Minneapolis &amp; Omaha Railway Employee Records. Chicago &amp; North Western Historical Society, Berwyn, Illinois.&lt;/p&gt;
+0 @S367332361@ SOUR
+1 TITL U.S., Newspapers.com™ Obituary Index, 1800s-current
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations Inc
+2 DATE 2019
+2 PLAC Lehi, UT, USA
+1 _APID 1,61843::0
+1 REPO @R255881211@
+1 NOTE See newspaper information provided with each entry.
+0 @S367332378@ SOUR
+1 TITL U.S., Obituary Collection, 1930-Current
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations Inc
+2 DATE 2006
+2 PLAC Lehi, UT, USA
+1 _APID 1,7545::0
+1 REPO @R255881211@
+1 NOTE See newspaper information provided with each entry.
+0 @S367332386@ SOUR
+1 TITL U.S., Index to Public Records, 1994-2019
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2020
+2 PLAC Lehi, UT, USA
+1 _APID 1,62209::0
+1 REPO @R255881211@
+1 NOTE &lt;i&gt;Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings&lt;/i&gt;.
+0 @S367332408@ SOUR
+1 TITL U.S., School Yearbooks, 1900-2016
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2010
+2 PLAC Lehi, UT, USA
+1 _APID 1,1265::0
+1 REPO @R255881211@
+1 NOTE Various school yearbooks from across the United States.
+0 @S367332430@ SOUR
+1 TITL U.S., Public Records Index, 1950-1993, Volume 1
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2010
+2 PLAC Lehi, UT, USA
+1 _APID 1,1788::0
+1 REPO @R255881211@
+1 NOTE &lt;i&gt;Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings&lt;/i&gt;.
+0 @S367332443@ SOUR
+1 TITL Florida, U.S., Voter Registration Records, 1942-2023
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2024
+2 PLAC Lehi, UT USA
+1 _APID 1,62882::0
+1 REPO @R255881211@
+1 NOTE &lt;i&gt;Florida Voter Registration Records, 1942-2023&lt;/i&gt;. Tallahassee, Florida: Florida Division of Elections.
+0 @S367332448@ SOUR
+1 TITL Florida, U.S., Newspapers.com™ Stories and Events Index, 1800's-current
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations Inc
+2 DATE 2023
+2 PLAC Lehi, UT, USA
+1 _APID 1,50033::0
+1 REPO @R255881211@
+1 NOTE See newspaper information provided with each entry.
+0 @S367332450@ SOUR
+1 TITL New York, U.S., Arriving Passenger and Crew Lists (including Castle Garden and Ellis Island), 1820-1957
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2010
+2 PLAC Lehi, UT, USA
+1 _APID 1,7488::0
+1 REPO @R255881211@
+1 NOTE &lt;p&gt;&lt;a href="##SearchUrlPrefix##/search/dbextra.aspx?dbid=7488" target="_blank"&gt;View Sources&lt;/a&gt;.&lt;/p&gt;
+0 @S367332465@ SOUR
+1 TITL U.S., Public Records Index, 1950-1993, Volume 2
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2010
+2 PLAC Lehi, UT, USA
+1 _APID 1,1732::0
+1 REPO @R255881211@
+1 NOTE &lt;i&gt;Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings&lt;/i&gt;.
+0 @S367332613@ SOUR
+1 TITL Ancestry Family Trees
+1 PUBL Online publication - Provo, UT, USA: Ancestry.com.  Original data:  Family Tree files submitted by Ancestry members.
+1 _APID 1,1030::0
+1 REPO @R255881211@
+0 @S367332671@ SOUR
+1 TITL 1870 United States Federal Census
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2009
+2 PLAC Lehi, UT, USA
+1 _APID 1,7163::0
+1 REPO @R255881211@
+1 NOTE &lt;ul&gt;&lt;li&gt;1870 U.S. census, population schedules. NARA microfilm publication M593, 1,761 rolls. Washington, D.C.: National Archives and Records Administration, n.d.&lt;/li&gt;&lt;li&gt;Minnesota census schedules for 1870. NARA microfilm p
+2 CONC ublication T132, 13 rolls. Washington, D.C.: National Archives and Records Administration, n.d.&lt;/li&gt;&lt;/ul&gt;
+0 @S367332681@ SOUR
+1 TITL U.S., Freedmen's Bureau Records, 1865-1878
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2021
+2 PLAC Lehi, UT, USA
+1 _APID 1,62309::0
+1 REPO @R255881211@
+1 NOTE &lt;p&gt;&lt;a href="##SearchUrlPrefix##/search/dbextra.aspx?dbid=62309" target="_blank"&gt;View Sources&lt;/a&gt;.&lt;/p&gt;
+0 @S367332941@ SOUR
+1 TITL 1900 United States Federal Census
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations Inc
+2 DATE 2004
+2 PLAC Lehi, UT, USA
+1 _APID 1,7602::0
+1 REPO @R255881211@
+1 NOTE United States of America, Bureau of the Census. &lt;i&gt;Twelfth Census of the United States, 1900&lt;/i&gt;. Washington, D.C.: National Archives and Records Administration, 1900. T623, 1854 rolls.
+0 @S367333025@ SOUR
+1 TITL U.S., Civil War Soldiers, 1861-1865
+1 AUTH National Park Service
+1 PUBL Ancestry.com Operations Inc
+2 DATE 2007
+2 PLAC Provo, UT, USA
+1 _APID 1,1138::0
+1 REPO @R255881211@
+1 NOTE National Park Service, Civil War Soldiers and Sailors System, online &amp;lt;&lt;a href="http://www.itd.nps.gov/cwss/" target="_blank"&gt;http://www.itd.nps.gov/cwss/&lt;/a&gt;&amp;gt;, acquired 2007.
+0 @S367333041@ SOUR
+1 TITL North Carolina, U.S., Wills and Probate Records, 1665-1998
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2015
+2 PLAC Provo, UT, USA
+1 _APID 1,9061::0
+1 REPO @R255881211@
+1 NOTE North Carolina County, District and Probate Courts.
+0 @S367333043@ SOUR
+1 TITL 1820 United States Federal Census
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2010
+2 PLAC Provo, UT, USA
+1 _APID 1,7734::0
+1 REPO @R255881211@
+1 NOTE Fourth Census of the United States, 1820. (NARA microfilm publication M33, 142 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C.
+0 @S367333080@ SOUR
+1 TITL American Genealogical-Biographical Index (AGBI)
+1 AUTH Godfrey Memorial Library, comp.
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 1999
+2 PLAC Provo, UT, USA
+1 _APID 1,3599::0
+1 REPO @R255881211@
+1 NOTE Godfrey Memorial Library. &lt;i&gt;American Genealogical-Biographical Index&lt;/i&gt;. Middletown, CT, USA: Godfrey Memorial Library.
+0 @S367935629@ SOUR
+1 TITL 1930 United States Federal Census
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations Inc
+2 DATE 2002
+2 PLAC Provo, UT, USA
+1 _APID 1,6224::0
+1 REPO @R255881211@
+1 NOTE United States of America, Bureau of the Census. &lt;i&gt;Fifteenth Census of the United States, 1930&lt;/i&gt;. Washington, D.C.: National Archives and Records Administration, 1930. T626, 2,667 rolls.
+0 @S367935676@ SOUR
+1 TITL Mississippi, U.S., Newspapers.com™ Stories and Events Index, 1800's-current
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations Inc
+2 DATE 2023
+2 PLAC Lehi, UT, USA
+1 _APID 1,50053::0
+1 REPO @R255881211@
+1 NOTE See newspaper information provided with each entry.
+0 @S367935703@ SOUR
+1 TITL 1920 United States Federal Census
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2010
+2 PLAC Provo, UT, USA
+1 _APID 1,6061::0
+1 REPO @R255881211@
+1 NOTE Fourteenth Census of the United States, 1920. (NARA microfilm publication T625, 2076 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C. For details on the contents of the film numbers, visit the follow
+2 CONC ing NARA web page: &lt;a href="https://www.archives.gov/research/census/publications-microfilm-catalogs-census/1920/part-07.html" target="_blank"&gt;NARA&lt;/a&gt;. Note: Enumeration Districts 819-839 are on roll 323 (Chicago City).
+0 @S367935710@ SOUR
+1 TITL 1880 United States Federal Census
+1 AUTH Ancestry.com and The Church of Jesus Christ of Latter-day Saints
+1 PUBL Ancestry.com Operations Inc
+2 DATE 2010
+2 PLAC Lehi, UT, USA
+1 _APID 1,6742::0
+1 REPO @R255881211@
+1 NOTE Tenth Census of the United States, 1880. (NARA microfilm publication T9, 1,454 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C.
+0 @S367935720@ SOUR
+1 TITL Massachusetts, U.S., State Census, 1855
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2014
+2 PLAC Provo, UT, USA
+1 _APID 1,4472::0
+1 REPO @R255881211@
+1 NOTE Massachusetts. 1855–1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts.
+0 @S367935854@ SOUR
+1 TITL U.S., Social Security Applications and Claims Index, 1936-2007
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2015
+2 PLAC Provo, UT, USA
+1 _APID 1,60901::0
+1 REPO @R255881211@
+1 NOTE Social Security Applications and Claims, 1936-2007.
+0 @S367935873@ SOUR
+1 TITL 1910 United States Federal Census
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations Inc
+2 DATE 2006
+2 PLAC Lehi, UT, USA
+1 _APID 1,7884::0
+1 REPO @R255881211@
+1 NOTE Thirteenth Census of the United States, 1910 (NARA microfilm publication T624, 1,178 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C. For details on the contents of the film numbers, visit the follow
+2 CONC ing NARA web page: &lt;a href="http://www.archives.gov/research/census/publications-microfilm-catalogs-census/1910/index.html" target="_blank"&gt;NARA&lt;/a&gt;.
+0 @S367936157@ SOUR
+1 TITL U.S., Find a Grave® Index, 1600s-Current
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2012
+2 PLAC Lehi, UT, USA
+1 _APID 1,60525::0
+1 REPO @R255881211@
+1 NOTE &lt;i&gt;Find a Grave&lt;/i&gt;. Find a Grave®. http://www.findagrave.com/cgi-bin/fg.cgi.
+0 @S367936417@ SOUR
+1 TITL U.S., Freedman's Bank Records, 1865-1874
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations Inc
+2 DATE 2005
+2 PLAC Lehi, UT, USA
+1 _APID 1,8755::0
+1 REPO @R255881211@
+1 NOTE &lt;p&gt;&lt;a href="##SearchUrlPrefix##/search/dbextra.aspx?dbid=8755" target="_blank"&gt;View Sources&lt;/a&gt;.&lt;/p&gt;
+0 @R255881211@ REPO
+1 NAME Ancestry.com
+0 TRLR

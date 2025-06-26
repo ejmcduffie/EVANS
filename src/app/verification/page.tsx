@@ -1,8 +1,50 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+// Mock components - replace with real imports when working
+const DeFiDashboard = () => <div>DeFi Dashboard Content</div>;
+const DAOGovernancePanel = () => <div>DAO Governance Content</div>;
+
+// Define the structure of a family member (same as in genealogy page)
+type FamilyMember = {
+  id: string;
+  name: string;
+  givenName: string;
+  surname: string;
+  birthDate?: string;
+  deathDate?: string;
+  gender: 'M' | 'F' | 'U';
+  children?: FamilyMember[];
+  partners?: FamilyMember[];
+};
+
+type FamilyTreeResponse = {
+  tree: FamilyMember;
+  fileName: string;
+  uploadDate: string;
+  warning?: string;
+};
+
+type VerificationRecord = {
+  memberId: string;
+  memberName: string;
+  recordType: 'birth' | 'death' | 'marriage' | 'military';
+  status: 'pending' | 'verified' | 'error';
+  verificationAgency?: string;
+};
+
 export default function Verification() {
-  // Sample verification data - would be populated from blockchain in a real implementation
+  const [activeTab, setActiveTab] = useState<'verification' | 'defi' | 'dao'>('verification');
+  const [familyMembers, setFamilyMembers] = useState<FamilyMember[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [selectedMembers, setSelectedMembers] = useState<Record<string, boolean>>({});
+  const [selectedRecordType, setSelectedRecordType] = useState<'birth' | 'death' | 'marriage' | 'military'>('birth');
+  const [verifications, setVerifications] = useState<VerificationRecord[]>([]);
+  
+  // Sample verification data
   const verificationData = {
     status: 'Verified',
     timestamp: '2025-05-25T14:32:10Z',
@@ -11,305 +53,376 @@ export default function Verification() {
     contractAddress: '0x1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b',
   };
 
+  // Function to fetch family members
+  useEffect(() => {
+    const fetchFamilyMembers = async () => {
+      setLoading(true);
+      setError('');
+      
+      try {
+        // Fetch family tree data from API
+        const response = await fetch('/api/family-tree');
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch family tree data');
+        }
+        
+        const data = await response.json();
+        
+        // Process the tree into a flat list of family members
+        const members: FamilyMember[] = [];
+        const processMembers = (member: FamilyMember) => {
+          members.push(member);
+          
+          // Process children recursively
+          if (member.children && member.children.length > 0) {
+            member.children.forEach(processMembers);
+          }
+          
+          // Process partners
+          if (member.partners && member.partners.length > 0) {
+            member.partners.forEach(processMembers);
+          }
+        };
+        
+        // Start processing from the root
+        if (data.data) {
+          // API returns data in data.data
+          processMembers(data.data);
+        } else if (data.tree) {
+          // Fallback for backward compatibility
+          processMembers(data.tree);
+        }
+        
+        setFamilyMembers(members);
+      } catch (err) {
+        console.error('Error fetching family members:', err);
+        setError('Failed to load family members. Please ensure you have uploaded and processed a GEDCOM file.');
+        
+        // Use example data for demo purposes
+        const exampleMembers: FamilyMember[] = [
+          { id: '1', name: 'John Smith', givenName: 'John', surname: 'Smith', birthDate: '1955', gender: 'M' },
+          { id: '2', name: 'Robert Smith', givenName: 'Robert', surname: 'Smith', birthDate: '1925', deathDate: '2010', gender: 'M' },
+          { id: '3', name: 'James Smith', givenName: 'James', surname: 'Smith', birthDate: '1895', deathDate: '1975', gender: 'M' },
+          { id: '4', name: 'Sarah Johnson', givenName: 'Sarah', surname: 'Johnson', birthDate: '1958', gender: 'F' },
+          { id: '5', name: 'Mary Williams', givenName: 'Mary', surname: 'Williams', birthDate: '1930', deathDate: '2015', gender: 'F' },
+        ];
+        setFamilyMembers(exampleMembers);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    if (activeTab === 'verification') {
+      fetchFamilyMembers();
+    }
+  }, [activeTab]);
+  
+  // Handle member selection
+  const toggleMemberSelection = (id: string) => {
+    setSelectedMembers(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
+  
+  // Government agencies for verification based on record type
+  const getAgencyForRecordType = (recordType: string): string => {
+    const agencies = {
+      birth: [
+        'U.S. National Archives - Birth Records Division',
+        'Census Bureau Historical Records Office',
+        'Department of Health Vital Statistics',
+        'State Historical Society Archives'
+      ],
+      death: [
+        'U.S. National Archives - Death Records Division',
+        'Social Security Administration Records',
+        'Veterans Affairs Historical Database',
+        'County Public Health Records Office'
+      ],
+      marriage: [
+        'County Clerk\'s Office Historical Archives',
+        'U.S. Census Bureau Family Records Division',
+        'State Judicial Historical Records',
+        'National Archives Marriage Documentation Center'
+      ],
+      military: [
+        'Department of Defense Personnel Archives',
+        'National Military Personnel Records Center',
+        'Veterans Affairs Military Service Division',
+        'U.S. Army Historical Documentation Center'
+      ]
+    };
+    
+    // Select a random agency from the appropriate list
+    const agencyList = agencies[recordType as keyof typeof agencies] || agencies.birth;
+    return agencyList[Math.floor(Math.random() * agencyList.length)];
+  };
+  
+  // Start verification process
+  const startVerification = () => {
+    const selectedIds = Object.keys(selectedMembers).filter(id => selectedMembers[id]);
+    
+    if (selectedIds.length === 0) {
+      alert('Please select at least one family member to verify.');
+      return;
+    }
+    
+    // Create verification records for selected members
+    const newVerifications = selectedIds.map(id => {
+      const member = familyMembers.find(m => m.id === id);
+      return {
+        memberId: id,
+        memberName: member?.name || 'Unknown',
+        recordType: selectedRecordType,
+        status: 'pending' as const,
+        verificationAgency: getAgencyForRecordType(selectedRecordType)
+      };
+    });
+    
+    // Add to existing verifications
+    setVerifications(prev => [...prev, ...newVerifications]);
+    
+    // Simulate verification process
+    newVerifications.forEach((record, index) => {
+      setTimeout(() => {
+        setVerifications(prev => 
+          prev.map(r => 
+            r.memberId === record.memberId && r.recordType === record.recordType
+              ? { ...r, status: Math.random() > 0.2 ? 'verified' : 'error' }
+              : r
+          )
+        );
+      }, (index + 1) * 1500);
+    });
+    
+    // Reset selections
+    setSelectedMembers({});
+  };
+  
+  // Tab rendering helper function
+  const renderTab = (tabId: 'verification' | 'defi' | 'dao', label: string) => {
+    return (
+      <button
+        key={tabId}
+        onClick={() => setActiveTab(tabId)}
+        className={`px-4 py-2 font-medium rounded-t-lg ${activeTab === tabId ? 'bg-white text-primary border-b-2 border-primary' : 'bg-gray-100 text-gray-600 hover:text-gray-800'}`}
+      >
+        {label}
+      </button>
+    );
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Blockchain Verification</h1>
       
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <div className="border-b pb-4 mb-4">
-          <h2 className="text-xl font-bold mb-2">How Verification Works</h2>
-          <p className="text-gray-700">
-            AncestryChain uses Chainlink technology to verify your genealogy data against
-            historical United States slave records. Our blockchain verification system ensures
-            the authenticity and integrity of your ancestral connections.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Verification Process</h3>
-            <ol className="space-y-4">
-              <li className="flex">
-                <div className="bg-primary rounded-full h-8 w-8 flex items-center justify-center text-secondary-dark font-bold mr-3 flex-shrink-0">
-                  1
-                </div>
-                <div>
-                  <h4 className="font-semibold">Upload Family Records</h4>
-                  <p className="text-gray-600 text-sm">
-                    Upload your GEDCOM file or historical family documents.
-                  </p>
-                </div>
-              </li>
-              
-              <li className="flex">
-                <div className="bg-primary rounded-full h-8 w-8 flex items-center justify-center text-secondary-dark font-bold mr-3 flex-shrink-0">
-                  2
-                </div>
-                <div>
-                  <h4 className="font-semibold">Data Extraction</h4>
-                  <p className="text-gray-600 text-sm">
-                    Our system extracts relevant names, dates, and locations from your records.
-                  </p>
-                </div>
-              </li>
-              
-              <li className="flex">
-                <div className="bg-primary rounded-full h-8 w-8 flex items-center justify-center text-secondary-dark font-bold mr-3 flex-shrink-0">
-                  3
-                </div>
-                <div>
-                  <h4 className="font-semibold">Blockchain Oracle Request</h4>
-                  <p className="text-gray-600 text-sm">
-                    Chainlink functions fetch and verify data from U.S. slave records databases.
-                  </p>
-                </div>
-              </li>
-              
-              <li className="flex">
-                <div className="bg-primary rounded-full h-8 w-8 flex items-center justify-center text-secondary-dark font-bold mr-3 flex-shrink-0">
-                  4
-                </div>
-                <div>
-                  <h4 className="font-semibold">Smart Contract Verification</h4>
-                  <p className="text-gray-600 text-sm">
-                    Records are verified through a smart contract that validates and stores the proof.
-                  </p>
-                </div>
-              </li>
-              
-              <li className="flex">
-                <div className="bg-primary rounded-full h-8 w-8 flex items-center justify-center text-secondary-dark font-bold mr-3 flex-shrink-0">
-                  5
-                </div>
-                <div>
-                  <h4 className="font-semibold">Results & Documentation</h4>
-                  <p className="text-gray-600 text-sm">
-                    Receive blockchain-verified documentation of your ancestral connections.
-                  </p>
-                </div>
-              </li>
-            </ol>
+      {/* Tab Navigation */}
+      <div className="flex mb-6 border-b border-gray-200">
+        {renderTab('verification', 'Verification Process')}
+        {renderTab('defi', 'DeFi Integration')}
+        {renderTab('dao', 'DAO Governance')}
+      </div>
+      
+      {/* Tab Content */}
+      {activeTab === 'verification' && (
+        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+          <div className="border-b pb-4 mb-4">
+            <h2 className="text-xl font-bold mb-2">How Verification Works</h2>
+            <p className="text-gray-700">
+              AncestryChain uses Chainlink technology to verify your genealogy data against
+              historical United States slave records. Our blockchain verification system ensures
+              the authenticity and integrity of your ancestral connections.
+            </p>
           </div>
           
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Benefits of Blockchain Verification</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <div className="bg-primary text-secondary-dark p-1 rounded-full mr-2 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <p>
-                  <span className="font-semibold">Immutability:</span>{" "}
-                  <span className="text-gray-600">Once verified, records cannot be altered or tampered with.</span>
-                </p>
-              </li>
-              <li className="flex items-start">
-                <div className="bg-primary text-secondary-dark p-1 rounded-full mr-2 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <p>
-                  <span className="font-semibold">Transparency:</span>{" "}
-                  <span className="text-gray-600">All verification steps are publicly viewable on the blockchain.</span>
-                </p>
-              </li>
-              <li className="flex items-start">
-                <div className="bg-primary text-secondary-dark p-1 rounded-full mr-2 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <p>
-                  <span className="font-semibold">Trust:</span>{" "}
-                  <span className="text-gray-600">Third-party verification eliminates the need to trust any single entity.</span>
-                </p>
-              </li>
-              <li className="flex items-start">
-                <div className="bg-primary text-secondary-dark p-1 rounded-full mr-2 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <p>
-                  <span className="font-semibold">Permanence:</span>{" "}
-                  <span className="text-gray-600">Records remain accessible indefinitely for future generations.</span>
-                </p>
-              </li>
-              <li className="flex items-start">
-                <div className="bg-primary text-secondary-dark p-1 rounded-full mr-2 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <p>
-                  <span className="font-semibold">Legal Standing:</span>{" "}
-                  <span className="text-gray-600">Blockchain verification provides stronger legal documentation.</span>
-                </p>
-              </li>
-            </ul>
-            
-            <div className="mt-6">
-              <h3 className="text-lg font-semibold mb-2">Start Your Verification</h3>
-              <p className="text-gray-600 mb-4">
-                Begin the process by uploading your family records for verification.
-              </p>
-              <Link href="/upload" className="btn-primary inline-block">
-                Upload Documents
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-xl font-bold mb-4">Recent Verification</h2>
-        
-        {verificationData ? (
-          <div>
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-              <div className="flex items-center mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="font-semibold text-green-700">Verification Successful</span>
-              </div>
-              <p className="text-green-600">
-                Your records have been successfully verified on the blockchain.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <h3 className="font-semibold mb-2">Verification Details</h3>
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="text-gray-600">Status:</div>
-                    <div className="font-medium">{verificationData.status}</div>
-                    
-                    <div className="text-gray-600">Timestamp:</div>
-                    <div className="font-medium">{new Date(verificationData.timestamp).toLocaleString()}</div>
-                    
-                    <div className="text-gray-600">Blockchain:</div>
-                    <div className="font-medium">{verificationData.blockchainNetwork}</div>
-                  </div>
-                </div>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-lg font-bold mb-4">Family Member Selection</h3>
               
-              <div>
-                <h3 className="font-semibold mb-2">Transaction Information</h3>
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <div className="mb-2">
-                    <div className="text-gray-600 text-sm">Transaction Hash:</div>
-                    <div className="font-mono text-xs break-all">{verificationData.transactionHash}</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-600 text-sm">Contract Address:</div>
-                    <div className="font-mono text-xs break-all">{verificationData.contractAddress}</div>
-                  </div>
+              {loading ? (
+                <div className="flex items-center justify-center p-8">
+                  <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary mr-2"></div>
+                  <span>Loading family members...</span>
                 </div>
-              </div>
+              ) : error ? (
+                <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
+                  <p className="text-red-700">{error}</p>
+                </div>
+              ) : familyMembers.length === 0 ? (
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                  <p className="text-yellow-700">No family members found. Please upload a GEDCOM file on the dashboard first.</p>
+                </div>
+              ) : (
+                <>
+                  <div className="mb-6">
+                    <label className="block text-gray-700 mb-2">Select record type to verify:</label>
+                    <div className="flex flex-wrap gap-2">
+                      <button 
+                        onClick={() => setSelectedRecordType('birth')} 
+                        className={`px-3 py-1 rounded-full text-sm ${selectedRecordType === 'birth' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-700'}`}
+                      >
+                        Birth Records
+                      </button>
+                      <button 
+                        onClick={() => setSelectedRecordType('death')} 
+                        className={`px-3 py-1 rounded-full text-sm ${selectedRecordType === 'death' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-700'}`}
+                      >
+                        Death Records
+                      </button>
+                      <button 
+                        onClick={() => setSelectedRecordType('marriage')} 
+                        className={`px-3 py-1 rounded-full text-sm ${selectedRecordType === 'marriage' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-700'}`}
+                      >
+                        Marriage Records
+                      </button>
+                      <button 
+                        onClick={() => setSelectedRecordType('military')} 
+                        className={`px-3 py-1 rounded-full text-sm ${selectedRecordType === 'military' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-700'}`}
+                      >
+                        Military Records
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white border rounded-lg overflow-hidden">
+                    <div className="px-4 py-2 bg-gray-50 border-b">
+                      <div className="flex items-center justify-between">
+                        <h4 className="font-medium">Select Family Members</h4>
+                        <span className="text-xs text-gray-500">{Object.values(selectedMembers).filter(Boolean).length} selected</span>
+                      </div>
+                    </div>
+                    <div className="max-h-80 overflow-y-auto">
+                      {familyMembers.map((member) => (
+                        <div key={member.id} className="border-b last:border-b-0 px-4 py-3 hover:bg-gray-50">
+                          <div className="flex items-center">
+                            <input
+                              type="checkbox"
+                              id={`member-${member.id}`}
+                              checked={!!selectedMembers[member.id]}
+                              onChange={() => toggleMemberSelection(member.id)}
+                              className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                            />
+                            <label htmlFor={`member-${member.id}`} className="ml-3 cursor-pointer flex-grow">
+                              <div className="font-medium">{member.name}</div>
+                              <div className="text-xs text-gray-500">
+                                {member.birthDate && `b. ${member.birthDate}`}
+                                {member.birthDate && member.deathDate && ' - '}
+                                {member.deathDate && `d. ${member.deathDate}`}
+                                {!member.birthDate && !member.deathDate && 'No dates available'}
+                              </div>
+                            </label>
+                            <span className={`w-6 h-6 rounded-full flex items-center justify-center ${member.gender === 'M' ? 'bg-blue-100 text-blue-600' : member.gender === 'F' ? 'bg-pink-100 text-pink-600' : 'bg-gray-100 text-gray-600'}`}>
+                              {member.gender}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="px-4 py-3 bg-gray-50 border-t">
+                      <button 
+                        onClick={startVerification}
+                        disabled={Object.values(selectedMembers).filter(Boolean).length === 0}
+                        className="w-full px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        Verify Selected Records
+                      </button>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
             
-            <div className="bg-primary bg-opacity-10 rounded-lg p-4 border border-primary">
-              <h3 className="font-semibold mb-2">Verified Ancestry</h3>
-              <p className="text-gray-700 mb-3">
-                Our blockchain verification has confirmed connections to the following historical records:
-              </p>
-              <ul className="list-disc list-inside text-gray-700 space-y-1 ml-2">
-                <li>Smith Plantation Records (Georgia, 1845-1860)</li>
-                <li>Johnson Family Slave Registry (South Carolina, 1830-1865)</li>
-                <li>Alabama Emancipation Documents (1865-1870)</li>
-              </ul>
+            <div>
+              <h3 className="text-lg font-bold mb-4">Verification Status</h3>
+              
+              {verifications.length > 0 ? (
+                <div className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+                  <div className="px-4 py-2 bg-gray-100 border-b">
+                    <div className="grid grid-cols-4 gap-2">
+                      <div className="font-medium">Family Member</div>
+                      <div className="font-medium">Record Type</div>
+                      <div className="font-medium">Status</div>
+                      <div className="font-medium">Government Agency</div>
+                    </div>
+                  </div>
+                  
+                  <div className="max-h-96 overflow-y-auto">
+                    {verifications.map((record, index) => (
+                      <div key={`${record.memberId}-${record.recordType}-${index}`} className="border-b last:border-b-0 px-4 py-2 hover:bg-gray-50">
+                        <div className="grid grid-cols-4 gap-2 items-center">
+                          <div>{record.memberName}</div>
+                          <div className="capitalize">{record.recordType}</div>
+                          <div>
+                            {record.status === 'pending' ? (
+                              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                <svg className="animate-spin -ml-0.5 mr-1.5 h-2 w-2 text-yellow-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                Pending
+                              </span>
+                            ) : record.status === 'verified' ? (
+                              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                <svg className="-ml-0.5 mr-1.5 h-3 w-3 text-green-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Verified
+                              </span>
+                            ) : (
+                              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                <svg className="-ml-0.5 mr-1.5 h-3 w-3 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                                Error
+                              </span>
+                            )}
+                          </div>
+                          <div className="text-xs text-gray-600">
+                            {record.status === 'pending' ? (
+                              'Pending verification...'
+                            ) : record.status === 'verified' ? (
+                              record.verificationAgency || 'U.S. National Archives'
+                            ) : (
+                              'Verification failed'
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <div className="text-center py-6">
+                    <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <p className="mt-2 text-gray-500">No verifications yet</p>
+                    <p className="text-sm text-gray-400">Select family members and a record type to begin verification</p>
+                  </div>
+                </div>
+              )}
+              
+              <div className="mt-4">
+                <Link href="/dashboard" className="text-primary hover:text-primary-dark flex items-center">
+                  <span>Return to Dashboard</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
-        ) : (
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            <h3 className="text-lg font-semibold mb-2">No Verification Data Available</h3>
-            <p className="text-gray-600 mb-4">
-              You haven't submitted any documents for verification yet.
-            </p>
-            <Link href="/upload" className="btn-primary">
-              Upload Documents
-            </Link>
-          </div>
-        )}
-      </div>
+        </div>
+      )}
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-lg font-semibold mb-4">Verification Statistics</h3>
-          <div className="space-y-3">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">Total Uploads</span>
-              <span className="font-bold">3</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">Verified Records</span>
-              <span className="font-bold">2</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">Pending Verification</span>
-              <span className="font-bold">1</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">Verification Rate</span>
-              <span className="font-bold">67%</span>
-            </div>
-          </div>
-        </div>
-        
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-lg font-semibold mb-4">Download Verification</h3>
-          <p className="text-gray-600 mb-4">
-            Download your verification certificate and documentation for your records.
-          </p>
-          <button className="bg-primary text-secondary-dark font-bold py-2 px-4 rounded shadow-button w-full mb-3 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            Download Certificate (PDF)
-          </button>
-          <button className="bg-secondary-light text-secondary-dark border border-gray-300 font-bold py-2 px-4 rounded shadow-sm w-full flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-            </svg>
-            Export Blockchain Proof
-          </button>
-        </div>
-        
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-lg font-semibold mb-4">Verification Support</h3>
-          <p className="text-gray-600 mb-4">
-            Need help with the verification process? Our team is available to assist you.
-          </p>
-          <div className="space-y-3">
-            <a href="#" className="flex items-center text-primary hover:underline">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Verification FAQs
-            </a>
-            <a href="#" className="flex items-center text-primary hover:underline">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-              Verification Guide
-            </a>
-            <Link href="/contact" className="flex items-center text-primary hover:underline">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Contact Support
-            </Link>
-          </div>
-        </div>
-      </div>
+      {/* DeFi Tab */}
+      {activeTab === 'defi' && <DeFiDashboard />}
+      
+      {/* DAO Tab */}
+      {activeTab === 'dao' && <DAOGovernancePanel />}
     </div>
   );
 }

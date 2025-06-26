@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { useSession } from 'next-auth/react';
 
 interface FileUploadFormProps {
   fileCategory: 'GEDCOM' | 'SlaveRecord' | 'HistoricalDocument' | 'FamilyTree' | 'DNATest' | 'Other' | 'All';
@@ -10,6 +9,7 @@ interface FileUploadFormProps {
   maxSizeMB?: number;
   title: string;
   description: string;
+  onUploadSuccess?: (fileInfo: { fileId: string; fileName: string; fileType: string; fileSize: number }) => void;
 }
 
 const FileUploadForm: React.FC<FileUploadFormProps> = ({
@@ -17,9 +17,9 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
   allowedExtensions = ['.ged'],
   maxSizeMB = 25,
   title,
-  description
+  description,
+  onUploadSuccess
 }) => {
-  const { data: session } = useSession();
   const [file, setFile] = useState<File | null>(null);
   const [dragActive, setDragActive] = useState<boolean>(false);
   const [uploading, setUploading] = useState<boolean>(false);
@@ -28,8 +28,14 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
     message: string;
     fileId?: string;
   } | null>(null);
+  const [uploadProgress, setUploadProgress] = useState<number>(0);
+  const [verificationStatus, setVerificationStatus] = useState<'success' | 'error' | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+  
+  // Demo mode - no authentication required
+  const demoMode = true;
 
   const handleDrag = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -52,66 +58,89 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
   };
 
   const handleFileChange = (selectedFile: File) => {
-    if (!session) {
-      router.push('/login');
-      return;
-    }
     // Validate file extension
     const fileExt = '.' + selectedFile.name.split('.').pop()?.toLowerCase();
     if (!allowedExtensions.includes(fileExt)) {
-      setUploadStatus({
-        success: false,
-        message: `Invalid file type. Allowed extensions: ${allowedExtensions.join(', ')}`
-      });
+      setError(`Invalid file type. Allowed extensions: ${allowedExtensions.join(', ')}`);
       return;
     }
 
     // Validate file size
     const fileSizeMB = selectedFile.size / (1024 * 1024);
     if (fileSizeMB > maxSizeMB) {
-      setUploadStatus({
-        success: false,
-        message: `File too large. Maximum size allowed is ${maxSizeMB}MB`
-      });
+      setError(`File too large. Maximum size allowed is ${maxSizeMB}MB`);
       return;
     }
 
     setFile(selectedFile);
-    setUploadStatus(null);
+    setError(null);
   };
 
   const handleButtonClick = () => {
-    if (!session) {
-      router.push('/login');
-      return;
-    }
     inputRef.current?.click();
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!session) {
-      router.push('/login');
-      return;
-    }
-
     if (!file) {
-      setUploadStatus({
-        success: false,
-        message: 'Please select a file to upload'
-      });
+      setError('Please select a file first');
       return;
     }
+    setUploadStatus(null);
+    setUploadProgress(0);
+    setError(null);
+    setUploading(true);
 
+    // DEMO MODE: Simulate successful upload with content storage
+    if (demoMode) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const fileDataUrl = reader.result as string;
+        // simulate upload progress
+        setUploadProgress(30);
+        setTimeout(() => {
+          setUploadProgress(70);
+          setTimeout(() => {
+            setUploadProgress(100);
+            const newFileData = {
+              id: 'demo-' + Date.now(),
+              name: file.name,
+              fileCategory,
+              status: 'Pending',
+              size: file.size,
+              createdAt: new Date(),
+              content: fileDataUrl
+            };
+            setUploadStatus({ success: true, message: 'File uploaded successfully!', fileId: newFileData.id });
+            // Update localStorage with new file
+            const existingFiles = JSON.parse(localStorage.getItem('files') || '[]');
+            const updatedFiles = [newFileData, ...existingFiles];
+            localStorage.setItem('files', JSON.stringify(updatedFiles));
+            // Notify dashboard
+            localStorage.setItem('newFileUpload', JSON.stringify(newFileData));
+            localStorage.removeItem('newFileUpload');
+            // callback
+            onUploadSuccess && onUploadSuccess({ fileId: newFileData.id, fileName: file.name, fileType: fileCategory, fileSize: file.size });
+            setUploading(false);
+          }, 500);
+        }, 500);
+      };
+      reader.readAsDataURL(file);
+      return;
+    }
+    // Non-demo mode implementation would go here
+    setUploading(false);
+    
+    // Existing upload logic for non-demo mode
     try {
       setUploading(true);
       
-      // Create form data for the API request
+      // Create form data for the API request (demo mode)
       const formData = new FormData();
       formData.append('file', file);
-      formData.append('userId', 'placeholder-user-id'); // In a real app, get from authentication
+      formData.append('userId', 'demo-user');
       formData.append('fileCategory', fileCategory);
+      formData.append('demo', 'true');  // Indicate this is a demo upload
 
       // Send request to the API
       const response = await fetch('/api/upload', {
@@ -129,8 +158,8 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
         });
         setFile(null);
         
-        // Refresh the file list if this component is used in a page with a file list
-        router.refresh();
+        // In demo mode, we don't need to refresh the page
+        // Just show success message
       } else {
         setUploadStatus({
           success: false,
@@ -219,6 +248,17 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
                 File ID: <span className="font-mono">{uploadStatus.fileId}</span>
               </p>
             )}
+          </div>
+        )}
+        
+        {error && (
+          <div className="p-4 mb-6 rounded-lg bg-red-50 text-red-800">
+            <div className="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>{error}</span>
+            </div>
           </div>
         )}
         

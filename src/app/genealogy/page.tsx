@@ -3,7 +3,6 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
 // Dynamically import the FamilyTree component with SSR disabled
@@ -96,21 +95,16 @@ const exampleTreeData: FamilyTreeResponse = {
   uploadDate: new Date().toISOString()
 };
 
-// Remove the duplicate FamilyTreeData interface since we're using FamilyMember type
-
 export default function Genealogy() {
-  const { data: session, status } = useSession();
   const router = useRouter();
   const [familyTreeData, setFamilyTreeData] = useState<FamilyTreeResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [showExample, setShowExample] = useState(false);
 
-  // Fetch family tree data when component mounts or session changes
+  // Always fetch data in demo mode
   useEffect(() => {
     const fetchFamilyTree = async () => {
-      if (status === 'loading') return;
-      
       setLoading(true);
       setError('');
       
@@ -132,76 +126,17 @@ export default function Genealogy() {
         setShowExample(false);
       } catch (err) {
         console.error('Error fetching family tree:', err);
-        const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
-        setError(errorMessage);
-        
-        // If there's an error but we're not logged in, show the example
-        if (status === 'unauthenticated') {
-          setShowExample(true);
-        }
+        setError('Failed to load family tree');
       } finally {
         setLoading(false);
       }
     };
     
-    if (status === 'authenticated') {
-      fetchFamilyTree();
-    } else {
-      setLoading(false);
-      setShowExample(true);
-    }
-  }, [status, router]);
+    fetchFamilyTree();
+  }, [router]);
 
-  const isLoading = status === 'loading';
-  const isAuthenticated = status === 'authenticated';
+  const isLoading = loading;
 
-  // Show sign-in prompt for unauthenticated users
-  if (status === 'unauthenticated') {
-    return (
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">Family Tree</h1>
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <div className="text-center">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Sign In to View Your Family Tree</h2>
-            <p className="text-gray-600 mb-6">
-              Please sign in to view and interact with your family tree. If you don't have an account, you can register for free.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link 
-                href="/auth/signin" 
-                className="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors text-center"
-              >
-                Sign In
-              </Link>
-              <Link 
-                href="/auth/register" 
-                className="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors text-center"
-              >
-                Register
-              </Link>
-            </div>
-          </div>
-        </div>
-        
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">Example Family Tree</h2>
-          <p className="text-gray-600 mb-6">
-            Here's an example of what your family tree will look like after you sign in and upload a GEDCOM file.
-          </p>
-          <div className="border rounded-lg p-4">
-            <Suspense fallback={
-              <div className="flex justify-center items-center h-64">
-                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-              </div>
-            }>
-              <FamilyTree initialData={exampleTreeData} />
-            </Suspense>
-          </div>
-        </div>
-      </div>
-    );
-  }
-  
   // Show error message if there was an error
   if (error && !showExample) {
     return (
@@ -283,35 +218,29 @@ export default function Genealogy() {
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
           <div>
-            <h2 className="text-xl font-bold mb-2">
-              {isAuthenticated ? 'Your Family Tree' : 'Example Family Tree'}
-            </h2>
+            <h2 className="text-xl font-bold mb-2">Your Family Tree</h2>
             <p className="text-gray-600">
-              {isAuthenticated 
-                ? 'Interactive visualization of your verified ancestral lineage'
-                : 'See how your family tree could look with AncestryChain'}
+              Interactive visualization of your verified ancestral lineage
             </p>
           </div>
-          {isAuthenticated && (
-            <div className="mt-4 md:mt-0 flex space-x-4">
-              <Link 
-                href="/upload" 
-                className="btn-primary inline-flex items-center"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                </svg>
-                Upload GEDCOM
-              </Link>
-            </div>
-          )}
+          <div className="mt-4 md:mt-0 flex space-x-4">
+            <Link 
+              href="/upload" 
+              className="btn-primary inline-flex items-center"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
+              </svg>
+              Upload GEDCOM
+            </Link>
+          </div>
         </div>
         
         {isLoading ? (
           <div className="flex justify-center items-center h-64">
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
           </div>
-        ) : isAuthenticated ? (
+        ) : (
           <Suspense fallback={
             <div className="flex justify-center items-center h-64">
               <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
@@ -319,32 +248,6 @@ export default function Genealogy() {
           }>
             <FamilyTree />
           </Suspense>
-        ) : (
-          <div className="relative">
-            <div className="absolute inset-0 bg-white bg-opacity-75 flex flex-col items-center justify-center z-10">
-              <h3 className="text-xl font-bold mb-4">Sign In to View Your Family Tree</h3>
-              <p className="text-gray-600 mb-6 text-center max-w-md">
-                Create an account or sign in to upload your GEDCOM file and visualize your family history.
-              </p>
-              <div className="flex space-x-4">
-                <Link 
-                  href="/auth/signin" 
-                  className="btn-primary px-6 py-2"
-                >
-                  Sign In
-                </Link>
-                <Link 
-                  href="/auth/register" 
-                  className="btn-outline px-6 py-2"
-                >
-                  Register
-                </Link>
-              </div>
-            </div>
-            <div className="opacity-50 pointer-events-none">
-              <FamilyTree initialData={exampleTreeData} />
-            </div>
-          </div>
         )}
       </div>
       
