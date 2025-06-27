@@ -33,6 +33,9 @@ type VerificationRecord = {
   recordType: 'birth' | 'death' | 'marriage' | 'military';
   status: 'pending' | 'verified' | 'error';
   verificationAgency?: string;
+  // NFT minting flags
+  isMinted?: boolean;
+  isMinting?: boolean;
 };
 
 export default function Verification() {
@@ -178,7 +181,9 @@ export default function Verification() {
         memberName: member?.name || 'Unknown',
         recordType: selectedRecordType,
         status: 'pending' as const,
-        verificationAgency: getAgencyForRecordType(selectedRecordType)
+        verificationAgency: getAgencyForRecordType(selectedRecordType),
+        isMinted: false,
+        isMinting: false
       };
     });
     
@@ -201,7 +206,55 @@ export default function Verification() {
     // Reset selections
     setSelectedMembers({});
   };
-  
+
+  // Mint handler
+  const handleMint = async (
+    memberId: string,
+    recordType: 'birth' | 'death' | 'marriage' | 'military'
+  ) => {
+    // set minting flag
+    setVerifications(prev =>
+      prev.map(r =>
+        r.memberId === memberId && r.recordType === recordType
+          ? { ...r, isMinting: true }
+          : r
+      )
+    );
+    try {
+      const record = verifications.find(
+        r => r.memberId === memberId && r.recordType === recordType
+      );
+      if (!record) return;
+
+      const res = await fetch('/api/nft-mint', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fileId: memberId, fileData: record })
+      });
+
+      if (!res.ok) throw new Error('Mint failed');
+
+      // success – mark minted
+      setVerifications(prev =>
+        prev.map(r =>
+          r.memberId === memberId && r.recordType === recordType
+            ? { ...r, isMinted: true, isMinting: false }
+            : r
+        )
+      );
+    } catch (e) {
+      console.error(e);
+      setVerifications(prev =>
+        prev.map(r =>
+          r.memberId === memberId && r.recordType === recordType
+            ? { ...r, isMinting: false }
+            : r
+        )
+      );
+      alert('Failed to mint record');
+    }
+  };
+
   // Tab rendering helper function
   const renderTab = (tabId: 'verification' | 'defi' | 'dao', label: string) => {
     return (
@@ -341,10 +394,11 @@ export default function Verification() {
               {verifications.length > 0 ? (
                 <div className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
                   <div className="px-4 py-2 bg-gray-100 border-b">
-                    <div className="grid grid-cols-4 gap-2">
+                    <div className="grid grid-cols-5 gap-2">
                       <div className="font-medium">Family Member</div>
                       <div className="font-medium">Record Type</div>
                       <div className="font-medium">Status</div>
+                      <div className="font-medium">Mint</div>
                       <div className="font-medium">Government Agency</div>
                     </div>
                   </div>
@@ -352,7 +406,7 @@ export default function Verification() {
                   <div className="max-h-96 overflow-y-auto">
                     {verifications.map((record, index) => (
                       <div key={`${record.memberId}-${record.recordType}-${index}`} className="border-b last:border-b-0 px-4 py-2 hover:bg-gray-50">
-                        <div className="grid grid-cols-4 gap-2 items-center">
+                        <div className="grid grid-cols-5 gap-2 items-center">
                           <div>{record.memberName}</div>
                           <div className="capitalize">{record.recordType}</div>
                           <div>
@@ -378,6 +432,22 @@ export default function Verification() {
                                 </svg>
                                 Error
                               </span>
+                            )}
+                          </div>
+                          <div>
+                            {record.status !== 'verified' ? (
+                              <span className="text-xs text-gray-500">—</span>
+                            ) : record.isMinted ? (
+                              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">Minted</span>
+                            ) : record.isMinting ? (
+                              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Minting...</span>
+                            ) : (
+                              <button
+                                onClick={() => handleMint(record.memberId, record.recordType)}
+                                className="px-2 py-1 text-xs font-semibold rounded-full bg-blue-600 text-white hover:bg-blue-700"
+                              >
+                                Mint
+                              </button>
                             )}
                           </div>
                           <div className="text-xs text-gray-600">

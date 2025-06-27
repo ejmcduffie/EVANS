@@ -12,6 +12,10 @@ type FamilyMember = {
   partners?: FamilyMember[];
   location?: string;
   relation?: string;
+  // Verification and minting status
+  isVerified?: boolean;
+  isMinted?: boolean;
+  isMinting?: boolean;
 };
 
 export default function VerifiedAncestors() {
@@ -81,7 +85,8 @@ export default function VerifiedAncestors() {
           .slice(0, Math.min(members.length, 5)) // Take up to 5 members
           .map(member => ({
             ...member,
-            isVerified: true
+            isVerified: true,
+            isMinted: false // default minted status
           }));
         
         setFamilyMembers(verifiedMembers);
@@ -165,6 +170,26 @@ export default function VerifiedAncestors() {
     );
   }
 
+  // Mint handler
+  const handleMint = async (memberId: string) => {
+    setFamilyMembers(prev => prev.map(m => m.id === memberId ? { ...m, isMinting: true } as any : m));
+    try {
+      const member = familyMembers.find(m => m.id === memberId);
+      if (!member) return;
+      const res = await fetch('/api/nft-mint', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fileId: member.id, fileData: member })
+      });
+      if (!res.ok) throw new Error('Mint failed');
+      setFamilyMembers(prev => prev.map(m => m.id === memberId ? { ...m, isMinted: true, isMinting: false } : m));
+    } catch (e) {
+      console.error(e);
+      setFamilyMembers(prev => prev.map(m => m.id === memberId ? { ...m, isMinting: false } : m));
+      alert('Failed to mint record');
+    }
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
       <h2 className="text-xl font-bold mb-4">Verified Ancestors</h2>
@@ -187,6 +212,9 @@ export default function VerifiedAncestors() {
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Verification
               </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Mint
+              </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
@@ -208,6 +236,24 @@ export default function VerifiedAncestors() {
                   <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                     Verified
                   </span>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm">
+                  {member.isMinted ? (
+                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-indigo-100 text-indigo-800">
+                      Minted
+                    </span>
+                  ) : member.isMinting ? (
+                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                      Minting...
+                    </span>
+                  ) : (
+                    <button
+                      onClick={() => handleMint(member.id)}
+                      className="px-2 py-1 text-xs font-semibold rounded-full bg-blue-600 text-white hover:bg-blue-700"
+                    >
+                      Mint
+                    </button>
+                  )}
                 </td>
               </tr>
             ))}

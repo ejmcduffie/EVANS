@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+
 // Mock implementation for arbundles
-// This removes the dependency on the arbundles package which was causing build errors
 const createMockTransaction = (data: string) => {
   return {
     id: 'TX_' + Math.random().toString(36).substr(2, 9),
@@ -9,54 +9,85 @@ const createMockTransaction = (data: string) => {
   };
 };
 
-import axios from 'axios';
-
-// Simplified implementation - in production you'd use real keys
-const ARWEAVE_KEY = process.env.ARWEAVE_KEY || 'demo-key';
-const CHAINLINK_ORACLE = process.env.CHAINLINK_ORACLE || '0xOracleAddress';
+type VerificationRecord = {
+  memberId: string;
+  memberName: string;
+  recordType: string;
+  status: string;
+  verificationAgency?: string;
+};
 
 export async function POST(request: NextRequest) {
   try {
-    const { fileId, fileData } = await request.json();
+    const { fileId, fileData }: { fileId: string; fileData: VerificationRecord } = await request.json();
 
-    // 1. Verify via Chainlink
-    const verificationResponse = await axios.post(
-      `https://chainlink-verifier.com/verify`,
-      { fileId, data: fileData }
-    );
+    if (!fileId || !fileData) {
+      return NextResponse.json(
+        { error: 'Missing required fields: fileId and fileData are required' },
+        { status: 400 }
+      );
+    }
 
-    if (!verificationResponse.data.verified) {
+    // 1. Local verification (mocked for development)
+    // In a production environment, you would verify with Chainlink here
+    const isVerified = true; // Mock verification success
+
+    if (!isVerified) {
       return NextResponse.json(
         { error: 'Verification failed' },
         { status: 400 }
       );
     }
 
-    // 2. Store on Arweave (mock implementation)
-    const data = JSON.stringify({
+    // 2. Create metadata for the NFT
+    const metadata = {
       fileId,
-      ...fileData,
-      verified: true,
-      timestamp: new Date().toISOString()
-    });
+      name: `Verification Record: ${fileData.memberName}`,
+      description: `Verification record for ${fileData.memberName} (${fileData.recordType})`,
+      attributes: [
+        {
+          trait_type: 'Type',
+          value: fileData.recordType
+        },
+        {
+          trait_type: 'Status',
+          value: fileData.status
+        },
+        {
+          trait_type: 'Agency',
+          value: fileData.verificationAgency || 'Self-verified'
+        },
+        {
+          display_type: 'date',
+          trait_type: 'Verification Date',
+          value: Math.floor(Date.now() / 1000)
+        }
+      ]
+    };
 
-    // Create mock transaction instead of using arbundles
+    // 3. Store metadata (mock implementation)
+    const data = JSON.stringify(metadata);
     const mockTransaction = createMockTransaction(data);
     await mockTransaction.sign();
     const transactionId = mockTransaction.id;
 
-    // 3. Return transaction details
+    // 4. Return success response
     return NextResponse.json({
       success: true,
       transactionId,
       arweaveLink: `https://arweave.net/${transactionId}`,
-      message: 'NFT minted successfully!'
+      message: 'NFT minted successfully!',
+      metadata
     });
 
   } catch (error: any) {
     console.error('NFT mint error:', error);
     return NextResponse.json(
-      { error: 'Failed to mint NFT', details: error.message },
+      { 
+        error: 'Failed to mint NFT', 
+        details: error.message,
+        stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      },
       { status: 500 }
     );
   }
