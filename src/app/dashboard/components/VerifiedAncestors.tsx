@@ -182,6 +182,33 @@ export default function VerifiedAncestors() {
         body: JSON.stringify({ fileId: member.id, fileData: member })
       });
       if (!res.ok) throw new Error('Mint failed');
+
+      // Persist to localStorage for dashboard collection
+      try {
+        const json = await res.json();
+        const { transactionId, arweaveLink, metadata } = json;
+        const agencyAttr = (metadata?.attributes || []).find((a: any) => a.trait_type === 'Agency');
+        const typeAttr = (metadata?.attributes || []).find((a: any) => a.trait_type === 'Type');
+
+        const newNFT = {
+          id: transactionId,
+          name: metadata?.name || member.name || member.givenName || 'Record',
+          imageUrl: 'https://placehold.co/300x400/e2e8f0/1e293b?text=Record',
+          description: metadata?.description || `Verification record for ${member.name || member.givenName}`,
+          transactionId,
+          arweaveLink,
+          mintedAt: new Date().toISOString(),
+          recordType: typeAttr?.value,
+          agency: agencyAttr?.value,
+          relatedFile: memberId
+        } as any;
+        const existing = JSON.parse(localStorage.getItem('mintedNFTs') || '[]');
+        existing.push(newNFT);
+        localStorage.setItem('mintedNFTs', JSON.stringify(existing));
+      } catch (storageErr) {
+        console.error('Failed to store minted NFT locally:', storageErr);
+      }
+
       setFamilyMembers(prev => prev.map(m => m.id === memberId ? { ...m, isMinted: true, isMinting: false } : m));
     } catch (e) {
       console.error(e);

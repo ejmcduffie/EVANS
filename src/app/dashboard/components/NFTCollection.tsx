@@ -9,6 +9,8 @@ type NFT = {
   transactionId: string;
   arweaveLink: string;
   mintedAt: Date;
+  recordType?: string;
+  agency?: string;
   relatedFile?: string;
 };
 
@@ -41,8 +43,9 @@ export default function NFTCollection() {
           }
         }
         
-        // If no NFTs found in storage or parsing failed, use demo data
-        if (userNFTs.length === 0) {
+        // If no NFTs found in storage or parsing failed, just return empty list
+        // We no longer use demo placeholders here. The dashboard will show a helpful message when no NFTs are present.
+        /* if (userNFTs.length === 0) {
           userNFTs = [
             {
               id: 'nft1',
@@ -63,7 +66,7 @@ export default function NFTCollection() {
               mintedAt: new Date(Date.now() - 5*24*60*60*1000) // 5 days ago
             }
           ];
-        }
+        } */
         
         setNfts(userNFTs);
       } catch (err) {
@@ -132,9 +135,10 @@ export default function NFTCollection() {
             <div className="p-4">
               <h3 className="font-bold text-lg mb-1">{nft.name}</h3>
               <p className="text-gray-600 text-sm mb-3">{nft.description}</p>
-              <div className="text-xs text-gray-500 mb-3">
-                Minted: {nft.mintedAt.toLocaleDateString()}
-              </div>
+              <div className="text-xs text-gray-500 mb-1">Record Type: {nft.recordType || 'N/A'}</div>
+              <div className="text-xs text-gray-500 mb-1">Agency: {nft.agency || 'N/A'}</div>
+              <div className="text-xs text-gray-500 mb-1 truncate" title={nft.transactionId}>Tx: {nft.transactionId}</div>
+              <div className="text-xs text-gray-500 mb-3">Minted: {nft.mintedAt.toLocaleDateString()}</div>
               <div className="flex space-x-2">
                 <button
                   onClick={() => viewNFTDetails(nft)}
