@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useSession } from 'next-auth/react';
 import { useRouter, useParams } from 'next/navigation';
 import Link from 'next/link';
 
@@ -27,18 +26,15 @@ type FileDetails = {
 };
 
 export default function FileDetailPage() {
-  const { data: session, status } = useSession();
+  // Demo mode: always authenticated
+  const status = 'authenticated' as const;
   const router = useRouter();
   const params = useParams();
   const [file, setFile] = useState<FileDetails | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (status === 'unauthenticated') {
-      router.push('/login');
-    }
-  }, [status, router]);
+  // No authentication check needed in demo mode
 
   useEffect(() => {
     const fetchFile = async () => {
@@ -56,12 +52,12 @@ export default function FileDetailPage() {
       }
     };
 
-    if (params.fileId && status === 'authenticated') {
+    if (params.fileId) {
       fetchFile();
     }
   }, [params.fileId, status]);
 
-  if (status === 'loading' || isLoading) {
+  if (isLoading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
         <div className="text-xl font-semibold">Loading file details...</div>

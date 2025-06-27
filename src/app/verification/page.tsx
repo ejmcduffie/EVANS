@@ -43,6 +43,7 @@ export default function Verification() {
   const [selectedMembers, setSelectedMembers] = useState<Record<string, boolean>>({});
   const [selectedRecordType, setSelectedRecordType] = useState<'birth' | 'death' | 'marriage' | 'military'>('birth');
   const [verifications, setVerifications] = useState<VerificationRecord[]>([]);
+  const [noGedcomFiles, setNoGedcomFiles] = useState(false);
   
   // Sample verification data
   const verificationData = {
@@ -50,9 +51,9 @@ export default function Verification() {
     timestamp: '2025-05-25T14:32:10Z',
     blockchainNetwork: 'Polygon Testnet',
     transactionHash: '0x3a8d9b2c7d6e5f4a1b0c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b2c1d',
-    contractAddress: '0x1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b',
+    contractAddress: '0x1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b'
   };
-
+  
   // Function to fetch family members
   useEffect(() => {
     const fetchFamilyMembers = async () => {
@@ -62,12 +63,20 @@ export default function Verification() {
       try {
         // Fetch family tree data from API
         const response = await fetch('/api/family-tree');
+        const data = await response.json();
         
         if (!response.ok) {
-          throw new Error('Failed to fetch family tree data');
+          // Handle NO_GEDCOM_FILES case specifically
+          if (data.code === 'NO_GEDCOM_FILES') {
+            setError(data.error || 'No GEDCOM file parsed yet. Please upload a GEDCOM file first.');
+            setNoGedcomFiles(true);
+            setFamilyMembers([]);
+            return;
+          }
+          throw new Error(data.error || 'Failed to fetch family tree data');
         }
         
-        const data = await response.json();
+        setNoGedcomFiles(false);
         
         // Process the tree into a flat list of family members
         const members: FamilyMember[] = [];
@@ -85,29 +94,21 @@ export default function Verification() {
           }
         };
         
-        // Start processing from the root
-        if (data.data) {
-          // API returns data in data.data
-          processMembers(data.data);
-        } else if (data.tree) {
-          // Fallback for backward compatibility
-          processMembers(data.tree);
+        // Prefer flat individuals array if provided
+        if (Array.isArray((data as any).individuals) && (data as any).individuals.length > 0) {
+          setFamilyMembers((data as any).individuals as FamilyMember[]);
+        } else {
+          // Start processing from the root
+          const rootNode = data.data || data.tree;
+          if (rootNode) {
+            processMembers(rootNode);
+          }
+          setFamilyMembers(members);
         }
-        
-        setFamilyMembers(members);
       } catch (err) {
         console.error('Error fetching family members:', err);
         setError('Failed to load family members. Please ensure you have uploaded and processed a GEDCOM file.');
-        
-        // Use example data for demo purposes
-        const exampleMembers: FamilyMember[] = [
-          { id: '1', name: 'John Smith', givenName: 'John', surname: 'Smith', birthDate: '1955', gender: 'M' },
-          { id: '2', name: 'Robert Smith', givenName: 'Robert', surname: 'Smith', birthDate: '1925', deathDate: '2010', gender: 'M' },
-          { id: '3', name: 'James Smith', givenName: 'James', surname: 'Smith', birthDate: '1895', deathDate: '1975', gender: 'M' },
-          { id: '4', name: 'Sarah Johnson', givenName: 'Sarah', surname: 'Johnson', birthDate: '1958', gender: 'F' },
-          { id: '5', name: 'Mary Williams', givenName: 'Mary', surname: 'Williams', birthDate: '1930', deathDate: '2015', gender: 'F' },
-        ];
-        setFamilyMembers(exampleMembers);
+        setFamilyMembers([]);
       } finally {
         setLoading(false);
       }
@@ -117,7 +118,7 @@ export default function Verification() {
       fetchFamilyMembers();
     }
   }, [activeTab]);
-  
+
   // Handle member selection
   const toggleMemberSelection = (id: string) => {
     setSelectedMembers(prev => ({

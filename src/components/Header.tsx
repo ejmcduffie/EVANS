@@ -26,6 +26,7 @@ const Header = () => {
             <Link href="/upload" className={isActive('/upload')}>Upload</Link>
             <Link href="/genealogy" className={isActive('/genealogy')}>Family Tree</Link>
             <Link href="/verification" className={isActive('/verification')}>Verification</Link>
+            <Link href="/timecapsule" className={isActive('/timecapsule')}>Timecapsule</Link>
           </nav>
         </div>
       </div>

@@ -26,6 +26,10 @@ export default function VerifiedAncestors() {
         const response = await fetch('/api/family-tree');
         
         if (!response.ok) {
+          const errorData = await response.json().catch(() => null);
+          if (response.status === 404 && errorData?.code === 'NO_GEDCOM_FILES') {
+            throw new Error('No family tree found. Please upload a GEDCOM file first.');
+          }
           throw new Error('Failed to fetch family tree data');
         }
         
@@ -186,8 +190,8 @@ export default function VerifiedAncestors() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {familyMembers.map((member) => (
-              <tr key={member.id}>
+            {familyMembers.map((member, index) => (
+              <tr key={member.id ? member.id : `member-${index}`}>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   {member.name || `${member.givenName || ''} ${member.surname || ''}`}
                 </td>

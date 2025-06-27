@@ -1,129 +1,45 @@
 import React, { useState, useEffect } from 'react';
 
-type FamilyMember = {
-  id: string;
-  name?: string;
-  givenName?: string;
-  surname?: string;
-  birthDate?: string;
-  deathDate?: string;
-  gender?: string;
-  children?: FamilyMember[];
-  partners?: FamilyMember[];
-};
+interface FamilyStats {
+  totalAncestors: number;
+  verifiedAncestors: number;
+  generations: number;
+  earliestRecord: string;
+  primaryLocation: string;
+  nobleHouses: number;
+}
 
-export default function FamilyStatistics() {
-  const [statistics, setStatistics] = useState({
-    totalAncestors: 0,
-    verifiedAncestors: 0,
-    generations: 0,
-    earliestRecord: 'N/A',
-    primaryLocation: 'N/A',
-    slaveRecordMatches: 0,
+const FamilyStatistics: React.FC = () => {
+  const [statistics] = useState<FamilyStats>({
+    totalAncestors: 42,
+    verifiedAncestors: 28,
+    generations: 8,
+    earliestRecord: 'Age of Heroes',
+    primaryLocation: 'Winterfell, The North',
+    nobleHouses: 12,
   });
+  
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error] = useState<string | null>(null);
 
+  // Simulate loading with House Stark data
   useEffect(() => {
-    const fetchFamilyData = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetch('/api/family-tree');
-        
-        if (!response.ok) {
-          throw new Error('Failed to fetch family tree data');
-        }
-        
-        const data = await response.json();
-        
-        // Process the tree to gather statistics
-        const members: FamilyMember[] = [];
-        let maxDepth = 0;
-        const birthYears: number[] = [];
-        const locations = new Map<string, number>();
-        
-        const processMembers = (member: FamilyMember, depth = 1) => {
-          members.push(member);
-          maxDepth = Math.max(maxDepth, depth);
-          
-          // Extract birth year if available
-          if (member.birthDate) {
-            const yearMatch = member.birthDate.match(/\d{4}/);
-            if (yearMatch) {
-              birthYears.push(parseInt(yearMatch[0], 10));
-            }
-          }
-          
-          // Process children recursively
-          if (member.children && member.children.length > 0) {
-            member.children.forEach(child => 
-              processMembers(child, depth + 1)
-            );
-          }
-          
-          // Process partners
-          if (member.partners && member.partners.length > 0) {
-            member.partners.forEach(partner =>
-              processMembers(partner, depth)
-            );
-          }
-        };
-        
-        // Start processing from the root
-        if (data.data) {
-          // API returns data in data.data
-          processMembers(data.data);
-        } else if (data.tree) {
-          // Fallback for backward compatibility
-          processMembers(data.tree);
-        }
-        
-        // For demo purposes, generate some locations
-        const demoLocations = ['Georgia', 'South Carolina', 'North Carolina', 'Virginia', 'Alabama', 'Mississippi', 'Tennessee'];
-        members.forEach(() => {
-          const location = demoLocations[Math.floor(Math.random() * demoLocations.length)];
-          locations.set(location, (locations.get(location) || 0) + 1);
-        });
-        
-        // Find primary location (most frequent)
-        let primaryLocation = 'Unknown';
-        let maxCount = 0;
-        
-        locations.forEach((count, location) => {
-          if (count > maxCount) {
-            maxCount = count;
-            primaryLocation = location;
-          }
-        });
-        
-        // Calculate earliest record
-        const earliestYear = birthYears.length > 0 ? Math.min(...birthYears) : null;
-        
-        // Set statistics
-        setStatistics({
-          totalAncestors: members.length,
-          verifiedAncestors: Math.floor(members.length * 0.6), // 60% verified for demo
-          generations: maxDepth,
-          earliestRecord: earliestYear ? earliestYear.toString() : 'N/A',
-          primaryLocation,
-          slaveRecordMatches: Math.floor(Math.random() * 10), // Random for demo
-        });
-      } catch (err) {
-        console.error('Error fetching family data:', err);
-        setError('Failed to load family statistics');
-      } finally {
-        setIsLoading(false);
-      }
-    };
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
     
-    fetchFamilyData();
+    return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
     return (
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-xl font-bold mb-4">Family Statistics</h2>
-        <div className="text-gray-500">Loading family statistics...</div>
+        <h2 className="text-xl font-bold mb-4">House Stark Lineage</h2>
+        <div className="animate-pulse space-y-4">
+          <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+          <div className="h-4 bg-gray-200 rounded"></div>
+          <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+        </div>
       </div>
     );
   }
@@ -131,7 +47,7 @@ export default function FamilyStatistics() {
   if (error) {
     return (
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-xl font-bold mb-4">Family Statistics</h2>
+        <h2 className="text-xl font-bold mb-4">House Stark Lineage</h2>
         <div className="text-red-500">{error}</div>
       </div>
     );
@@ -139,37 +55,40 @@ export default function FamilyStatistics() {
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-      <h2 className="text-xl font-bold mb-4">Family Statistics</h2>
-      <div className="space-y-4">
-        <div className="flex justify-between items-center">
-          <span className="text-gray-600">Total Ancestors</span>
-          <span className="font-bold">{statistics.totalAncestors}</span>
+      <h2 className="text-xl font-bold mb-6">House Stark Lineage</h2>
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <h3 className="text-sm font-medium text-gray-500">Known Ancestors</h3>
+          <p className="text-2xl font-bold">{statistics.totalAncestors}+</p>
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-gray-600">Verified Ancestors</span>
-          <span className="font-bold">{statistics.verifiedAncestors}</span>
+        <div>
+          <h3 className="text-sm font-medium text-gray-500">Verified Records</h3>
+          <p className="text-2xl font-bold">{statistics.verifiedAncestors}</p>
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-gray-600">Generations</span>
-          <span className="font-bold">{statistics.generations}</span>
+        <div>
+          <h3 className="text-sm font-medium text-gray-500">Generations</h3>
+          <p className="text-2xl font-bold">{statistics.generations}</p>
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-gray-600">Earliest Record</span>
-          <span className="font-bold">{statistics.earliestRecord}</span>
+        <div>
+          <h3 className="text-sm font-medium text-gray-500">Earliest Record</h3>
+          <p className="text-lg font-medium">{statistics.earliestRecord}</p>
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-gray-600">Primary Location</span>
-          <span className="font-bold">{statistics.primaryLocation}</span>
+        <div className="col-span-2">
+          <h3 className="text-sm font-medium text-gray-500">Ancestral Seat</h3>
+          <p className="text-lg font-medium">{statistics.primaryLocation}</p>
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-gray-600">Slave Record Matches</span>
-          <span className="font-bold">{statistics.slaveRecordMatches}</span>
+        <div className="col-span-2">
+          <h3 className="text-sm font-medium text-gray-500">Allied Noble Houses</h3>
+          <p className="text-2xl font-bold">{statistics.nobleHouses}</p>
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-gray-600">Blockchain Verification</span>
-          <span className="font-bold text-green-600">Active</span>
-        </div>
+      </div>
+      <div className="mt-4 pt-4 border-t border-gray-100">
+        <p className="text-sm text-gray-500 italic">
+          "Winter is Coming" - House Stark words
+        </p>
       </div>
     </div>
   );
-}
+};
+
+export default FamilyStatistics;

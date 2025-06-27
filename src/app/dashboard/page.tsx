@@ -42,27 +42,43 @@ export default function Dashboard() {
   const initialMockFiles = [
     {
       id: 'f1',
-      name: 'SmithFamily.ged',
+      name: 'HouseStark_FamilyTree.ged',
       fileCategory: 'GEDCOM',
       status: 'Verified',
-      size: 1024 * 1024 * 2.5, // 2.5MB
-      createdAt: new Date(Date.now() - 86400000) // 1 day ago
+      size: 1024 * 1024 * 3.2, // 3.2MB
+      createdAt: new Date('2025-06-25') // 2 days ago
     },
     {
       id: 'f2',
-      name: 'GrandpaPhoto1945.jpg',
+      name: 'Eddard_Stark_Profile.jpg',
       fileCategory: 'Image',
       status: 'NFT_Minted',
-      size: 1024 * 1024 * 4.2, // 4.2MB
-      createdAt: new Date(Date.now() - 172800000) // 2 days ago
+      size: 1024 * 1024 * 2.8, // 2.8MB
+      createdAt: new Date('2025-06-20') // 1 week ago
     },
     {
       id: 'f3',
-      name: 'MarriageCertificate1923.pdf',
+      name: 'Stark_Lineage_Report.pdf',
       fileCategory: 'Document',
       status: 'Pending',
-      size: 1024 * 1024 * 1.8, // 1.8MB
-      createdAt: new Date(Date.now() - 43200000) // 12 hours ago
+      size: 1024 * 1024 * 1.5, // 1.5MB
+      createdAt: new Date('2025-06-26') // 1 day ago
+    },
+    {
+      id: 'f4',
+      name: 'Winterfell_Deeds.pdf',
+      fileCategory: 'Document',
+      status: 'Verified',
+      size: 1024 * 1024 * 4.7, // 4.7MB
+      createdAt: new Date('2025-05-15') // 1 month ago
+    },
+    {
+      id: 'f5',
+      name: 'Jon_Snow_Birth_Record.pdf',
+      fileCategory: 'Document',
+      status: 'NFT_Minted',
+      size: 1024 * 1024 * 0.9, // 0.9MB
+      createdAt: new Date('2025-06-10') // 2 weeks ago
     }
   ];
   
@@ -276,7 +292,7 @@ export default function Dashboard() {
     }
   };
   
-  const deleteFile = (fileId: string) => {
+  const deleteFile = async (fileId: string) => {
     try {
       // Find the file in our state
       const file = files.find(f => f.id === fileId);
@@ -287,7 +303,17 @@ export default function Dashboard() {
         return;
       }
       
-      // Remove from state
+      // Call the DELETE API endpoint
+      const response = await fetch(`/api/upload?fileId=${fileId}`, {
+        method: 'DELETE',
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to delete file');
+      }
+      
+      // Remove from state after successful API call
       const updatedFiles = files.filter(f => f.id !== fileId);
       setFiles(updatedFiles);
       
@@ -375,37 +401,53 @@ export default function Dashboard() {
     }
   }, [isAuthenticated]);
   
-  // Simulate receiving blockchain events
+  // Simulate receiving blockchain events with House Stark theme
   useEffect(() => {
     // This would be replaced with actual blockchain event listeners in production
     const simulateBlockchainEvents = () => {
-      const randomEvent = Math.floor(Math.random() * 4);
-      const newActivity: ActivityItem = {
-        timestamp: new Date(),
-        type: 'verification' as const,
-        message: ''
-      };
+      const events = [
+        {
+          type: 'verification' as const,
+          message: "Verified Stark lineage records from Winterfell's archives"
+        },
+        {
+          type: 'nft' as const,
+          message: 'Minted NFT for Eddard Stark\'s military service record'
+        },
+        {
+          type: 'defi' as const,
+          message: 'Staked 1000 WINTER tokens in the North\'s treasury'
+        },
+        {
+          type: 'dao' as const,
+          message: 'House Stark DAO approved new family charter'
+        },
+        {
+          type: 'verification' as const,
+          message: 'Verified Jon Snow\'s birth record from the Tower of Joy'
+        },
+        {
+          type: 'nft' as const,
+          message: 'Created NFT for the original Ice sword blueprint'
+        },
+        {
+          type: 'defi' as const,
+          message: 'Earned 250 WINTER tokens from Northern trade routes'
+        },
+        {
+          type: 'dao' as const,
+          message: 'Voted on reconstruction of Winterfell\'s east wing'
+        }
+      ];
       
-      switch(randomEvent) {
-        case 0:
-          newActivity.type = 'verification' as const;
-          newActivity.message = 'Document c3f4d2 verified via Chainlink oracle';
-          break;
-        case 1:
-          newActivity.type = 'nft' as const;
-          newActivity.message = 'Heritage NFT #2845 minted for document a1b2c3';
-          break;
-        case 2:
-          newActivity.type = 'defi' as const;
-          newActivity.message = '150 ANC tokens staked in Heritage Preservation Pool';
-          break;
-        case 3:
-          newActivity.type = 'dao' as const;
-          newActivity.message = 'Family DAO proposal #12 passed with 67% approval';
-          break;
-      }
-      
-      setRecentActivity(prev => [newActivity, ...prev.slice(0, 4)]);
+      const randomEvent = events[Math.floor(Math.random() * events.length)];
+      setRecentActivity(prev => [
+        {
+          ...randomEvent,
+          timestamp: new Date()
+        },
+        ...prev
+      ].slice(0, 10)); // Keep only the 10 most recent events
     };
     
     // Simulate a blockchain event every 20 seconds
@@ -416,12 +458,27 @@ export default function Dashboard() {
       {
         type: 'verification' as const,
         timestamp: new Date(Date.now() - 5*60000), // 5 minutes ago
-        message: 'Document a1b2c3 verified via Chainlink oracle'
+        message: 'Verified House Stark family tree back to the Age of Heroes'
+      },
+      {
+        type: 'nft' as const,
+        timestamp: new Date(Date.now() - 17*60000), // 17 minutes ago
+        message: 'Minted Direwolf sigil NFT for the Stark family'
       },
       {
         type: 'dao' as const,
-        timestamp: new Date(Date.now() - 17*60000), // 17 minutes ago
-        message: 'Cast vote on Family DAO proposal #11'
+        timestamp: new Date(Date.now() - 35*60000), // 35 minutes ago
+        message: 'Approved new trade agreement with House Manderly'
+      },
+      {
+        type: 'defi' as const,
+        timestamp: new Date(Date.now() - 120*60000), // 2 hours ago
+        message: 'Earned 500 WINTER tokens from Northern harvest'
+      },
+      {
+        type: 'verification' as const,
+        timestamp: new Date(Date.now() - 180*60000), // 3 hours ago
+        message: 'Authenticated ancient Stark family documents from the crypts'
       }
     ]);
     

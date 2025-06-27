@@ -20,7 +20,7 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
   description,
   onUploadSuccess
 }) => {
-  const [file, setFile] = useState<File | null>(null);
+  const [files, setFiles] = useState<File[]>([]);
   const [dragActive, setDragActive] = useState<boolean>(false);
   const [uploading, setUploading] = useState<boolean>(false);
   const [uploadStatus, setUploadStatus] = useState<{
@@ -52,28 +52,38 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
     e.stopPropagation();
     setDragActive(false);
     
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      handleFileChange(e.dataTransfer.files[0]);
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      handleFileChange(Array.from(e.dataTransfer.files));
     }
   };
 
-  const handleFileChange = (selectedFile: File) => {
-    // Validate file extension
-    const fileExt = '.' + selectedFile.name.split('.').pop()?.toLowerCase();
-    if (!allowedExtensions.includes(fileExt)) {
-      setError(`Invalid file type. Allowed extensions: ${allowedExtensions.join(', ')}`);
-      return;
+  const handleFileChange = (selectedFiles: File | File[]) => {
+    const filesToProcess = Array.isArray(selectedFiles) ? selectedFiles : [selectedFiles];
+    
+    // Validate all files
+    let hasError = false;
+    for (const file of filesToProcess) {
+      // Validate file extension
+      const fileExt = '.' + file.name.split('.').pop()?.toLowerCase();
+      if (!allowedExtensions.includes(fileExt)) {
+        setError(`Invalid file type: ${file.name}. Allowed extensions: ${allowedExtensions.join(', ')}`);
+        hasError = true;
+        break;
+      }
+
+      // Validate file size
+      const fileSizeMB = file.size / (1024 * 1024);
+      if (fileSizeMB > maxSizeMB) {
+        setError(`File too large: ${file.name}. Maximum size allowed is ${maxSizeMB}MB`);
+        hasError = true;
+        break;
+      }
     }
 
-    // Validate file size
-    const fileSizeMB = selectedFile.size / (1024 * 1024);
-    if (fileSizeMB > maxSizeMB) {
-      setError(`File too large. Maximum size allowed is ${maxSizeMB}MB`);
-      return;
+    if (!hasError) {
+      setFiles(prev => [...prev, ...filesToProcess]);
+      setError(null);
     }
-
-    setFile(selectedFile);
-    setError(null);
   };
 
   const handleButtonClick = () => {
@@ -82,8 +92,8 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!file) {
-      setError('Please select a file first');
+    if (files.length === 0) {
+      setError('Please select at least one file first');
       return;
     }
     setUploadStatus(null);
@@ -93,40 +103,65 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
 
     // DEMO MODE: Simulate successful upload with content storage
     if (demoMode) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const fileDataUrl = reader.result as string;
-        // simulate upload progress
-        setUploadProgress(30);
-        setTimeout(() => {
-          setUploadProgress(70);
-          setTimeout(() => {
-            setUploadProgress(100);
-            const newFileData = {
-              id: 'demo-' + Date.now(),
-              name: file.name,
-              fileCategory,
-              status: 'Pending',
-              size: file.size,
-              createdAt: new Date(),
-              content: fileDataUrl
+      // Simulate upload progress for multiple files
+      let filesProcessed = 0;
+      setUploadProgress(10);
+      
+      // Process each file sequentially
+      const processFiles = async () => {
+        for (const file of files) {
+          await new Promise<void>((resolve) => {
+            const reader = new FileReader();
+            reader.onload = () => {
+              const fileDataUrl = reader.result as string;
+              // Update progress based on files processed
+              filesProcessed++;
+              setUploadProgress(Math.round((filesProcessed / files.length) * 100));
+              // Create a record of the file
+              const newFileData = {
+                id: 'demo-' + Date.now() + '-' + Math.random().toString(36).substring(2, 9),
+                name: file.name,
+                fileCategory,
+                status: 'Pending',
+                size: file.size,
+                createdAt: new Date(),
+                content: fileDataUrl
+              };
+              
+              // Update localStorage with new file
+              const existingFiles = JSON.parse(localStorage.getItem('files') || '[]');
+              const updatedFiles = [newFileData, ...existingFiles];
+              localStorage.setItem('files', JSON.stringify(updatedFiles));
+              
+              // Notify dashboard about this file
+              localStorage.setItem('newFileUpload', JSON.stringify(newFileData));
+              localStorage.removeItem('newFileUpload');
+              
+              // Callback for each file if provided
+              onUploadSuccess && onUploadSuccess({
+                fileId: newFileData.id,
+                fileName: file.name,
+                fileType: fileCategory,
+                fileSize: file.size
+              });
+              
+              resolve();
             };
-            setUploadStatus({ success: true, message: 'File uploaded successfully!', fileId: newFileData.id });
-            // Update localStorage with new file
-            const existingFiles = JSON.parse(localStorage.getItem('files') || '[]');
-            const updatedFiles = [newFileData, ...existingFiles];
-            localStorage.setItem('files', JSON.stringify(updatedFiles));
-            // Notify dashboard
-            localStorage.setItem('newFileUpload', JSON.stringify(newFileData));
-            localStorage.removeItem('newFileUpload');
-            // callback
-            onUploadSuccess && onUploadSuccess({ fileId: newFileData.id, fileName: file.name, fileType: fileCategory, fileSize: file.size });
-            setUploading(false);
-          }, 500);
-        }, 500);
+            reader.readAsDataURL(file);
+          });
+        }
+        
+        // All files processed
+        setUploadStatus({
+          success: true,
+          message: `${files.length} ${files.length === 1 ? 'file' : 'files'} uploaded successfully!`
+        });
+        setFiles([]);
+        setUploading(false);
       };
-      reader.readAsDataURL(file);
-      return;
+      
+      // Start processing files locally (for demo UI) but continue to upload to backend
+      await processFiles();
     }
     // Non-demo mode implementation would go here
     setUploading(false);
@@ -137,7 +172,10 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
       
       // Create form data for the API request (demo mode)
       const formData = new FormData();
-      formData.append('file', file);
+      // API expects the GEDCOM file in a field named 'file'. We'll send the first file.
+      if (files.length > 0) {
+        formData.append('file', files[0]);
+      }
       formData.append('userId', 'demo-user');
       formData.append('fileCategory', fileCategory);
       formData.append('demo', 'true');  // Indicate this is a demo upload
@@ -156,7 +194,7 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
           message: 'File uploaded successfully!',
           fileId: result.fileId
         });
-        setFile(null);
+        setFiles([]);
         
         // In demo mode, we don't need to refresh the page
         // Just show success message
@@ -196,16 +234,29 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
             </svg>
           </div>
           
-          {file ? (
+          {files.length > 0 ? (
             <div className="mb-4">
-              <p className="text-gray-800 font-medium">Selected File:</p>
-              <p className="text-primary">{file.name}</p>
-              <p className="text-gray-500 text-sm">
-                {(file.size / (1024 * 1024)).toFixed(2)} MB
-              </p>
+              <p className="text-gray-800 font-medium">Selected Files: {files.length}</p>
+              <div className="max-h-32 overflow-auto text-sm">
+                {files.map((file, index) => (
+                  <div key={index} className="flex justify-between items-center border-b border-gray-100 py-1 last:border-0">
+                    <p className="text-primary truncate max-w-xs">{file.name}</p>
+                    <p className="text-gray-500 text-xs ml-2">
+                      {(file.size / (1024 * 1024)).toFixed(2)} MB
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <button 
+                type="button" 
+                className="text-xs text-red-600 mt-2 hover:underline"
+                onClick={() => setFiles([])}
+              >
+                Clear All
+              </button>
             </div>
           ) : (
-            <p className="text-gray-600 mb-2">Drag and drop your file here, or</p>
+            <p className="text-gray-600 mb-2">Drag and drop your files here, or</p>
           )}
           
           <button 
@@ -220,8 +271,9 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
             type="file"
             ref={inputRef}
             className="hidden"
+            multiple
             accept={allowedExtensions.join(',')} 
-            onChange={(e) => e.target.files && e.target.files[0] && handleFileChange(e.target.files[0])}
+            onChange={(e) => e.target.files && e.target.files.length > 0 && handleFileChange(Array.from(e.target.files))}
           />
           
           <p className="text-xs text-gray-500 mt-2">
@@ -266,7 +318,7 @@ const FileUploadForm: React.FC<FileUploadFormProps> = ({
           <button 
             type="submit"
             className="btn-primary px-8"
-            disabled={!file || uploading}
+            disabled={files.length === 0 || uploading}
           >
             {uploading ? (
               <span className="flex items-center">

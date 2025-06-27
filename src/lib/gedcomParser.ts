@@ -144,6 +144,7 @@ export function getFamilyTreeData(gedcomData: GedcomData, rootId: string, maxDep
     givenName: individual.givenName,
     surname: individual.surname,
     sex: individual.sex,
+    gender: individual.sex, // alias for frontend components expecting 'gender'
     birthDate: individual.birthDate,
     deathDate: individual.deathDate,
     partners: [],
@@ -164,6 +165,7 @@ export function getFamilyTreeData(gedcomData: GedcomData, rootId: string, maxDep
         givenName: spouse.givenName,
         surname: spouse.surname,
         sex: spouse.sex,
+        gender: spouse.sex, // alias
         birthDate: spouse.birthDate,
         deathDate: spouse.deathDate,
         relation: 'spouse'

@@ -1,38 +1,22 @@
 'use client';
-import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function LoginPage() {
-  const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
+  // In demo mode - redirect to dashboard immediately
+  useEffect(() => {
+    router.push('/dashboard');
+  }, [router]);
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
     setIsLoading(true);
     
-    const target = e.target as HTMLFormElement;
-    
-    try {
-      const result = await signIn('credentials', {
-        email: target.email.value,
-        password: target.password.value,
-        redirect: false
-      });
-
-      if (result?.error) {
-        setError(result.error);
-      } else {
-        // Redirect to dashboard on success
-        router.push('/dashboard');
-      }
-    } catch (err) {
-      setError('An error occurred during sign in');
-    } finally {
-      setIsLoading(false);
-    }
+    // In demo mode - just redirect to dashboard
+    router.push('/dashboard');
   };
 
   return (
@@ -40,11 +24,7 @@ export default function LoginPage() {
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-md w-96">
         <h2 className="text-2xl font-bold mb-6">Sign In</h2>
         
-        {error && (
-          <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
-            {error}
-          </div>
-        )}
+        {/* Demo mode - no errors */}
         
         <div className="mb-4">
           <label className="block text-gray-700 mb-2" htmlFor="email">Email</label>
@@ -88,7 +68,7 @@ export default function LoginPage() {
         <div className="mt-4">
           <button
             type="button"
-            onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
+            onClick={() => router.push('/dashboard')}
             className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50"
             disabled={isLoading}
           >
