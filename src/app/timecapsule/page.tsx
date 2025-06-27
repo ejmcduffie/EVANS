@@ -42,77 +42,26 @@ interface Message {
   timestamp: Date;
 }
 
-// ---------------------- Rive-like Avatar ------------------------------
-const RiveAvatar: React.FC<{ isTalking: boolean; ancestorData: Ancestor }> = ({ isTalking, ancestorData }) => {
-  const [blinkState, setBlinkState] = useState(false);
-  const [mouthState, setMouthState] = useState(0);
+// ---------------------- Ancestor Image ------------------------------
+const AncestorImage: React.FC<{ isTalking: boolean; ancestorData: Ancestor }> = ({ isTalking, ancestorData }) => {
+  const [imageError, setImageError] = useState(false);
 
-  // blinking
-  useEffect(() => {
-    const blinkInterval = setInterval(() => {
-      setBlinkState(true);
-      setTimeout(() => setBlinkState(false), 150);
-    }, 2000 + Math.random() * 3000);
-    return () => clearInterval(blinkInterval);
-  }, []);
-
-  // mouth movement when talking
-  useEffect(() => {
-    let mouthInt: NodeJS.Timeout | undefined;
-    if (isTalking) {
-      mouthInt = setInterval(() => setMouthState(Math.random() * 3), 100);
-    } else {
-      setMouthState(0);
-    }
-    return () => mouthInt && clearInterval(mouthInt);
-  }, [isTalking]);
-
-  const avatarStyle: React.CSSProperties = {
-    width: '300px',
-    height: '300px',
-    borderRadius: '50%',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
-    border: '4px solid #e2e8f0',
-    boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
-    transition: 'all 0.3s ease'
-  };
-
-  const eyeStyle: React.CSSProperties = {
-    width: '20px',
-    height: blinkState ? '2px' : '20px',
-    backgroundColor: '#2d3748',
-    borderRadius: '50%',
-    margin: '0 15px',
-    transition: 'height 0.1s ease'
-  };
-
-  const mouthStyle: React.CSSProperties = {
-    width: '30px',
-    height: `${5 + mouthState * 3}px`,
-    backgroundColor: '#2d3748',
-    borderRadius: '50%',
-    marginTop: '20px',
-    transition: 'height 0.1s ease'
-  };
+  if (imageError || !ancestorData.imageUrl) {
+    return (
+      <div className="w-64 h-64 rounded-full bg-gray-200 flex items-center justify-center">
+        <span className="text-gray-500">No Image</span>
+      </div>
+    );
+  }
 
   return (
-    <div style={avatarStyle} className={isTalking ? 'animate-pulse' : ''}>
-      <div style={{ fontSize: 24, color: 'white', marginBottom: 20, fontWeight: 'bold' }}>
-        {ancestorData.name || 'Ancestor'}
-      </div>
-      <div style={{ display: 'flex', marginBottom: 10 }}>
-        <div style={eyeStyle} />
-        <div style={eyeStyle} />
-      </div>
-      <div style={mouthStyle} />
-      <div style={{ position: 'absolute', bottom: 10, fontSize: 12, color: 'rgba(255,255,255,0.8)' }}>
-        {ancestorData.timesPeriod || 'Historical Era'}
-      </div>
+    <div className={`relative ${isTalking ? 'animate-pulse' : ''}`}>
+      <img
+        src={ancestorData.imageUrl}
+        alt={ancestorData.name}
+        className="w-64 h-64 object-cover rounded-full border-4 border-white shadow-lg"
+        onError={() => setImageError(true)}
+      />
     </div>
   );
 };
@@ -231,17 +180,17 @@ export default function TimecapsulePage() {
   const [talking, setTalking] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(false);
 
-  const [selectedAncestor, setSelectedAncestor] = useState<Ancestor>({
-    name: "Edwlye Stark",
-    timesPeriod: 'Age of Heroes, Westeros',
-    location: 'Winterfell, North',
-    relationship: 'House Stark Ancestor',
-    occupation: 'Lady of Winterfell',
-    imageUrl: '/images/edwlye_stark.jpg'
-  });
+  const [selectedAncestor, setSelectedAncestor] = useState<Ancestor | null>(null);
 
   const mockAncestors: Ancestor[] = [
-    selectedAncestor,
+    {
+      name: "Edwlye Stark",
+      timesPeriod: 'Age of Heroes, Westeros',
+      location: 'Winterfell, North',
+      relationship: 'House Stark Ancestor',
+      occupation: 'Lady of Winterfell',
+      imageUrl: '/images/edwlye_stark.jpg'
+    },
     {
       name: 'Marna Locke',
       timesPeriod: 'Age of Heroes, Westeros',
@@ -259,6 +208,16 @@ export default function TimecapsulePage() {
       imageUrl: '/images/rickard_starks.jpg'
     }
   ];
+
+  const handleAncestorClick = (ancestor: Ancestor) => {
+    if (selectedAncestor && selectedAncestor.name === ancestor.name) {
+      // Clicking the same ancestor deselects it
+      setSelectedAncestor(null);
+    } else {
+      // Select the clicked ancestor
+      setSelectedAncestor(ancestor);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
@@ -278,9 +237,11 @@ export default function TimecapsulePage() {
             {mockAncestors.map((ancestor, idx) => (
               <div
                 key={idx}
-                onClick={() => setSelectedAncestor(ancestor)}
+                onClick={() => handleAncestorClick(ancestor)}
                 className={`cursor-pointer p-4 rounded-lg border-2 transition-all ${
-                  selectedAncestor.name === ancestor.name ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-gray-300'
+                  selectedAncestor && selectedAncestor.name === ancestor.name
+                    ? 'border-blue-500 bg-blue-50'
+                    : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
                 }`}
               >
                 <h3 className="font-semibold text-lg">{ancestor.name}</h3>
@@ -311,28 +272,47 @@ export default function TimecapsulePage() {
               </div>
             </div>
             <div className="flex flex-col items-center">
-              <RiveAvatar isTalking={talking} ancestorData={selectedAncestor} />
-              {selectedAncestor.imageUrl && (
-                <img
-                  src={selectedAncestor.imageUrl}
-                  alt={selectedAncestor.name}
-                  className="w-40 h-40 object-cover rounded-lg mt-4 shadow"
-                />
+              {selectedAncestor ? (
+                <AncestorImage isTalking={talking} ancestorData={selectedAncestor} />
+              ) : (
+                <div className="w-64 h-64 rounded-full bg-gray-100 flex items-center justify-center">
+                  <p className="text-gray-500 text-center">Select an ancestor to begin</p>
+                </div>
               )}
+
             </div>
             <div className="mt-4 text-center">
-              <h3 className="text-lg font-semibold">{selectedAncestor.name}</h3>
-              <p className="text-sm text-gray-600">{selectedAncestor.relationship}</p>
+              {selectedAncestor ? (
+                <h3 className="text-lg font-semibold">{selectedAncestor.name}</h3>
+              ) : (
+                <p className="text-gray-500">No Ancestor Selected</p>
+              )}
+              {selectedAncestor && (
+                <p className="text-sm text-gray-600">{selectedAncestor.relationship}</p>
+              )}
               <div className="mt-2 text-xs text-gray-500">
-                <p>📍 {selectedAncestor.location}</p>
-                <p>💼 {selectedAncestor.occupation}</p>
+                {selectedAncestor && (
+                  <>
+                    <p>📍 {selectedAncestor.location}</p>
+                    <p>💼 {selectedAncestor.occupation}</p>
+                  </>
+                )}
               </div>
             </div>
           </div>
 
           {/* Chat Section */}
           <div>
-            <ChatWindow onTalking={setTalking} ancestorData={selectedAncestor} />
+            {selectedAncestor ? (
+              <ChatWindow onTalking={setTalking} ancestorData={selectedAncestor} />
+            ) : (
+              <div className="flex h-96 items-center justify-center bg-white rounded-lg shadow-lg border border-gray-200">
+                <div className="text-center p-8">
+                  <h3 className="text-xl font-semibold mb-2">No Ancestor Selected</h3>
+                  <p className="text-gray-600 mb-4">Select an ancestor from the list to start chatting</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
