@@ -46,6 +46,61 @@ export default function Verification() {
   const [selectedMembers, setSelectedMembers] = useState<Record<string, boolean>>({});
   const [selectedRecordType, setSelectedRecordType] = useState<'birth' | 'death' | 'marriage' | 'military'>('birth');
   const [verifications, setVerifications] = useState<VerificationRecord[]>([]);
+
+  // Load verification records from API on component mount
+  useEffect(() => {
+    const fetchVerificationRecords = async () => {
+      try {
+        setLoading(true);
+        // In a real app, you'd include proper auth - here we use default-user
+        const userId = 'default-user';
+        const response = await fetch(`/api/verification-records?userId=${userId}`);
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch verification records');
+        }
+        
+        const data = await response.json();
+        if (data.records && Array.isArray(data.records)) {
+          setVerifications(data.records);
+        }
+      } catch (error) {
+        console.error('Failed to load verification records from API:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchVerificationRecords();
+  }, []);
+
+  // Save verification records to API whenever they change
+  useEffect(() => {
+    const saveVerificationRecords = async () => {
+      try {
+        // Don't save empty records or on initial load
+        if (verifications.length === 0) return;
+        
+        // In a real app, you'd include proper auth
+        const userId = 'default-user';
+        const response = await fetch('/api/verification-records', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId, records: verifications })
+        });
+        
+        if (!response.ok) {
+          console.error('API returned error status when saving verification records');
+        }
+      } catch (error) {
+        console.error('Failed to save verification records to API:', error);
+      }
+    };
+    
+    // Use a debounce to avoid too many API calls
+    const timeoutId = setTimeout(saveVerificationRecords, 500);
+    return () => clearTimeout(timeoutId);
+  }, [verifications]);
   const [noGedcomFiles, setNoGedcomFiles] = useState(false);
   
   // Sample verification data

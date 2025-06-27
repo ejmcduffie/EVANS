@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
 type NFT = {
@@ -19,70 +19,79 @@ export default function NFTCollection() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchNFTs = async () => {
-      setIsLoading(true);
-      try {
-        // In a production app, this would be a real API call
-        // For demo purposes, we'll simulate a fetch from localStorage
-        
-        // Check if we have any minted NFTs in localStorage
-        const storedNFTs = localStorage.getItem('mintedNFTs');
-        let userNFTs: NFT[] = [];
-        
-        if (storedNFTs) {
-          try {
-            const parsedNFTs = JSON.parse(storedNFTs);
-            // Ensure mintedAt is properly converted to Date objects
-            userNFTs = parsedNFTs.map((nft: any) => ({
-              ...nft,
-              mintedAt: new Date(nft.mintedAt)
-            }));
-          } catch (error) {
-            console.error('Error parsing stored NFTs:', error);
-          }
-        }
-        
-        // If no NFTs found in storage or parsing failed, just return empty list
-        // We no longer use demo placeholders here. The dashboard will show a helpful message when no NFTs are present.
-        /* if (userNFTs.length === 0) {
-          userNFTs = [
-            {
-              id: 'nft1',
-              name: 'Smith Family Marriage Certificate',
-              imageUrl: 'https://placehold.co/300x400/e2e8f0/1e293b?text=Marriage+Certificate',
-              description: 'Verified marriage certificate from 1923',
-              transactionId: 'TX_abc123def',
-              arweaveLink: 'https://arweave.net/TX_abc123def',
-              mintedAt: new Date(Date.now() - 2*24*60*60*1000) // 2 days ago
-            },
-            {
-              id: 'nft2',
-              name: 'Historical Family Portrait',
-              imageUrl: 'https://placehold.co/300x400/e2e8f0/1e293b?text=Family+Portrait',
-              description: 'Authenticated family portrait from 1945',
-              transactionId: 'TX_xyz789',
-              arweaveLink: 'https://arweave.net/TX_xyz789',
-              mintedAt: new Date(Date.now() - 5*24*60*60*1000) // 5 days ago
-            }
-          ];
-        } */
-        
-        setNfts(userNFTs);
-      } catch (err) {
-        console.error('Error fetching NFTs:', err);
-        setError('Failed to load NFT collection');
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  // Fetch NFTs from the in-memory API
+  const fetchNFTs = useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
     
-    fetchNFTs();
+    try {
+      const response = await fetch('/api/nft-collection?userId=default-user');
+      
+      if (!response.ok) {
+        throw new Error('Failed to fetch NFT collection');
+      }
+      
+      const data = await response.json();
+      
+      // Convert string dates to Date objects
+      const nftsWithDates = data.nfts.map((nft: any) => ({
+        ...nft,
+        mintedAt: new Date(nft.mintedAt)
+      }));
+      
+      setNfts(nftsWithDates);
+    } catch (err) {
+      console.error('Error fetching NFTs:', err);
+      setError('Failed to load NFT collection');
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
+
+  // Save NFTs to the in-memory API
+  const saveNFTs = async (updatedNFTs: NFT[]) => {
+    try {
+      const response = await fetch('/api/nft-collection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          userId: 'default-user',
+          nfts: updatedNFTs.map(nft => ({
+            ...nft,
+            // Convert Date to ISO string for JSON serialization
+            mintedAt: nft.mintedAt.toISOString()
+          }))
+        })
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to save NFT collection');
+      }
+      
+      // Refresh the NFT list after saving
+      fetchNFTs();
+    } catch (err) {
+      console.error('Error saving NFTs:', err);
+      setError('Failed to save NFT collection');
+    }
+  };
+
+  // Load NFTs on component mount
+  useEffect(() => {
+    fetchNFTs();
+  }, [fetchNFTs]);
 
   // Handle viewing NFT details
   const viewNFTDetails = (nft: NFT) => {
     window.open(nft.arweaveLink, '_blank');
+  };
+
+  // Handle deleting an NFT
+  const handleDeleteNFT = async (nftId: string) => {
+    if (window.confirm('Are you sure you want to delete this NFT? This action cannot be undone.')) {
+      const updatedNFTs = nfts.filter(nft => nft.id !== nftId);
+      await saveNFTs(updatedNFTs);
+    }
   };
 
   if (isLoading) {
@@ -154,6 +163,12 @@ export default function NFTCollection() {
                 >
                   Blockchain Link
                 </a>
+                <button
+                  onClick={() => handleDeleteNFT(nft.id)}
+                  className="px-3 py-2 bg-red-50 text-red-600 rounded-md text-sm font-medium hover:bg-red-100 transition-colors"
+                >
+                  Delete
+                </button>
               </div>
             </div>
           </div>
