@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { BalanceProvider } from '@/contexts/BalanceContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -16,11 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
+        <BalanceProvider>
         <Header />
         <main className="flex-grow">
           {children}
         </main>
         <Footer />
+              </BalanceProvider>
       </body>
     </html>
   );

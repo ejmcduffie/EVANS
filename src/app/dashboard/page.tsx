@@ -7,6 +7,7 @@ import RecentActivity from './components/RecentActivity';
 import DashboardCard from './components/DashboardCard';
 import DeFiDashboard from './components/DeFiDashboard';
 import DAOGovernancePanel from './components/DAOGovernancePanel';
+import { useBalance } from '@/contexts/BalanceContext';
 import VerifiedAncestors from './components/VerifiedAncestors';
 import FamilyStatistics from './components/FamilyStatistics';
 import NFTCollection from './components/NFTCollection';
@@ -93,6 +94,7 @@ export default function Dashboard() {
   
   // Selected files state
   const [selectedFileIds, setSelectedFileIds] = useState<string[]>([]);
+  const { adjustBalance } = useBalance();
   
   // Handle file selection change
   const handleFileSelectionChange = (fileIds: string[]) => {
@@ -111,6 +113,8 @@ export default function Dashboard() {
     const selectedFiles = files.filter(file => selectedFileIds.includes(file.id));
     
     try {
+      // Deduct ANC balance ($1 per secure transaction)
+      adjustBalance(-1);
       // Update status to Processing
       const updatedFiles = files.map(file => 
         selectedFileIds.includes(file.id) 

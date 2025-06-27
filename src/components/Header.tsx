@@ -3,9 +3,11 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
+import { useBalance } from '@/contexts/BalanceContext';
 
 const Header = () => {
   const pathname = usePathname();
+  const { balance, isInitialized } = useBalance();
 
   const isActive = (path: string) => {
     return pathname === path ? 'nav-link-active' : 'nav-link';
@@ -27,6 +29,9 @@ const Header = () => {
             <Link href="/genealogy" className={isActive('/genealogy')}>Family Tree</Link>
             <Link href="/verification" className={isActive('/verification')}>Verification</Link>
             <Link href="/timecapsule" className={isActive('/timecapsule')}>Timecapsule</Link>
+            {isInitialized && (
+              <span className="font-semibold text-primary">ANC Balance: {balance.toFixed(2)} ANC</span>
+            )}
           </nav>
         </div>
       </div>

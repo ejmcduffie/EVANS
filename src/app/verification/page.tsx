@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useBalance } from '@/contexts/BalanceContext';
 
 // Mock components - replace with real imports when working
 const DeFiDashboard = () => <div>DeFi Dashboard Content</div>;
@@ -46,6 +47,7 @@ export default function Verification() {
   const [selectedMembers, setSelectedMembers] = useState<Record<string, boolean>>({});
   const [selectedRecordType, setSelectedRecordType] = useState<'birth' | 'death' | 'marriage' | 'military'>('birth');
   const [verifications, setVerifications] = useState<VerificationRecord[]>([]);
+  const { adjustBalance } = useBalance();
 
   // Load verification records from API on component mount
   useEffect(() => {
@@ -242,6 +244,8 @@ export default function Verification() {
       };
     });
     
+    // Deduct ANC balance ($1 per verification)
+    adjustBalance(-selectedIds.length);
     // Add to existing verifications
     setVerifications(prev => [...prev, ...newVerifications]);
     
@@ -316,6 +320,8 @@ export default function Verification() {
         console.error('Failed to store minted NFT locally:', storageErr);
       }
 
+      // Deduct ANC balance for minting ($2)
+      adjustBalance(-2);
       // success – mark minted
       setVerifications(prev =>
         prev.map(r =>
