@@ -22,6 +22,8 @@ export type { IERC20Metadata } from "./@openzeppelin/contracts/token/ERC20/exten
 export { IERC20Metadata__factory } from "./factories/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata__factory";
 export type { IERC20 } from "./@openzeppelin/contracts/token/ERC20/IERC20";
 export { IERC20__factory } from "./factories/@openzeppelin/contracts/token/ERC20/IERC20__factory";
+export type { ANC } from "./contracts/ANC";
+export { ANC__factory } from "./factories/contracts/ANC__factory";
 export type { MockAR } from "./contracts/MockAR";
 export { MockAR__factory } from "./factories/contracts/MockAR__factory";
 export type { MockV3Aggregator } from "./contracts/test/MockV3Aggregator";

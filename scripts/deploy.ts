@@ -2,13 +2,18 @@ import { ethers } from "hardhat";
 import * as dotenv from "dotenv";
 dotenv.config();
 
-// Mock price feed addresses for local testing
-// These will be deployed as mock aggregators
+// -----------------------------------------------------------------------------
+// Hybrid deployment configuration (Polygon Amoy)
+// -----------------------------------------------------------------------------
+// • ANC/USD and AR/USD use mock Chainlink aggregators with static prices
+// • LINK/USD uses the live Chainlink feed on Amoy
+// -----------------------------------------------------------------------------
 const MOCK_PRICES = {
-  ANC_USD: 100000000, // $100.00 (8 decimals)
-  AR_USD: 5000000,    // $5.00 (8 decimals)
-  LINK_USD: 1500000000 // $15.00 (8 decimals)
+  ANC_USD: 100_000000, // $100.00 (8 decimals)
+  AR_USD: 5_000000,    // $5.00 (8 decimals)
 };
+
+const REAL_LINK_USD_FEED = "0x1C2252aeeD50e0c9B64bDfF2735Ee3C932F5C408"; // Amoy LINK/USD
 
 async function deployMockAggregator(deployer: any, initialAnswer: number) {
   const MockAggregator = await ethers.getContractFactory("MockV3Aggregator", {
@@ -20,37 +25,58 @@ async function deployMockAggregator(deployer: any, initialAnswer: number) {
 }
 
 async function main() {
+  console.log("Starting deployment process...");
   const [deployer] = await ethers.getSigners();
   console.log("Deploying contracts with the account:", deployer.address);
+  console.log("Account balance:", (await deployer.provider?.getBalance(deployer.address))?.toString() || "N/A");
 
-  // Deploy MockAR token
+    // -------------------------------------------------------------------------
+  // 1. Deploy ANC token (or use existing address from .env)
+  // -------------------------------------------------------------------------
+  let ancTokenAddress: string;
+  if (process.env.ANC_TOKEN && process.env.ANC_TOKEN !== "") {
+    ancTokenAddress = process.env.ANC_TOKEN;
+    console.log("Using existing ANC token:", ancTokenAddress);
+  } else {
+    console.log("Deploying ANC token...");
+    const ANC = await ethers.getContractFactory("ANC");
+    const anc = await ANC.deploy();
+    await anc.waitForDeployment();
+    ancTokenAddress = await anc.getAddress();
+    console.log("ANC deployed to:", ancTokenAddress);
+  }
+
+  // -------------------------------------------------------------------------
+  // 2. Deploy MockAR token
+  // -------------------------------------------------------------------------
   console.log("Deploying MockAR token...");
   const MockAR = await ethers.getContractFactory("MockAR");
   const mockAR = await MockAR.deploy();
   await mockAR.waitForDeployment();
   console.log("MockAR deployed to:", await mockAR.getAddress());
 
-  // Deploy mock price feeds
-  console.log("\nDeploying mock price feeds...");
+  // -------------------------------------------------------------------------
+  // 3. Deploy mock price feeds (ANC/USD & AR/USD)
+  // -------------------------------------------------------------------------
+  console.log("\nDeploying mock price feeds (ANC/USD & AR/USD)...");
   const ancUsdFeed = await deployMockAggregator(deployer, MOCK_PRICES.ANC_USD);
   const arUsdFeed = await deployMockAggregator(deployer, MOCK_PRICES.AR_USD);
-  const linkUsdFeed = await deployMockAggregator(deployer, MOCK_PRICES.LINK_USD);
 
   console.log("\nPrice Feeds:");
   console.log("ANC/USD:", await ancUsdFeed.getAddress());
   console.log("AR/USD: ", await arUsdFeed.getAddress());
-  console.log("LINK/USD:", await linkUsdFeed.getAddress());
+  console.log("LINK/USD (real):", REAL_LINK_USD_FEED);
 
   // Deploy TreasuryRouter
   console.log("\nDeploying TreasuryRouter...");
   const TreasuryRouter = await ethers.getContractFactory("TreasuryRouter");
-  const treasuryRouter = await TreasuryRouter.deploy(
-    process.env.ANC_TOKEN || deployer.address, // Use existing ANC token or deployer as mock
+    const treasuryRouter = await TreasuryRouter.deploy(
+    ancTokenAddress,
     await mockAR.getAddress(),
     "0x326C977E6efc84E512bB9C30f76E30c160eD06FB", // LINK token on Amoy
     await ancUsdFeed.getAddress(),
     await arUsdFeed.getAddress(),
-    await linkUsdFeed.getAddress()
+    REAL_LINK_USD_FEED
   );
   await treasuryRouter.waitForDeployment();
 

@@ -11,9 +11,9 @@ declare global {
   }
 }
 
-// Contract addresses from deployment
-const TREASURY_ROUTER_ADDRESS = '0xDC8B87F6C743cFE74d3074E75F600eCaB614bcE5';
-const MOCK_AR_ADDRESS = '0xc748E2F94ff95Fec69A5aC54A60349609bEE8b99';
+// Contract addresses (injected via .env with NEXT_PUBLIC_ prefix)
+const TREASURY_ROUTER_ADDRESS = process.env.NEXT_PUBLIC_TREASURY_ROUTER_ADDRESS as string;
+const MOCK_AR_ADDRESS = process.env.NEXT_PUBLIC_MOCK_AR_ADDRESS as string;
 
 // Fallback RPC URL from environment variables or hardcoded value
 const FALLBACK_RPC_URL = process.env.NEXT_PUBLIC_AMOY_RPC_URL || 'https://rpc-amoy.polygon.technology';
@@ -70,6 +70,11 @@ export const useChainlinkData = (ancBalance: number): ChainlinkData => {
         
         setProvider(provider);
         
+        // Verify contract address is provided
+        if (!TREASURY_ROUTER_ADDRESS) {
+          throw new Error("Treasury router contract address is missing. Please set NEXT_PUBLIC_TREASURY_ROUTER_ADDRESS in your environment.");
+        }
+
         // Create contract instance
         contractInstance = new ethers.Contract(
           TREASURY_ROUTER_ADDRESS,
@@ -92,7 +97,9 @@ export const useChainlinkData = (ancBalance: number): ChainlinkData => {
         setError(null); // Clear any previous errors
       } catch (err) {
         console.error("Failed to initialize provider:", err);
+        // Ensure loading spinner stops even if initialization fails
         setError("Failed to connect to blockchain: " + (err instanceof Error ? err.message : String(err)));
+        setIsLoading(false);
       }
     };
 

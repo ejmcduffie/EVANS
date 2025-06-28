@@ -3,5 +3,6 @@
 /* eslint-disable */
 import type * as test from "./test";
 export type { test };
+export type { ANC } from "./ANC";
 export type { MockAR } from "./MockAR";
 export type { TreasuryRouter } from "./TreasuryRouter";

@@ -42,6 +42,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC20__factory>;
     getContractFactory(
+      name: "ANC",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ANC__factory>;
+    getContractFactory(
       name: "MockAR",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.MockAR__factory>;
@@ -90,6 +94,11 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.IERC20>;
     getContractAt(
+      name: "ANC",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ANC>;
+    getContractAt(
       name: "MockAR",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
@@ -134,6 +143,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.IERC20>;
     deployContract(
+      name: "ANC",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ANC>;
+    deployContract(
       name: "MockAR",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.MockAR>;
@@ -181,6 +194,11 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.IERC20>;
+    deployContract(
+      name: "ANC",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ANC>;
     deployContract(
       name: "MockAR",
       args: any[],

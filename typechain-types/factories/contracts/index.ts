@@ -2,5 +2,6 @@
 /* tslint:disable */
 /* eslint-disable */
 export * as test from "./test";
+export { ANC__factory } from "./ANC__factory";
 export { MockAR__factory } from "./MockAR__factory";
 export { TreasuryRouter__factory } from "./TreasuryRouter__factory";
