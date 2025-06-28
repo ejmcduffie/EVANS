@@ -24,7 +24,7 @@ const ChainlinkPriceDisplay: React.FC = () => {
 
   const handleEstimateCost = async () => {
     const cost = await calculateStorageCost(storageAmount);
-    setEstimatedCost(cost);
+    setEstimatedCost(parseFloat(cost));
   };
 
   const handlePurchaseStorage = async () => {
@@ -32,8 +32,8 @@ const ChainlinkPriceDisplay: React.FC = () => {
     setPurchaseSuccess(null);
     
     try {
-      const success = await purchaseStorage(storageAmount);
-      setPurchaseSuccess(success);
+      await purchaseStorage(storageAmount);
+      setPurchaseSuccess(true);
     } catch (err) {
       setPurchaseSuccess(false);
     } finally {
@@ -63,17 +63,17 @@ const ChainlinkPriceDisplay: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div className="p-3 bg-blue-50 rounded">
           <div className="text-sm text-gray-600">ANC/USD</div>
-          <div className="text-lg font-medium">${ancPrice.toFixed(2)}</div>
+          <div className="text-lg font-medium">${parseFloat(ancPrice).toFixed(2)}</div>
         </div>
         
         <div className="p-3 bg-green-50 rounded">
           <div className="text-sm text-gray-600">AR/USD</div>
-          <div className="text-lg font-medium">${arPrice.toFixed(2)}</div>
+          <div className="text-lg font-medium">${parseFloat(arPrice).toFixed(2)}</div>
         </div>
         
         <div className="p-3 bg-purple-50 rounded">
           <div className="text-sm text-gray-600">LINK/USD</div>
-          <div className="text-lg font-medium">${linkPrice.toFixed(2)}</div>
+          <div className="text-lg font-medium">${parseFloat(linkPrice).toFixed(2)}</div>
         </div>
       </div>
       
@@ -81,7 +81,7 @@ const ChainlinkPriceDisplay: React.FC = () => {
         <div className="text-sm text-gray-600">Your ANC Balance</div>
         <div className="flex items-end gap-2">
           <div className="text-2xl font-bold">{balance.toFixed(2)} ANC</div>
-          <div className="text-lg text-gray-700">(${ancUsdBalance.toFixed(2)} USD)</div>
+          <div className="text-lg text-gray-700">(${parseFloat(ancUsdBalance).toFixed(2)} USD)</div>
         </div>
       </div>
       

@@ -20,14 +20,15 @@ declare global {
   }
 }
 
-// Type for the Treasury Router ABI
-type TreasuryRouterABI = Array<{
+// (Optional) Example structure of a function fragment in an ABI. Kept for reference only.
+// NOTE: Rename to avoid clashing with imported JSON name.
+type TreasuryRouterAbiFunction = {
   inputs: Array<{ internalType: string; name: string; type: string }>;
   name: string;
   outputs: Array<{ internalType: string; name: string; type: string }>;
   stateMutability: string;
   type: string;
-}>;
+};
 
 interface ChainlinkData {
   ancPrice: string;
@@ -108,8 +109,9 @@ const useChainlinkData = (ancBalance: number): ChainlinkData => {
   }, []);
 
   // Fetch price data from the contract
-  const fetchPriceData = async (contractInstance: ethers.Contract) => {
-    if (!contractInstance) return;
+  const fetchPriceData = async (contractInstance?: ethers.Contract) => {
+    const activeContract = contractInstance || contract;
+    if (!activeContract) return;
     
     try {
       setIsLoading(true);
@@ -117,9 +119,9 @@ const useChainlinkData = (ancBalance: number): ChainlinkData => {
       
       // Fetch all prices in parallel
       const [ancPrice, arPrice, linkPrice] = await Promise.all([
-        contractInstance.getAncUsdPrice(),
-        contractInstance.getArUsdPrice(),
-        contractInstance.getLinkUsdPrice()
+        activeContract.getAncUsdPrice(),
+        activeContract.getArUsdPrice(),
+        activeContract.getLinkUsdPrice()
       ]);
       
       // Update state with formatted prices
@@ -193,18 +195,19 @@ const useChainlinkData = (ancBalance: number): ChainlinkData => {
     };
     
     init();
-  }, [fetchPriceData]);
-    
-  // Calculate storage cost in ANC
+  }, []);
+
+  // ---------- Storage Cost & Purchase ----------
+// Calculate storage cost in ANC
   const calculateStorageCost = useCallback(async (gb: number): Promise<string> => {
     if (!contract) return '0';
-    
     try {
       const cost = await contract.calculateAncCostForStorage(gb);
       return ethers.formatUnits(cost, 18);
     } catch (err) {
       console.error('Error calculating storage cost:', err);
-      throw new Error('Failed to calculate storage cost');
+      // Instead of throwing, return a fallback value so the UI can handle it gracefully
+      return '0';
     }
   }, [contract]);
 
@@ -249,8 +252,9 @@ const useChainlinkData = (ancBalance: number): ChainlinkData => {
     isLoading,
     error,
     calculateStorageCost,
-    purchaseStorage
+    purchaseStorage,
   };
 };
 
 export default useChainlinkData;
+export { useChainlinkData };
