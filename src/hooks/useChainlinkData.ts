@@ -4,41 +4,50 @@ import { useState, useEffect, useCallback } from 'react';
 import { ethers } from 'ethers';
 import TreasuryRouterABI from '../contracts/abis/TreasuryRouter.json';
 
-// Add ethereum to the window type
+// Environment variables
+const FALLBACK_RPC_URL = process.env.NEXT_PUBLIC_AMOY_RPC_URL || 'https://rpc-amoy.polygon.technology';
+const TREASURY_ROUTER_ADDRESS = process.env.NEXT_PUBLIC_TREASURY_ROUTER_ADDRESS || '';
+
+// Extend Window interface to include ethereum
 declare global {
   interface Window {
-    ethereum?: any;
+    ethereum?: {
+      isMetaMask?: boolean;
+      request: (request: { method: string; params?: any[] }) => Promise<any>;
+      on: (event: string, callback: (...args: any[]) => void) => void;
+      removeListener: (event: string, callback: (...args: any[]) => void) => void;
+    };
   }
 }
 
-// Contract addresses (injected via .env with NEXT_PUBLIC_ prefix)
-const TREASURY_ROUTER_ADDRESS = process.env.NEXT_PUBLIC_TREASURY_ROUTER_ADDRESS as string;
-const MOCK_AR_ADDRESS = process.env.NEXT_PUBLIC_MOCK_AR_ADDRESS as string;
+// Type for the Treasury Router ABI
+type TreasuryRouterABI = Array<{
+  inputs: Array<{ internalType: string; name: string; type: string }>;
+  name: string;
+  outputs: Array<{ internalType: string; name: string; type: string }>;
+  stateMutability: string;
+  type: string;
+}>;
 
-// Fallback RPC URL from environment variables or hardcoded value
-const FALLBACK_RPC_URL = process.env.NEXT_PUBLIC_AMOY_RPC_URL || 'https://rpc-amoy.polygon.technology';
-
-// Interface for the hook return value
 interface ChainlinkData {
-  ancPrice: number;
-  arPrice: number;
-  linkPrice: number;
-  ancUsdBalance: number;
+  ancPrice: string;
+  arPrice: string;
+  linkPrice: string;
+  ancUsdBalance: string;
   isLoading: boolean;
   error: string | null;
-  calculateStorageCost: (gbAmount: number) => Promise<number>;
-  purchaseStorage: (gbAmount: number) => Promise<boolean>;
+  calculateStorageCost: (gb: number) => Promise<string>;
+  purchaseStorage: (gb: number) => Promise<void>;
 }
 
-export const useChainlinkData = (ancBalance: number): ChainlinkData => {
-  const [provider, setProvider] = useState<ethers.Provider | null>(null);
+const useChainlinkData = (ancBalance: number): ChainlinkData => {
+  const [provider, setProvider] = useState<ethers.BrowserProvider | ethers.JsonRpcProvider | null>(null);
   const [contract, setContract] = useState<ethers.Contract | null>(null);
-  const [signer, setSigner] = useState<ethers.Signer | null>(null);
-  
-  const [ancPrice, setAncPrice] = useState<number>(0);
-  const [arPrice, setArPrice] = useState<number>(0);
-  const [linkPrice, setLinkPrice] = useState<number>(0);
-  const [ancUsdBalance, setAncUsdBalance] = useState<number>(0);
+  const [signer, setSigner] = useState<ethers.JsonRpcSigner | null>(null);
+  const [ancPrice, setAncPrice] = useState<string>('0');
+  const [arPrice, setArPrice] = useState<string>('0');
+  const [linkPrice, setLinkPrice] = useState<string>('0');
+  const [ancUsdBalance, setAncUsdBalance] = useState<string>('0');
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -46,157 +55,192 @@ export const useChainlinkData = (ancBalance: number): ChainlinkData => {
   useEffect(() => {
     const init = async () => {
       try {
-        let provider;
-        let contractInstance;
+        setIsLoading(true);
+        setError(null);
         
-        // First try to use MetaMask if available
+        // Use browser provider if available, otherwise fallback to JSON RPC
+        let provider: ethers.BrowserProvider | ethers.JsonRpcProvider;
         if (typeof window !== 'undefined' && window.ethereum) {
+          provider = new ethers.BrowserProvider(window.ethereum);
+          // Try to get signer
           try {
-            // Request account access if needed
-            await window.ethereum.request({ method: 'eth_requestAccounts' });
-            provider = new ethers.BrowserProvider(window.ethereum);
-            console.log("Connected to MetaMask");
-          } catch (metamaskError) {
-            console.warn("MetaMask connection failed:", metamaskError);
-            // Fall back to RPC URL
-            provider = new ethers.JsonRpcProvider(FALLBACK_RPC_URL);
-            console.log("Falling back to RPC URL");
+            const signer = await provider.getSigner();
+            setSigner(signer);
+          } catch (err) {
+            console.warn('Could not get signer, using read-only mode');
           }
         } else {
-          // No MetaMask, use RPC URL
           provider = new ethers.JsonRpcProvider(FALLBACK_RPC_URL);
-          console.log("Using RPC URL (no MetaMask detected)");
         }
         
         setProvider(provider);
         
-        // Verify contract address is provided
-        if (!TREASURY_ROUTER_ADDRESS) {
-          throw new Error("Treasury router contract address is missing. Please set NEXT_PUBLIC_TREASURY_ROUTER_ADDRESS in your environment.");
-        }
-
         // Create contract instance
-        contractInstance = new ethers.Contract(
+        const contract = new ethers.Contract(
+          TREASURY_ROUTER_ADDRESS,
+          TreasuryRouterABI as any, // Type assertion since ABI might be more specific
+          provider
+        );
+        
+        setContract(contract);
+        
+        // Initial price fetch
+        await fetchPriceData(contract);
+        
+      } catch (err) {
+        console.error('Failed to initialize provider/contract:', err);
+        setError('Failed to connect to the blockchain. Please try again later.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    
+    init();
+    
+    // Set up polling for price updates
+    const intervalId = setInterval(() => {
+      if (contract) {
+        fetchPriceData(contract);
+      }
+    }, 60000); // Update every minute
+    
+    return () => clearInterval(intervalId);
+  }, []);
+
+  // Fetch price data from the contract
+  const fetchPriceData = async (contractInstance: ethers.Contract) => {
+    if (!contractInstance) return;
+    
+    try {
+      setIsLoading(true);
+      setError(null);
+      
+      // Fetch all prices in parallel
+      const [ancPrice, arPrice, linkPrice] = await Promise.all([
+        contractInstance.getAncUsdPrice(),
+        contractInstance.getArUsdPrice(),
+        contractInstance.getLinkUsdPrice()
+      ]);
+      
+      // Update state with formatted prices
+      setAncPrice(ethers.formatUnits(ancPrice, 8));
+      setArPrice(ethers.formatUnits(arPrice, 8));
+      setLinkPrice(ethers.formatUnits(linkPrice, 8));
+      
+      // Calculate and update ANC balance in USD
+      const ancBalanceWei = ethers.parseUnits(ancBalance.toString(), 18);
+      const ancPriceBigInt = typeof ancPrice === 'bigint' ? ancPrice : BigInt(ancPrice.toString());
+      const ancBalanceUsd = parseFloat(ethers.formatUnits(ancPriceBigInt * ancBalanceWei / ethers.WeiPerEther, 8));
+      setAncUsdBalance(ancBalanceUsd.toFixed(2));
+      
+    } catch (err) {
+      console.error('Error fetching price data:', err);
+      setError('Failed to fetch price data. Please try again later.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Initialize provider and contract
+  useEffect(() => {
+    const init = async () => {
+      try {
+        console.log('Initializing provider and contract in read-only mode...');
+        const provider = new ethers.JsonRpcProvider(FALLBACK_RPC_URL);
+        
+        // Log network info
+        const network = await provider.getNetwork();
+        console.log('Connected to network:', {
+          name: network.name,
+          chainId: network.chainId,
+          isTestnet: network.chainId === 80002n ? 'Amoy Testnet' : 'Other',
+          expectedChainId: 80002n
+        });
+        
+        if (network.chainId !== 80002n) {
+          console.warn('Warning: Connected to wrong network. Some features may not work.');
+        }
+        
+        // Create contract instance
+        const contractInstance = new ethers.Contract(
           TREASURY_ROUTER_ADDRESS,
           TreasuryRouterABI,
           provider
         );
+        
+        setProvider(provider);
         setContract(contractInstance);
         
-        // Try to get signer if using browser provider
-        if (provider instanceof ethers.BrowserProvider) {
-          try {
-            const signerInstance = await provider.getSigner();
-            setSigner(signerInstance);
-            console.log("Signer obtained");
-          } catch (signerError) {
-            console.log("No signer available, using read-only mode", signerError);
-          }
-        }
+        // Initial fetch
+        await fetchPriceData();
         
-        setError(null); // Clear any previous errors
-      } catch (err) {
-        console.error("Failed to initialize provider:", err);
-        // Ensure loading spinner stops even if initialization fails
-        setError("Failed to connect to blockchain: " + (err instanceof Error ? err.message : String(err)));
+        // Set up timer for periodic price updates
+        const interval = setInterval(fetchPriceData, 60000); // Update every minute
+        
+        return () => clearInterval(interval);
+        
+      } catch (error: unknown) {
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+        console.error('Failed to initialize contract:', {
+          error: errorMessage,
+          contractAddress: TREASURY_ROUTER_ADDRESS,
+          rpcUrl: FALLBACK_RPC_URL
+        });
+        setError(`Failed to initialize contract: ${errorMessage}`);
+      } finally {
         setIsLoading(false);
       }
     };
-
+    
     init();
-  }, []);
-
-  // Fetch price data from the contract
-  const fetchPriceData = useCallback(async () => {
-    if (!contract) return;
+  }, [fetchPriceData]);
+    
+  // Calculate storage cost in ANC
+  const calculateStorageCost = useCallback(async (gb: number): Promise<string> => {
+    if (!contract) return '0';
     
     try {
-      setIsLoading(true);
-      console.log("Fetching price data from contract...");
-      
-      // Get price data from Chainlink feeds one by one with better error handling
-      try {
-        const ancPriceRaw = await contract.getAncUsdPrice();
-        const ancPriceNum = parseFloat(ethers.formatUnits(ancPriceRaw, 8));
-        setAncPrice(ancPriceNum);
-        console.log("ANC price fetched:", ancPriceNum);
-        
-        // Calculate USD value of ANC balance
-        setAncUsdBalance(ancBalance * ancPriceNum);
-      } catch (ancError) {
-        console.error("Error fetching ANC price:", ancError);
-        setError("Failed to fetch ANC price");
-      }
-      
-      try {
-        const arPriceRaw = await contract.getArUsdPrice();
-        const arPriceNum = parseFloat(ethers.formatUnits(arPriceRaw, 8));
-        setArPrice(arPriceNum);
-        console.log("AR price fetched:", arPriceNum);
-      } catch (arError) {
-        console.error("Error fetching AR price:", arError);
-        setError("Failed to fetch AR price");
-      }
-      
-      try {
-        const linkPriceRaw = await contract.getLinkUsdPrice();
-        const linkPriceNum = parseFloat(ethers.formatUnits(linkPriceRaw, 8));
-        setLinkPrice(linkPriceNum);
-        console.log("LINK price fetched:", linkPriceNum);
-      } catch (linkError) {
-        console.error("Error fetching LINK price:", linkError);
-        setError("Failed to fetch LINK price");
-      }
-      
+      const cost = await contract.calculateAncCostForStorage(gb);
+      return ethers.formatUnits(cost, 18);
     } catch (err) {
-      console.error("Error in fetchPriceData:", err);
-      setError("Failed to fetch price data: " + (err instanceof Error ? err.message : String(err)));
-    } finally {
-      setIsLoading(false);
-    }
-  }, [contract, ancBalance]);
-
-  // Fetch data when contract is available or ancBalance changes
-  useEffect(() => {
-    if (contract) {
-      fetchPriceData();
-    }
-  }, [contract, ancBalance, fetchPriceData]);
-
-  // Calculate storage cost in ANC tokens
-  const calculateStorageCost = useCallback(async (gbAmount: number): Promise<number> => {
-    if (!contract) return 0;
-    
-    try {
-      const cost = await contract.calculateAncCostForStorage(gbAmount);
-      return parseFloat(ethers.formatUnits(cost, 18)); // Assuming ANC has 18 decimals
-    } catch (err) {
-      console.error("Error calculating storage cost:", err);
-      setError("Failed to calculate storage cost");
-      return 0;
+      console.error('Error calculating storage cost:', err);
+      throw new Error('Failed to calculate storage cost');
     }
   }, [contract]);
 
-  // Purchase storage with ANC tokens
-  const purchaseStorage = useCallback(async (gbAmount: number): Promise<boolean> => {
+  // Purchase storage
+  const purchaseStorage = useCallback(async (gb: number): Promise<void> => {
     if (!contract || !signer) {
-      setError("Wallet not connected");
-      return false;
+      throw new Error('Wallet not connected');
     }
     
     try {
-      const contractWithSigner = contract.connect(signer);
-      // Use type assertion to tell TypeScript that this method exists
-      const tx = await (contractWithSigner as any).purchaseStorage(gbAmount);
+      setIsLoading(true);
+      setError(null);
+      
+      // Get the cost in ANC
+      const cost = await calculateStorageCost(gb);
+      const tx = await contract.connect(signer).purchaseStorage(gb, { 
+        value: ethers.parseUnits(cost, 18) 
+      });
+      
+      console.log('Transaction sent:', tx.hash);
       await tx.wait();
-      return true;
+      
+      // Refresh data after purchase
+      if (contract) {
+        await fetchPriceData(contract);
+      }
+      
     } catch (err) {
-      console.error("Error purchasing storage:", err);
-      setError("Failed to purchase storage");
-      return false;
+      console.error('Error purchasing storage:', err);
+      setError('Failed to purchase storage. Please try again.');
+      throw err;
+    } finally {
+      setIsLoading(false);
     }
-  }, [contract, signer]);
-
+  }, [contract, signer, calculateStorageCost]);
+  
   return {
     ancPrice,
     arPrice,
@@ -208,3 +252,5 @@ export const useChainlinkData = (ancBalance: number): ChainlinkData => {
     purchaseStorage
   };
 };
+
+export default useChainlinkData;
