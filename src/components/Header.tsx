@@ -29,6 +29,7 @@ const Header = () => {
             <Link href="/genealogy" className={isActive('/genealogy')}>Family Tree</Link>
             <Link href="/verification" className={isActive('/verification')}>Verification</Link>
             <Link href="/timecapsule" className={isActive('/timecapsule')}>Timecapsule</Link>
+            <Link href="/blockchain" className={isActive('/blockchain')}>Blockchain</Link>
             {isInitialized && (
               <span className="font-semibold text-primary">ANC Balance: {balance.toFixed(2)} ANC</span>
             )}

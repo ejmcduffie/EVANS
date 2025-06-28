@@ -59,6 +59,48 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Chainlink Integration Section */}
+        <section className="py-16 bg-blue-50">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="md:w-1/2">
+                <h2 className="text-3xl font-bold mb-4">Powered by <span className="text-blue-600">Chainlink</span> Price Feeds</h2>
+                <p className="mb-4 text-lg">
+                  Our platform leverages Chainlink's decentralized oracle network to provide real-time price data for ANC, AR, and LINK tokens.
+                </p>
+                <p className="mb-6">
+                  This integration ensures transparent and accurate on-chain financial operations, allowing users to securely purchase storage for their genealogical records.
+                </p>
+                <Link href="/blockchain" className="bg-blue-600 text-white font-bold py-3 px-6 rounded shadow-button text-lg transition-all duration-200 hover:bg-blue-700">
+                  Explore Blockchain Features
+                </Link>
+              </div>
+              <div className="md:w-1/2 flex justify-center">
+                <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-xl font-semibold">Live Price Feeds</h3>
+                    <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Powered by Chainlink</span>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                      <span>ANC/USD</span>
+                      <span className="font-medium">Connect wallet to view</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                      <span>AR/USD</span>
+                      <span className="font-medium">Connect wallet to view</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                      <span>LINK/USD</span>
+                      <span className="font-medium">Connect wallet to view</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         {/* Benefits Section */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
