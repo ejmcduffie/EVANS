@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 
 export default function StoragePage() {
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto py-8 bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 min-h-screen">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold mb-6">File Storage Payment</h1>
         <p className="text-muted-foreground mb-8">

@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 interface FamilyMember {
   id: string;
@@ -41,12 +42,20 @@ export default function FamilyTree({ initialData = null }: FamilyTreeProps) {
       setError(null);
       
       const response = await fetch('/api/family-tree');
+      
+      // Handle non-JSON responses (like 404)
+      if (response.status === 404) {
+        setError('No family tree data found. Please upload a GEDCOM file to get started.');
+        setTreeData(null);
+        return;
+      }
+      
       const data = await response.json();
       
       if (!response.ok) {
         // Handle specific error cases
         if (data.code === 'NO_GEDCOM_FILES') {
-          setError('No verified GEDCOM files found. Please upload a GEDCOM file first.');
+          setError('No GEDCOM files found. Please upload a GEDCOM file to view your family tree.');
           setTreeData(null);
           return;
         }
@@ -192,46 +201,48 @@ export default function FamilyTree({ initialData = null }: FamilyTreeProps) {
 
   if (error) {
     return (
-      <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
-        <div className="flex">
-          <div className="flex-shrink-0">
-            <svg className="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+      <div className="min-h-[50vh] flex flex-col items-center justify-center p-6 text-center">
+        <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
+          <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
+            <svg className="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
           </div>
-          <div className="ml-3">
-            <h3 className="text-sm font-medium text-red-800">Error loading family tree</h3>
-            <div className="mt-2 text-sm text-red-700">
-              <p>
-                {error}
-                {error === 'No verified GEDCOM files found' && (
-                  <button
-                    onClick={() => router.push('/upload')}
-                    className="ml-2 text-red-600 underline hover:text-red-800"
-                  >
-                    Upload a GEDCOM file
-                  </button>
-                )}
-              </p>
+          <h3 className="text-lg font-medium text-gray-900 mb-2">
+            {error.includes('404') ? 'Family Tree Not Found' : 'Something went wrong'}
+          </h3>
+          <p className="text-gray-600 mb-6">
+            {error}
+          </p>
+          <div className="mt-6">
+            <Link 
+              href="/upload"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            >
+              <svg className="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+              Upload GEDCOM File
+            </Link>
+          </div>
+          <div className="mt-4">
+            <div className="-mx-2 -my-1.5 flex">
+              <button
+                type="button"
+                onClick={fetchFamilyTree}
+                className="bg-red-50 px-2 py-1.5 rounded-md text-sm font-medium text-red-800 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600"
+              >
+                Try again
+              </button>
+              <button
+                type="button"
+                onClick={() => router.push('/upload')}
+                className="ml-3 bg-red-50 px-2 py-1.5 rounded-md text-sm font-medium text-red-800 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600"
+              >
+                Upload GEDCOM
+              </button>
             </div>
-            <div className="mt-4">
-              <div className="-mx-2 -my-1.5 flex">
-                <button
-                  type="button"
-                  onClick={fetchFamilyTree}
-                  className="bg-red-50 px-2 py-1.5 rounded-md text-sm font-medium text-red-800 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600"
-                >
-                  Try again
-                </button>
-                <button
-                  type="button"
-                  onClick={() => router.push('/upload')}
-                  className="ml-3 bg-red-50 px-2 py-1.5 rounded-md text-sm font-medium text-red-800 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600"
-                >
-                  Upload GEDCOM
-                </button>
-              </div>
-            </div>
+          </div>
           </div>
         </div>
       </div>

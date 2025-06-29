@@ -121,7 +121,14 @@ export function StoragePayment() {
     return date.toLocaleString();
   };
   
-  if (typeof window === 'undefined') {
+  // Handle server-side rendering
+  const [isClient, setIsClient] = useState(false);
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  
+  if (!isClient) {
     return (
       <div className="flex items-center justify-center h-64">
         <Loader2 className="w-8 h-8 animate-spin" />

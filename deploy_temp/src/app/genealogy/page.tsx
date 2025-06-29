@@ -7,15 +7,18 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
 // Dynamically import the FamilyTree component with SSR disabled
-const FamilyTree = dynamic(() => import('@/components/FamilyTree'), {
-  ssr: false,
-  loading: () => (
-    <div className="flex flex-col items-center justify-center min-h-[50vh]">
-      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary mb-4"></div>
-      <p className="text-gray-600">Loading your family tree...</p>
-    </div>
-  ),
-});
+const FamilyTree = dynamic(
+  () => import('@/components/FamilyTree').then(mod => mod.default),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex flex-col items-center justify-center min-h-[50vh]">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary mb-4"></div>
+        <p className="text-gray-600">Loading your family tree...</p>
+      </div>
+    ),
+  }
+);
 
 // Define the structure of a family member
 type FamilyMember = {
