@@ -5,12 +5,13 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20BurnableUpgradeable.sol";
+import "@chainlink/contracts/src/v0.8/automation/interfaces/KeeperCompatibleInterface.sol";
 
 /**
  * @title StorageManager
  * @dev Upgradeable contract to manage per-file ANC cost tracking and burning.
  */
-contract StorageManager is Initializable, OwnableUpgradeable {
+contract StorageManager is Initializable, OwnableUpgradeable, KeeperCompatibleInterface {
     ERC20BurnableUpgradeable public ancToken;
 
     // fileHash => total ANC paid for storage
@@ -22,14 +23,33 @@ contract StorageManager is Initializable, OwnableUpgradeable {
 
     event FileStoragePaid(address indexed user, bytes32 indexed fileHash, uint256 amount);
     event ANCSpent(address indexed user, uint256 amount, string purpose);
+    event AutoBurned(uint256 amount, uint256 timestamp);
 
     /// @custom:oz-upgrades-unsafe-allow constructor
     
+
+    // Keeper state
+    uint256 public lastBurn;
+    uint256 public burnInterval;
+    uint256 public burnAmount;
 
     function initialize(address _ancToken) public initializer {
         require(_ancToken != address(0), "ANC token required");
         __Ownable_init();
         ancToken = ERC20BurnableUpgradeable(_ancToken);
+        burnInterval = 1 weeks;
+        burnAmount = 10 * 1e18; // Default: 10 ANC
+        lastBurn = block.timestamp;
+    }
+
+    /**
+     * @notice Set auto-burn parameters (only owner)
+     */
+    function setAutoBurnParams(uint256 _interval, uint256 _amount) external onlyOwner {
+        require(_interval > 0, "Interval must be > 0");
+        require(_amount > 0, "Amount must be > 0");
+        burnInterval = _interval;
+        burnAmount = _amount;
     }
 
     /**
@@ -70,5 +90,18 @@ contract StorageManager is Initializable, OwnableUpgradeable {
      */
     function getTotalANCSpent() external view returns (uint256) {
         return totalANCSpent;
+    }
+
+    // Chainlink Automation (Keepers) functions
+    function checkUpkeep(bytes calldata) external view override returns (bool upkeepNeeded, bytes memory) {
+        upkeepNeeded = (block.timestamp - lastBurn) >= burnInterval && ancToken.balanceOf(address(this)) >= burnAmount;
+    }
+
+    function performUpkeep(bytes calldata) external override {
+        require((block.timestamp - lastBurn) >= burnInterval, "Burn interval not reached");
+        require(ancToken.balanceOf(address(this)) >= burnAmount, "Not enough ANC to burn");
+        ancToken.burn(burnAmount);
+        lastBurn = block.timestamp;
+        emit AutoBurned(burnAmount, lastBurn);
     }
 }

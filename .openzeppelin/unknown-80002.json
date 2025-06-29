@@ -5,6 +5,31 @@
       "address": "0xDB3806C05938Da69780B7A7219472f0c72450057",
       "txHash": "0x7e31990fa414f1848daaaaeae365ea5e774ecdf5e4dd86969146bde16efbe469",
       "kind": "transparent"
+    },
+    {
+      "address": "0x76D9117a18C9058bc15504e41c8EA12F9f940e2C",
+      "txHash": "0x177236ee900169ef43352e5cfac54b47f39bf1c20ae8167cecabae9a244765d7",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x6d74AdC715031a6839E56f6DB443B968b691cF0a",
+      "txHash": "0x2e08b1e06885cec15282d5d9c182f5ce0be15a85b5c322374954a2c5fc4100f9",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x785746e8D4b2b180AF335274C6B946c0424285b4",
+      "txHash": "0xdeaacfdf269bd5cf285f9fe606b99bf82aadde1b44a1e9f49f213cd1e469cc26",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xDBA29DC9279a844Ef045A45D603568F59E74f8ae",
+      "txHash": "0xb3c137706ec5ab6e777289280f36e08602b03fd8f91e648629f532ccd1df741a",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x763CBFACD6dEBE6337CfA99f84475Ef8A79a2771",
+      "txHash": "0xa22b795236d9d9ed175db9559ef652df336aefa385a4eb2624714c887743e5bd",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -110,6 +135,155 @@
             "numberOfBytes": "32"
           },
           "t_contract(ERC20BurnableUpgradeable)1184": {
+            "label": "contract ERC20BurnableUpgradeable",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_mapping(t_bytes32,t_uint256))": {
+            "label": "mapping(address => mapping(bytes32 => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {}
+      }
+    },
+    "b3abe2de9c5bb63c25eb6857fed29be4b7ecef3c366fc61f573e54320d10346d": {
+      "address": "0x6a9959Bb10515B8d8c57059fDd79Fb48b785fd3A",
+      "txHash": "0xef677fc5e46feca46c471a496025fadf3cc03be6fab00a62eb484061cced42bc",
+      "layout": {
+        "solcVersion": "0.8.20",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:68"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "ancToken",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_contract(ERC20BurnableUpgradeable)1077",
+            "contract": "StorageManager",
+            "src": "contracts\\StorageManager.sol:15"
+          },
+          {
+            "label": "totalPaidANC",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_mapping(t_bytes32,t_uint256)",
+            "contract": "StorageManager",
+            "src": "contracts\\StorageManager.sol:18"
+          },
+          {
+            "label": "userPaidANC",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_mapping(t_address,t_mapping(t_bytes32,t_uint256))",
+            "contract": "StorageManager",
+            "src": "contracts\\StorageManager.sol:20"
+          },
+          {
+            "label": "totalANCSpent",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_uint256",
+            "contract": "StorageManager",
+            "src": "contracts\\StorageManager.sol:22"
+          },
+          {
+            "label": "lastBurn",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_uint256",
+            "contract": "StorageManager",
+            "src": "contracts\\StorageManager.sol:32"
+          },
+          {
+            "label": "burnInterval",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_uint256",
+            "contract": "StorageManager",
+            "src": "contracts\\StorageManager.sol:33"
+          },
+          {
+            "label": "burnAmount",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_uint256",
+            "contract": "StorageManager",
+            "src": "contracts\\StorageManager.sol:34"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_contract(ERC20BurnableUpgradeable)1077": {
             "label": "contract ERC20BurnableUpgradeable",
             "numberOfBytes": "20"
           },

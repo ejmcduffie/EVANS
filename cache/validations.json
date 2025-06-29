@@ -2,6 +2,72 @@
   "version": "3.4",
   "log": [
     {
+      "contracts/SimpleStorage.sol:SimpleStorage": {
+        "src": "contracts\\SimpleStorage.sol:4",
+        "version": {
+          "withMetadata": "ebb793f97641b2e6a836f79441b8ade3f9e67d473e903fbac88d13861963d98b",
+          "withoutMetadata": "224bac77f21d619856be8d935da42655f3a093e03de12b1ddd9bcbe313a2842f",
+          "linkedWithoutMetadata": "224bac77f21d619856be8d935da42655f3a093e03de12b1ddd9bcbe313a2842f"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "set(uint256)",
+          "get()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "SimpleStorage",
+            "src": "contracts\\SimpleStorage.sol:7"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "storedData",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "SimpleStorage",
+              "src": "contracts\\SimpleStorage.sol:5"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.20"
+      }
+    },
+    {
+      "@chainlink/contracts/src/v0.8/automation/interfaces/AutomationCompatibleInterface.sol:AutomationCompatibleInterface": {
+        "src": "@chainlink\\contracts\\src\\v0.8\\automation\\interfaces\\AutomationCompatibleInterface.sol:5",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "checkUpkeep(bytes)",
+          "performUpkeep(bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.20"
+      },
       "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol:AggregatorV3Interface": {
         "src": "@chainlink\\contracts\\src\\v0.8\\shared\\interfaces\\AggregatorV3Interface.sol:5",
         "inherit": [],
@@ -1377,13 +1443,14 @@
         "solcVersion": "0.8.20"
       },
       "contracts/StorageManager.sol:StorageManager": {
-        "src": "contracts\\StorageManager.sol:13",
+        "src": "contracts\\StorageManager.sol:14",
         "version": {
-          "withMetadata": "1acfd03395b813eccc702f73d385b76c9509ad3771f64530e3aac98783c29484",
-          "withoutMetadata": "be6f3f232e9241316551eca7686c25b7b5349a37cda3410c0d7655a1ff7436bb",
-          "linkedWithoutMetadata": "be6f3f232e9241316551eca7686c25b7b5349a37cda3410c0d7655a1ff7436bb"
+          "withMetadata": "d3740b74c75a008bdce8572551b579ff9b770b869a714371fc7d3da401512959",
+          "withoutMetadata": "b3abe2de9c5bb63c25eb6857fed29be4b7ecef3c366fc61f573e54320d10346d",
+          "linkedWithoutMetadata": "b3abe2de9c5bb63c25eb6857fed29be4b7ecef3c366fc61f573e54320d10346d"
         },
         "inherit": [
+          "@chainlink/contracts/src/v0.8/automation/interfaces/AutomationCompatibleInterface.sol:AutomationCompatibleInterface",
           "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:OwnableUpgradeable",
           "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:ContextUpgradeable",
           "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:Initializable"
@@ -1391,10 +1458,13 @@
         "libraries": [],
         "methods": [
           "initialize(address)",
+          "setAutoBurnParams(uint256,uint256)",
           "payForFileStorage(bytes32,uint256,string)",
           "getTotalPaidForFile(bytes32)",
           "getUserPaidForFile(address,bytes32)",
-          "getTotalANCSpent()"
+          "getTotalANCSpent()",
+          "checkUpkeep(bytes)",
+          "performUpkeep(bytes)"
         ],
         "linkReferences": [],
         "errors": [],
@@ -1445,9 +1515,9 @@
               "label": "ancToken",
               "offset": 0,
               "slot": "101",
-              "type": "t_contract(ERC20BurnableUpgradeable)1184",
+              "type": "t_contract(ERC20BurnableUpgradeable)1207",
               "contract": "StorageManager",
-              "src": "contracts\\StorageManager.sol:14"
+              "src": "contracts\\StorageManager.sol:15"
             },
             {
               "label": "totalPaidANC",
@@ -1455,7 +1525,7 @@
               "slot": "102",
               "type": "t_mapping(t_bytes32,t_uint256)",
               "contract": "StorageManager",
-              "src": "contracts\\StorageManager.sol:17"
+              "src": "contracts\\StorageManager.sol:18"
             },
             {
               "label": "userPaidANC",
@@ -1463,7 +1533,7 @@
               "slot": "103",
               "type": "t_mapping(t_address,t_mapping(t_bytes32,t_uint256))",
               "contract": "StorageManager",
-              "src": "contracts\\StorageManager.sol:19"
+              "src": "contracts\\StorageManager.sol:20"
             },
             {
               "label": "totalANCSpent",
@@ -1471,7 +1541,31 @@
               "slot": "104",
               "type": "t_uint256",
               "contract": "StorageManager",
-              "src": "contracts\\StorageManager.sol:21"
+              "src": "contracts\\StorageManager.sol:22"
+            },
+            {
+              "label": "lastBurn",
+              "offset": 0,
+              "slot": "105",
+              "type": "t_uint256",
+              "contract": "StorageManager",
+              "src": "contracts\\StorageManager.sol:32"
+            },
+            {
+              "label": "burnInterval",
+              "offset": 0,
+              "slot": "106",
+              "type": "t_uint256",
+              "contract": "StorageManager",
+              "src": "contracts\\StorageManager.sol:33"
+            },
+            {
+              "label": "burnAmount",
+              "offset": 0,
+              "slot": "107",
+              "type": "t_uint256",
+              "contract": "StorageManager",
+              "src": "contracts\\StorageManager.sol:34"
             }
           ],
           "types": {
@@ -1495,7 +1589,7 @@
               "label": "bytes32",
               "numberOfBytes": "32"
             },
-            "t_contract(ERC20BurnableUpgradeable)1184": {
+            "t_contract(ERC20BurnableUpgradeable)1207": {
               "label": "contract ERC20BurnableUpgradeable",
               "numberOfBytes": "20"
             },
@@ -1643,7 +1737,7 @@
               "label": "_roundData",
               "offset": 0,
               "slot": "4",
-              "type": "t_mapping(t_uint80,t_struct(RoundData)3384_storage)",
+              "type": "t_mapping(t_uint80,t_struct(RoundData)3548_storage)",
               "contract": "MockV3Aggregator",
               "src": "contracts\\test\\MockV3Aggregator.sol:22"
             }
@@ -1653,11 +1747,11 @@
               "label": "int256",
               "numberOfBytes": "32"
             },
-            "t_mapping(t_uint80,t_struct(RoundData)3384_storage)": {
+            "t_mapping(t_uint80,t_struct(RoundData)3548_storage)": {
               "label": "mapping(uint80 => struct MockV3Aggregator.RoundData)",
               "numberOfBytes": "32"
             },
-            "t_struct(RoundData)3384_storage": {
+            "t_struct(RoundData)3548_storage": {
               "label": "struct MockV3Aggregator.RoundData",
               "members": [
                 {
