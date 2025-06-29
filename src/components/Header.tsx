@@ -30,6 +30,7 @@ const Header = () => {
             <Link href="/verification" className={isActive('/verification')}>Verification</Link>
             <Link href="/timecapsule" className={isActive('/timecapsule')}>Timecapsule</Link>
             <Link href="/blockchain" className={isActive('/blockchain')}>Blockchain</Link>
+            <Link href="/storage" className={isActive('/storage')}>Storage</Link>
             {isInitialized && (
               <span className="font-semibold text-primary">ANC Balance: {balance.toFixed(2)} ANC</span>
             )}
