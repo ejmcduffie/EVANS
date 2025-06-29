@@ -4,5 +4,8 @@
 import type * as test from "./test";
 export type { test };
 export type { ANC } from "./ANC";
+export type { ANCTokenDynamic } from "./ANCTokenDynamic";
 export type { MockAR } from "./MockAR";
+export type { SimpleToken } from "./SimpleToken";
+export type { StorageManager } from "./StorageManager";
 export type { TreasuryRouter } from "./TreasuryRouter";

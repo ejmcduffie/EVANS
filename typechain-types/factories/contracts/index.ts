@@ -3,5 +3,8 @@
 /* eslint-disable */
 export * as test from "./test";
 export { ANC__factory } from "./ANC__factory";
+export { ANCTokenDynamic__factory } from "./ANCTokenDynamic__factory";
 export { MockAR__factory } from "./MockAR__factory";
+export { SimpleToken__factory } from "./SimpleToken__factory";
+export { StorageManager__factory } from "./StorageManager__factory";
 export { TreasuryRouter__factory } from "./TreasuryRouter__factory";

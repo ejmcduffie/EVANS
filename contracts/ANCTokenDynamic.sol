@@ -13,10 +13,10 @@ pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
+import "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 
-contract ANCTokenDynamic is ERC20, Ownable, ReentrancyGuard {
+contract ANCTokenDynamic is ERC20, Ownable, ReentrancyGuardUpgradeable {
     // ------------------------------------------------------------------
     // Constants & immutables
     // ------------------------------------------------------------------
@@ -49,7 +49,7 @@ contract ANCTokenDynamic is ERC20, Ownable, ReentrancyGuard {
         address _treasury,
         address _maticUsdFeed,
         uint256 _targetUsdPrice // 8 decimals (1e8 == $1)
-    ) ERC20("AncestryCoin", "ANC") {
+    ) ERC20("AncestryCoin", "ANC") Ownable() {
         require(_treasury != address(0), "Treasury zero");
         require(_maticUsdFeed != address(0), "Feed zero");
         treasury = _treasury;
@@ -85,7 +85,7 @@ contract ANCTokenDynamic is ERC20, Ownable, ReentrancyGuard {
         uint256 priceWei = getTokenPriceInMatic();
         uint256 tokensToTransfer = (msg.value * 1e18) / priceWei;
         require(tokensToTransfer > 0, "Insufficient MATIC for 1 ANC");
-        require(balanceOf(address(this)) >= tokensToTransfer, "ANC sold out – add liquidity");
+        require(balanceOf(address(this)) >= tokensToTransfer, "ANC sold out - add liquidity");
 
         _transfer(address(this), msg.sender, tokensToTransfer);
         emit TokensPurchased(msg.sender, msg.value, tokensToTransfer);

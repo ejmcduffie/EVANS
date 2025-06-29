@@ -31,19 +31,37 @@ async function main() {
   console.log("Account balance:", (await deployer.provider?.getBalance(deployer.address))?.toString() || "N/A");
 
     // -------------------------------------------------------------------------
-  // 1. Deploy ANC token (or use existing address from .env)
+  // 1. Deploy ANCTokenDynamic (or use existing address from .env)
   // -------------------------------------------------------------------------
   let ancTokenAddress: string;
   if (process.env.ANC_TOKEN && process.env.ANC_TOKEN !== "") {
     ancTokenAddress = process.env.ANC_TOKEN;
-    console.log("Using existing ANC token:", ancTokenAddress);
+    console.log("Using existing ANCTokenDynamic:", ancTokenAddress);
   } else {
-    console.log("Deploying ANC token...");
-    const ANC = await ethers.getContractFactory("ANC");
-    const anc = await ANC.deploy();
-    await anc.waitForDeployment();
-    ancTokenAddress = await anc.getAddress();
-    console.log("ANC deployed to:", ancTokenAddress);
+    console.log("Deploying ANCTokenDynamic...");
+    const ANCTokenDynamic = await ethers.getContractFactory("ANCTokenDynamic");
+    
+    // Deployer will be the initial owner and treasury
+    const deployerAddress = await deployer.getAddress();
+    
+    // Using MATIC/USD price feed on Amoy testnet
+    const maticUsdFeed = "0xd0D5e3DB44DE05E9F294BB0a3bEEaF030DE24Ada";
+    
+    // Target price of $100 per ANC (8 decimals)
+    const targetUsdPrice = 100 * 10 ** 8;
+    
+    const ancToken = await ANCTokenDynamic.deploy(
+      deployerAddress,  // treasury address
+      maticUsdFeed,     // MATIC/USD price feed
+      targetUsdPrice    // $100 per ANC (8 decimals)
+    );
+    
+    await ancToken.waitForDeployment();
+    ancTokenAddress = await ancToken.getAddress();
+    
+    console.log("ANCTokenDynamic deployed to:", ancTokenAddress);
+    console.log("• Treasury:", deployerAddress);
+    console.log("• Target Price: $", targetUsdPrice / 1e8, "per ANC");
   }
 
   // -------------------------------------------------------------------------
