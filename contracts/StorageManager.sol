@@ -3,6 +3,7 @@ pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20BurnableUpgradeable.sol";
 import "@chainlink/contracts/src/v0.8/automation/interfaces/KeeperCompatibleInterface.sol";
@@ -11,7 +12,7 @@ import "@chainlink/contracts/src/v0.8/automation/interfaces/KeeperCompatibleInte
  * @title StorageManager
  * @dev Upgradeable contract to manage per-file ANC cost tracking and burning.
  */
-contract StorageManager is Initializable, OwnableUpgradeable, KeeperCompatibleInterface {
+contract StorageManager is Initializable, OwnableUpgradeable, UUPSUpgradeable, KeeperCompatibleInterface {
     ERC20BurnableUpgradeable public ancToken;
 
     // fileHash => total ANC paid for storage
@@ -36,11 +37,19 @@ contract StorageManager is Initializable, OwnableUpgradeable, KeeperCompatibleIn
     function initialize(address _ancToken) public initializer {
         require(_ancToken != address(0), "ANC token required");
         __Ownable_init();
+        __UUPSUpgradeable_init();
         ancToken = ERC20BurnableUpgradeable(_ancToken);
         burnInterval = 1 weeks;
         burnAmount = 10 * 1e18; // Default: 10 ANC
         lastBurn = block.timestamp;
     }
+
+    /// @custom:oz-upgrades-unsafe-allow constructor
+    constructor() {
+        _disableInitializers();
+    }
+
+    function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
 
     /**
      * @notice Set auto-burn parameters (only owner)
