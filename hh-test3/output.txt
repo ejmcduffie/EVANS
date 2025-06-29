@@ -1,0 +1,245 @@
+2025-06-29T19:56:57.525Z hardhat:core:vars:varsManager Creating a new instance of VarsManager
+2025-06-29T19:56:57.527Z hardhat:core:vars:varsManager Loading ENV variables if any
+2025-06-29T19:56:57.548Z hardhat:core:config Loading Hardhat config from C:\Users\Mythi\Documents\UUU\EVANS\hardhat.config.ts
+[dotenv@17.0.0] injecting env (0) from .env ΓÇô ≡ƒöÉ encrypt with dotenvx: https://dotenvx.com
+2025-06-29T19:56:58.483Z hardhat:core:hre Creating HardhatRuntimeEnvironment
+2025-06-29T19:56:58.490Z hardhat:core:global-dir Looking up Client Id at C:\Users\Mythi\AppData\Local\hardhat-nodejs\Data\analytics.json
+2025-06-29T19:56:58.492Z hardhat:core:global-dir Client Id found: a12e986d-3b75-4e72-b472-c3ee60d5cc1e
+2025-06-29T19:56:58.612Z hardhat:core:analytics Sending hit for task
+2025-06-29T19:56:58.612Z hardhat:core:analytics Hit payload: {"client_id":"a12e986d-3b75-4e72-b472-c3ee60d5cc1e","user_id":"a12e986d-3b75-4e72-b472-c3ee60d5cc1e","user_properties":{"projectId":{"value":"hardhat-project"},"userType":{"value":"Developer"},"hardhatVersion":{"value":"Hardhat 2.25.0"},"operatingSystem":{"value":"win32"},"nodeVersion":{"value":"v22.16.0"}},"events":[{"name":"task","params":{"engagement_time_msec":"10000","session_id":"0.12412617489561639"}}]}
+2025-06-29T19:56:58.685Z hardhat:core:hre Running task run
+2025-06-29T19:56:58.687Z hardhat:core:hre Running task compile
+2025-06-29T19:56:58.687Z hardhat:core:hre Running task compile:get-compilation-tasks
+2025-06-29T19:56:58.688Z hardhat:core:hre Running task compile:solidity
+2025-06-29T19:56:58.707Z hardhat:core:hre Running compile:solidity's super
+2025-06-29T19:56:58.707Z hardhat:core:hre Running task compile:solidity:get-source-paths
+2025-06-29T19:56:58.709Z hardhat:core:hre Running task compile:solidity:get-source-names
+2025-06-29T19:56:58.716Z hardhat:core:hre Running task compile:solidity:get-dependency-graph
+2025-06-29T19:56:58.716Z hardhat:core:hre Running task compile:solidity:get-remappings
+2025-06-29T19:56:58.721Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.722Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.722Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.722Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.723Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.723Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.723Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.724Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.727Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.727Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.727Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.727Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.727Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.727Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.727Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.727Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.728Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.728Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.728Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.728Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.728Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.728Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.797Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.798Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.798Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.798Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.799Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.799Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.799Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.799Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.799Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.800Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.800Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.801Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.801Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.801Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.802Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.803Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.804Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.804Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.805Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.805Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.805Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.807Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.808Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.808Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.808Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.809Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.821Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.821Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.822Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.822Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.822Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.822Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.823Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.824Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.824Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.825Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.826Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.826Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.826Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.826Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.837Z hardhat:core:analytics Hit for task sent successfully
+2025-06-29T19:56:58.840Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.840Z hardhat:core:hre Running task compile:solidity:read-file
+2025-06-29T19:56:58.841Z hardhat:core:hre Running task compile:solidity:transform-import-name
+2025-06-29T19:56:58.851Z hardhat:core:hre Running task compile:solidity:get-compilation-jobs
+2025-06-29T19:56:58.852Z hardhat:core:tasks:compile The dependency graph was divided in '3' connected components
+2025-06-29T19:56:58.852Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.854Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANC.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.854Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\ERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANC.sol'
+2025-06-29T19:56:58.854Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANC.sol'
+2025-06-29T19:56:58.854Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\utils\Context.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANC.sol'
+2025-06-29T19:56:58.854Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\extensions\IERC20Metadata.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANC.sol'
+2025-06-29T19:56:58.854Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANC.sol'
+2025-06-29T19:56:58.854Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.854Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\SimpleStorage.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.854Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.855Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\test\MockV3Aggregator.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.855Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.855Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\ERC20.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.855Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\ERC20.sol'
+2025-06-29T19:56:58.856Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\utils\Context.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\ERC20.sol'
+2025-06-29T19:56:58.856Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\extensions\IERC20Metadata.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\ERC20.sol'
+2025-06-29T19:56:58.856Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\ERC20.sol'
+2025-06-29T19:56:58.856Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.857Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\extensions\IERC20Metadata.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.857Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\extensions\IERC20Metadata.sol'
+2025-06-29T19:56:58.857Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.857Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.857Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.858Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\TreasuryRouter.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.858Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\TreasuryRouter.sol'
+2025-06-29T19:56:58.858Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@chainlink\contracts\src\v0.8\shared\interfaces\AggregatorV3Interface.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\TreasuryRouter.sol'
+2025-06-29T19:56:58.858Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.858Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@chainlink\contracts\src\v0.8\shared\interfaces\AggregatorV3Interface.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.859Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.859Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANCTokenDynamic.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.859Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\access\Ownable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANCTokenDynamic.sol'
+2025-06-29T19:56:58.859Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\security\ReentrancyGuardUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANCTokenDynamic.sol'
+2025-06-29T19:56:58.859Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\ERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANCTokenDynamic.sol'
+2025-06-29T19:56:58.859Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@chainlink\contracts\src\v0.8\shared\interfaces\AggregatorV3Interface.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANCTokenDynamic.sol'
+2025-06-29T19:56:58.859Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\utils\Context.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANCTokenDynamic.sol'
+2025-06-29T19:56:58.859Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANCTokenDynamic.sol'
+2025-06-29T19:56:58.859Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\AddressUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANCTokenDynamic.sol'
+2025-06-29T19:56:58.859Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANCTokenDynamic.sol'
+2025-06-29T19:56:58.859Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\utils\Context.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANCTokenDynamic.sol'
+2025-06-29T19:56:58.859Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\extensions\IERC20Metadata.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANCTokenDynamic.sol'
+2025-06-29T19:56:58.859Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\ANCTokenDynamic.sol'
+2025-06-29T19:56:58.859Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.860Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\security\ReentrancyGuardUpgradeable.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.860Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\security\ReentrancyGuardUpgradeable.sol'
+2025-06-29T19:56:58.860Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\AddressUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\security\ReentrancyGuardUpgradeable.sol'
+2025-06-29T19:56:58.860Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.860Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.860Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\AddressUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol'
+2025-06-29T19:56:58.860Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.860Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\ERC20Upgradeable.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.861Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\ERC20Upgradeable.sol'
+2025-06-29T19:56:58.861Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\ContextUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\ERC20Upgradeable.sol'
+2025-06-29T19:56:58.861Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\IERC20Upgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\ERC20Upgradeable.sol'
+2025-06-29T19:56:58.861Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\IERC20MetadataUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\ERC20Upgradeable.sol'
+2025-06-29T19:56:58.861Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\AddressUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\ERC20Upgradeable.sol'
+2025-06-29T19:56:58.861Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\ERC20Upgradeable.sol'
+2025-06-29T19:56:58.861Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\IERC20Upgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\ERC20Upgradeable.sol'
+2025-06-29T19:56:58.861Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.861Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\IERC20MetadataUpgradeable.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.861Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\IERC20Upgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\IERC20MetadataUpgradeable.sol'
+2025-06-29T19:56:58.861Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.861Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\IERC20Upgradeable.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.861Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\ContextUpgradeable.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\ContextUpgradeable.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\AddressUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\ContextUpgradeable.sol'
+2025-06-29T19:56:58.862Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\ERC20BurnableUpgradeable.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\ERC20BurnableUpgradeable.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\ContextUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\ERC20BurnableUpgradeable.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\ERC20Upgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\ERC20BurnableUpgradeable.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\AddressUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\ERC20BurnableUpgradeable.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\ERC20BurnableUpgradeable.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\ERC20BurnableUpgradeable.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\ContextUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\ERC20BurnableUpgradeable.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\IERC20Upgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\ERC20BurnableUpgradeable.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\IERC20MetadataUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\ERC20BurnableUpgradeable.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\IERC20Upgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\ERC20BurnableUpgradeable.sol'
+2025-06-29T19:56:58.862Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\access\OwnableUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\ERC20BurnableUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@chainlink\contracts\src\v0.8\automation\interfaces\KeeperCompatibleInterface.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\ContextUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\AddressUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\ContextUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.862Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\ERC20Upgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\ContextUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\IERC20Upgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\extensions\IERC20MetadataUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\token\ERC20\IERC20Upgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@chainlink\contracts\src\v0.8\automation\interfaces\AutomationCompatibleInterface.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\StorageManager.sol'
+2025-06-29T19:56:58.863Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@chainlink\contracts\src\v0.8\automation\interfaces\KeeperCompatibleInterface.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@chainlink\contracts\src\v0.8\automation\interfaces\AutomationCompatibleInterface.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@chainlink\contracts\src\v0.8\automation\interfaces\KeeperCompatibleInterface.sol'
+2025-06-29T19:56:58.863Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@chainlink\contracts\src\v0.8\automation\interfaces\AutomationCompatibleInterface.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.863Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\access\OwnableUpgradeable.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\access\OwnableUpgradeable.sol'
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\ContextUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\access\OwnableUpgradeable.sol'
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\AddressUpgradeable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\access\OwnableUpgradeable.sol'
+2025-06-29T19:56:58.863Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\proxy\utils\Initializable.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\access\OwnableUpgradeable.sol'
+2025-06-29T19:56:58.863Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.864Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts-upgradeable\utils\AddressUpgradeable.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.864Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.864Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\access\Ownable.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.864Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\utils\Context.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\access\Ownable.sol'
+2025-06-29T19:56:58.864Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.864Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\utils\Context.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.864Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.864Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\SimpleToken.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.864Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\ERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\SimpleToken.sol'
+2025-06-29T19:56:58.864Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\SimpleToken.sol'
+2025-06-29T19:56:58.864Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\utils\Context.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\SimpleToken.sol'
+2025-06-29T19:56:58.864Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\extensions\IERC20Metadata.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\SimpleToken.sol'
+2025-06-29T19:56:58.864Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\SimpleToken.sol'
+2025-06-29T19:56:58.865Z hardhat:core:hre Running task compile:solidity:get-compilation-job-for-file
+2025-06-29T19:56:58.865Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\MockAR.sol' will be compiled with version '0.8.20'
+2025-06-29T19:56:58.865Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\ERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\MockAR.sol'
+2025-06-29T19:56:58.865Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\MockAR.sol'
+2025-06-29T19:56:58.865Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\utils\Context.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\MockAR.sol'
+2025-06-29T19:56:58.865Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\extensions\IERC20Metadata.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\MockAR.sol'
+2025-06-29T19:56:58.865Z hardhat:core:compilation-job File 'C:\Users\Mythi\Documents\UUU\EVANS\node_modules\@openzeppelin\contracts\token\ERC20\IERC20.sol' added as dependency of 'C:\Users\Mythi\Documents\UUU\EVANS\contracts\MockAR.sol'
+2025-06-29T19:56:58.865Z hardhat:core:hre Running task compile:solidity:handle-compilation-jobs-failures
+2025-06-29T19:56:58.866Z hardhat:core:hre Running task compile:solidity:filter-compilation-jobs
+2025-06-29T19:56:58.880Z hardhat:core:tasks:compile '25' jobs were filtered out
+2025-06-29T19:56:58.880Z hardhat:core:hre Running task compile:solidity:merge-compilation-jobs
+2025-06-29T19:56:58.880Z hardhat:core:hre Running task compile:solidity:compile-jobs
+2025-06-29T19:56:58.880Z hardhat:core:tasks:compile No compilation jobs to compile
+2025-06-29T19:56:58.880Z hardhat:core:hre Running task compile:solidity:log:nothing-to-compile
+2025-06-29T19:56:58.883Z hardhat:core:hre Running task compile:solidity:log:compilation-result
+2025-06-29T19:56:58.884Z hardhat:core:hre Running task compile:remove-obsolete-artifacts
+2025-06-29T19:56:58.911Z hardhat:core:tasks:run Running script test-simple.js in a subprocess so we can wait for it to complete
+2025-06-29T19:56:58.911Z hardhat:core:scripts-runner Creating Hardhat subprocess to run test-simple.js
+2025-06-29T19:56:59.125Z hardhat:core:vars:varsManager Creating a new instance of VarsManager
+2025-06-29T19:56:59.128Z hardhat:core:vars:varsManager Loading ENV variables if any
+2025-06-29T19:56:59.440Z hardhat:core:config Loading Hardhat config from C:\Users\Mythi\Documents\UUU\EVANS\hardhat.config.ts
+[dotenv@17.0.0] injecting env (0) from .env ΓÇô ≡ƒöÉ encrypt with dotenvx: https://dotenvx.com
+2025-06-29T19:56:59.998Z hardhat:core:hre Creating HardhatRuntimeEnvironment
+=== Starting Simple Test ===
+1. Hardhat require successful
+2. Testing async/await...
+3. Network: hardhat (31337)
+2025-06-29T19:57:00.265Z hardhat:core:hre Creating provider for network hardhat
+2025-06-29T19:57:01.190Z hardhat:core:hardhat-network:provider Making tracing config
+2025-06-29T19:57:01.196Z hardhat:core:hardhat-network:provider Creating EDR provider
+2025-06-29T19:57:01.237Z hardhat:core:hardhat-network:provider EDR provider created
+4. Deployer address: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+=== Test completed successfully ===
+2025-06-29T19:57:01.338Z hardhat:core:scripts-runner Script test-simple.js exited with status code 0
+2025-06-29T19:57:01.338Z hardhat:core:cli Killing Hardhat after successfully running task run

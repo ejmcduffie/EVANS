@@ -1,0 +1,6 @@
+[Sun 06/29/2025 15:49:13.74] Starting Hardhat... 
+Working directory: C:\Users\Mythi\Documents\UUU\EVANS 
+[dotenv@17.0.0] injecting env (15) from .env – 🔐 encrypt with dotenvx: https://dotenvx.com
+[31m[1mError[22m[39m [31m[1mHH601:[22m[39m Script scripts/test-simple.js doesn't exist.
+
+For more info go to https://hardhat.org/HH601 or run Hardhat with --show-stack-traces
