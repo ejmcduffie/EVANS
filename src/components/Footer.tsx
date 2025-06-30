@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-primary">AncestryChain</h3>
             <p className="mb-4">
-              Verify United States slave records and connect descendants to their ancestry using blockchain technology.
+              Verify United States records and connect descendants to their ancestry using blockchain technology.
             </p>
           </div>
           

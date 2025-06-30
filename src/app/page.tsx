@@ -22,7 +22,7 @@ export default function Home() {
               <span className="text-primary">Verify</span> Your Ancestral Heritage
             </h1>
             <p className="text-xl md:max-w-2xl mx-auto mb-8">
-              Connect to your lineage through verified United States slave records using blockchain technology for secure and trustworthy verification.
+            Immutable Family History - Create tamper-proof family trees with verified documentation like birth certificates, marriage licenses, and immigration records.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/upload" className="btn-primary">
@@ -48,7 +48,7 @@ export default function Home() {
               <div className="card">
                 <div className="mb-4 text-primary text-4xl">02</div>
                 <h3 className="text-xl font-bold mb-2">Blockchain Verification</h3>
-                <p>Our system uses Chainlink technology to verify your ancestry against historical slave records.</p>
+                <p>Our system uses Chainlink technology to verify your ancestry against historical records.</p>
               </div>
               <div className="card">
                 <div className="mb-4 text-primary text-4xl">03</div>
@@ -125,7 +125,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">Historical Accuracy</h3>
-                  <p>Access to verified United States slave records ensures accurate lineage tracing.</p>
+                  <p>Access to verified United States records ensures accurate lineage tracing.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">

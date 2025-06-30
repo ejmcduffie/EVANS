@@ -71,13 +71,42 @@ export async function POST(request: NextRequest) {
     await mockTransaction.sign();
     const transactionId = mockTransaction.id;
 
-    // 4. Return success response
+    // 4. Save the NFT to the user's collection
+    const nft = {
+      id: `nft-${Date.now()}`,
+      name: metadata.name,
+      imageUrl: '/images/nft-placeholder.png', // Default image
+      description: metadata.description,
+      transactionId,
+      arweaveLink: `https://arweave.net/${transactionId}`,
+      mintedAt: new Date(),
+      recordType: fileData.recordType,
+      agency: fileData.verificationAgency,
+      relatedFile: fileId
+    };
+
+    // Save to the NFT collection
+    const userId = 'default-user'; // In a real app, get this from the session
+    const collectionsResponse = await fetch(`${request.nextUrl.origin}/api/nft-collection?userId=${userId}`);
+    const { nfts: existingNfts = [] } = await collectionsResponse.json();
+    
+    await fetch(`${request.nextUrl.origin}/api/nft-collection`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userId,
+        nfts: [...existingNfts, nft]
+      })
+    });
+
+    // 5. Return success response
     return NextResponse.json({
       success: true,
       transactionId,
       arweaveLink: `https://arweave.net/${transactionId}`,
       message: 'NFT minted successfully!',
-      metadata
+      metadata,
+      nft
     });
 
   } catch (error: any) {

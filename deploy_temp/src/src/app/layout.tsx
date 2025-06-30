@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'AncestryChain | Verify Slave Records Lineage',
-  description: 'Verify United States slave records and genealogy with blockchain technology',
+  description: 'Verify United States records and genealogy with blockchain technology',
 };
 
 export default function RootLayout({

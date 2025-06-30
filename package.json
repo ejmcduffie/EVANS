@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.15",
+    "@rainbow-me/rainbowkit": "^2.2.8",
     "@rive-app/react-canvas": "^4.21.4",
     "@types/bcryptjs": "^2.4.6",
     "@types/uuid": "^10.0.0",
@@ -30,7 +31,9 @@
     "resend": "^4.5.1",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^3.3.3",
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "viem": "^2.31.4",
+    "wagmi": "^2.15.6"
   },
   "devDependencies": {
     "@chainlink/contracts": "^1.4.0",

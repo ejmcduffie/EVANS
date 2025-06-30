@@ -34,12 +34,32 @@ export default function NFTCollection() {
       const data = await response.json();
       
       // Convert string dates to Date objects
-      const nftsWithDates = data.nfts.map((nft: any) => ({
+      const remoteNfts = data.nfts.map((nft: any) => ({
         ...nft,
         mintedAt: new Date(nft.mintedAt)
       }));
+
+      // Merge with localStorage NFTs (if any)
+      let localNfts: any[] = [];
+      if (typeof window !== 'undefined') {
+        try {
+          const stored = JSON.parse(localStorage.getItem('mintedNFTs') || '[]');
+          localNfts = stored.map((nft: any) => ({
+            ...nft,
+            mintedAt: new Date(nft.mintedAt)
+          }));
+        } catch (e) {
+          console.warn('Failed to parse localStorage NFTs', e);
+        }
+      }
+
+      // Combine and deduplicate by id
+      const combined = [...remoteNfts, ...localNfts].reduce((acc: Record<string, any>, nft: any) => {
+        acc[nft.id] = nft;
+        return acc;
+      }, {} as Record<string, any>);
       
-      setNfts(nftsWithDates);
+      setNfts(Object.values(combined));
     } catch (err) {
       console.error('Error fetching NFTs:', err);
       setError('Failed to load NFT collection');

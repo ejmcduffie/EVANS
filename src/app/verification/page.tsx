@@ -374,7 +374,7 @@ export default function Verification() {
             <h2 className="text-xl font-bold mb-2">How Verification Works</h2>
             <p className="text-gray-700">
               AncestryChain uses Chainlink technology to verify your genealogy data against
-              historical United States slave records. Our blockchain verification system ensures
+              historical United States records. Our blockchain verification system ensures
               the authenticity and integrity of your ancestral connections.
             </p>
           </div>

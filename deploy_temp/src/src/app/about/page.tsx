@@ -11,7 +11,7 @@ export default function About() {
           <div className="bg-white rounded-lg shadow-md p-6 mb-8">
             <h2 className="text-xl font-bold mb-4">Our Mission</h2>
             <p className="text-gray-700 mb-4">
-              AncestryChain was founded with a mission to connect African American descendants to their ancestral roots through verified United States slave records, utilizing the power of blockchain technology for secure and immutable verification.
+              AncestryChain was founded with a mission to connect African American descendants to their ancestral roots through verified United States records, utilizing the power of blockchain technology for secure and immutable verification.
             </p>
             <p className="text-gray-700 mb-4">
               Our platform bridges the gap between historical documentation and modern technology, providing a trustworthy means for individuals to discover and confirm their genealogical connections to ancestors who were enslaved in the United States.
@@ -42,7 +42,7 @@ export default function About() {
               <div>
                 <h3 className="font-semibold text-lg mb-2">Blockchain Verification</h3>
                 <p className="text-gray-700">
-                  Using Chainlink technology, we securely access verified United States slave record databases. Our system matches your family data against these records to identify potential ancestral connections.
+                  Using Chainlink technology, we securely access verified United States record databases. Our system matches your family data against these records to identify potential ancestral connections.
                 </p>
               </div>
               
